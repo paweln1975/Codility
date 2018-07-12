@@ -1,8 +1,7 @@
-package pl.paweln.codility;
+package pl.paweln.codility.binarygap;
 
 import org.junit.Assert;
 import org.junit.Test;
-import pl.paweln.codility.binarygap.Solution;
 
 public class TestBinaryGap {
     @Test
