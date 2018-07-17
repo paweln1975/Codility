@@ -50,6 +50,30 @@ expected worst-case space complexity is O(N) (not counting the storage required 
 
 public class TapeEquilibrium {
     public int solution(int[] A) {
-        return 1;
+        if (A.length < 2) throw new IllegalArgumentException("Array too small. Minimal size is 2.");
+
+        long sumLeft = 0;
+        long sumRight = 0;
+
+        int diff = 0;
+
+        for (int elem:A) sumRight += elem;
+
+        for (int i = 0; i < A.length - 1 ; i++) {
+            int nextDiff;
+
+            sumLeft += A[i];
+            sumRight -= A[i];
+
+            if (i == 0) {
+                diff = (int)Math.abs(sumLeft - sumRight);
+            } else {
+                nextDiff = (int)Math.abs(sumLeft - sumRight);
+                if (nextDiff < diff) {
+                    diff = nextDiff;
+                }
+            }
+        }
+        return diff;
     }
 }

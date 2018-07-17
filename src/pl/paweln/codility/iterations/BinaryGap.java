@@ -29,19 +29,19 @@ expected worst-case space complexity is O(1).
 */
 
 public class BinaryGap {
-    public int solution(int n) {
+    public int solution(int N) {
         int binGap = 0;
         int tmpBinGap = 0;
         boolean foundStart = false;
-        while (n > 0) {
-            if (n % 2 == 1) {
+        while (N > 0) {
+            if (N % 2 == 1) {
                 foundStart = true;
                 if (tmpBinGap > binGap) binGap = tmpBinGap;
                 tmpBinGap = 0;
             } else {
                 if (foundStart) tmpBinGap ++;
             }
-            n = n >> 1;
+            N = N >> 1;
         }
         return binGap;
     }
