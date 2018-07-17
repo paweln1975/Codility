@@ -24,4 +24,11 @@ public class TestOddOccurrencesInArray {
         int[] A = {874385, 983983, 983983, 888832, 888832, 989, 874385};
         Assert.assertEquals(989, s.solution(A));
     }
+
+    @Test
+    public void testMissingOddOccNumber() {
+        OddOccurrencesInArray s = new OddOccurrencesInArray();
+        int[] A = {10, 20, 35, 47, 49, 100, 2000, 10, 20, 35, 47, 49, 100, 2000};
+        Assert.assertEquals(0, s.solution(A));
+    }
 }
