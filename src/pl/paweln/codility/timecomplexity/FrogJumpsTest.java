@@ -3,7 +3,7 @@ package pl.paweln.codility.timecomplexity;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestFrogJumps {
+public class FrogJumpsTest {
 
     @Test
     public void testSimple() {

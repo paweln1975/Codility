@@ -3,7 +3,7 @@ package pl.paweln.codility.arrays;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestOddOccurrencesInArray {
+public class OddOccurrencesInArrayTest {
     @Test
     public void testSimple() {
         OddOccurrencesInArray s = new OddOccurrencesInArray();

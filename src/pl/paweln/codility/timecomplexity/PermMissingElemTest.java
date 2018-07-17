@@ -3,7 +3,7 @@ package pl.paweln.codility.timecomplexity;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestPermMissingElem {
+public class PermMissingElemTest {
     @Test
     public void testEmpty() {
         PermMissingElem t = new PermMissingElem();

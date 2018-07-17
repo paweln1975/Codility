@@ -3,7 +3,7 @@ package pl.paweln.codility.arrays;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestCyclicRotation {
+public class CyclicRotationTest {
     @Test
     public void testShiftNone() {
         int[] A = { 1, 3, 4, 6 };
