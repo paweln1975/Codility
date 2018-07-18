@@ -3,7 +3,7 @@ package pl.paweln.codility.iterations;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class TestBinaryGap {
+public class BinaryGapTest {
     @Test
     public void test0() {
         int n = 0;
