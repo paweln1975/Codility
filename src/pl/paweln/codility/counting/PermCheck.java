@@ -1,5 +1,8 @@
 package pl.paweln.codility.counting;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /*
 A non-empty array A consisting of N integers is given.
 
@@ -52,6 +55,50 @@ expected worst-case space complexity is O(N) (not counting the storage required 
  */
 public class PermCheck {
     public int solution(int[] A) {
-        return 0;
+
+        if (A.length == 0) return 0;
+
+        Set<Integer> missingPermValues = new HashSet<>();
+        for (int i = 0; i < A.length; i++) {
+            missingPermValues.add(Integer.valueOf(i+1));
+        }
+
+        for (int i = 0; i < A.length; i++) {
+            if (missingPermValues.contains(Integer.valueOf(A[i]))) {
+                missingPermValues.remove(Integer.valueOf(A[i]));
+            }
+        }
+
+        return missingPermValues.size() == 0 ? 1 : 0;
+    }
+
+
+    public int solution2(int[] A) {
+
+        if (A.length == 0) return 0;
+
+        int sumOfElements = 0;
+        int expectedSumOfElements = 0;
+        int[] countArray = new int[A.length + 1];
+
+        for (int i = 0; i < A.length; i++) {
+
+            if (A[i] >= countArray.length)
+                return 0;
+
+            if (countArray[A[i]] != 0)
+                return 0;
+
+            countArray[A[i]]++;
+
+            sumOfElements += A[i];
+            expectedSumOfElements += i + 1;
+
+        }
+
+        if (sumOfElements == expectedSumOfElements)
+            return 1;
+        else
+            return 0;
     }
 }
