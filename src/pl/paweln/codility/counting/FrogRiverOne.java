@@ -56,6 +56,27 @@ expected worst-case space complexity is O(X) (not counting the storage required 
  */
 public class FrogRiverOne {
     public int solution(int X, int[] A) {
-        return 0;
+        int[] tabPositions = new int[X];
+        int expectedSum = (1 + X) * X / 2;
+        int pos = 0;
+
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] < tabPositions.length+1) {
+                if (tabPositions[A[i]-1] == 0) {
+                    expectedSum-= A[i];
+                    tabPositions[A[i]-1]++;
+                    if (expectedSum == 0) {
+                        pos = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (expectedSum == 0) {
+            return pos;
+        } else {
+            return -1;
+        }
     }
 }

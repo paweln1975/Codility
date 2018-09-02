@@ -5,21 +5,21 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+
 
 public class PermCheckTest {
-    PermCheck pc;
-    @Before
-    public void setUp() throws Exception {
-        this.pc = new PermCheck();
-    }
+    private PermCheck pc;
+        @Before
+        public void setUp() {
+            this.pc = new PermCheck();
+        }
 
-    @After
-    public void tearDown() throws Exception {
-    }
+        @After
+        public void tearDown() {
+        }
 
-    @Test
-    public void solutionSimple() {
+        @Test
+        public void solutionSimple() {
         int[] tab = {4, 1, 2, 3};
         Assert.assertEquals(1, pc.solution(tab));
         Assert.assertEquals(1, pc.solution2(tab));
