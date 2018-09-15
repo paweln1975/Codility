@@ -65,6 +65,43 @@ expected worst-case space complexity is O(N) (not counting the storage required 
 
 public class MaxCounters {
     public int[] solution(int N, int[] A) {
-        return new int[0];
+        int lastMax = 0;
+        int maxValue = 0;
+
+        int[] R = new int[N];
+
+        if (N <= 0) {
+            throw new IllegalArgumentException("N must be higher of equal to 1.");
+        }
+
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] > N + 1 || A[i] < 0) {
+                throw new IllegalArgumentException("Value of an array index is to high.");
+            }
+
+            if (A[i] < N + 1) {
+                if (R[A[i]-1] < lastMax) {
+                    R[A[i]-1] = lastMax;
+                }
+
+                R[A[i]-1]++;
+
+                if (R[A[i]-1] > maxValue) {
+                    maxValue = R[A[i]-1];
+                }
+
+            } else {
+                lastMax = maxValue;
+            }
+        }
+
+        for (int i = 0; i < R.length; i++) {
+            if (R[i] < lastMax) {
+                R[i] = lastMax;
+            }
+
+        }
+
+        return R;
     }
 }
