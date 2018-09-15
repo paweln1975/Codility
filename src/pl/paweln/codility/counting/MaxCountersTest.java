@@ -31,5 +31,25 @@ public class MaxCountersTest {
 
         Assert.assertArrayEquals(new int[] {3, 2, 2, 4, 2}, retArr);
     }
+
+    @Test
+    public void testMaxValues() {
+        int[] A = new int[100000];
+        for (int i = 0; i < A.length; i++) {
+            A[i] = 100000;
+        }
+
+        A[A.length-1] = 100001;
+
+        int[] retArr = this.mc.solution(100000, A);
+
+        int[] expArr = new int[100000];
+        for (int i = 0; i < expArr.length; i++) {
+            expArr[i] = 99999;
+
+        }
+
+        Assert.assertArrayEquals(expArr, retArr);
+    }
 }
 
