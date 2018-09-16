@@ -1,5 +1,7 @@
 package pl.paweln.codility.counting;
 
+import java.util.Arrays;
+
 /*
 This is a demo task.
 
@@ -26,6 +28,22 @@ expected worst-case space complexity is O(N) (not counting the storage required 
  */
 public class MissingInteger {
     public int solution(int[] A) {
-        return 0;
+        int prevValue = 0;
+
+        // TODO implement quicksort - for training purposes only
+        Arrays.sort(A);
+
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] > 0) {
+                if (A[i] - prevValue > 1) {
+                    break;
+                } else {
+                    prevValue = A[i];
+                }
+            }
+        }
+
+
+        return ++prevValue;
     }
 }
