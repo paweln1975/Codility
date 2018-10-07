@@ -3,12 +3,18 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionFactory;
 
 public class PassingCarsTest {
-    private PassingCars pc;
+
+    private SolutionFactory solutionFactory = new PassingCarsFactory();
+    private CodilitySolution codilitySolution;
+
     @Before
     public void setUp() {
-        this.pc = new PassingCars();
+
+        this.codilitySolution = this.solutionFactory.createSolution();
     }
 
     @After
@@ -25,19 +31,19 @@ public class PassingCarsTest {
         A[4] = 1;
 
 
-        Assert.assertEquals(5, this.pc.solution(A));
+        Assert.assertEquals(5, this.codilitySolution.solution(A));
     }
 
     @Test
     public void testMaxNumberOfCarsAllEast() {
         int[] A = new int[100000];
-        Assert.assertEquals(0, this.pc.solution(A));
+        Assert.assertEquals(0, this.codilitySolution.solution(A));
     }
 
     @Test
     public void testMaxNumberOfCarsLastWest() {
         int[] A = new int[100000];
         A[A.length - 1] = 1;
-        Assert.assertEquals(A.length-1, this.pc.solution(A));
+        Assert.assertEquals(A.length-1, this.codilitySolution.solution(A));
     }
 }
