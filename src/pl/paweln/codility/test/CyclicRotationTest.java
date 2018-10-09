@@ -1,14 +1,14 @@
-package pl.paweln.codility.arrays;
+package pl.paweln.codility.test;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import pl.paweln.codility.arrays.CyclicRotationFactory;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionFactory;
 
 public class CyclicRotationTest {
-    private SolutionFactory solutionFactory = new CyclicRotationFactory();
+    private final SolutionFactory<Integer[]> solutionFactory = new CyclicRotationFactory();
     private CodilitySolution<Integer[]> s;
 
     @Before
@@ -16,9 +16,6 @@ public class CyclicRotationTest {
         this.s = this.solutionFactory.createSolution();
     }
 
-    @After
-    public void tearDown() {
-    }
     @Test
     public void testShiftNone() {
         int[] A = { 1, 3, 4, 6 };

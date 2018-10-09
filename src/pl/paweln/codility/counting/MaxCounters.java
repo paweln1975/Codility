@@ -74,20 +74,20 @@ public class MaxCounters {
             throw new IllegalArgumentException("N must be higher of equal to 1.");
         }
 
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] > N + 1 || A[i] < 0) {
+        for (int aA : A) {
+            if (aA > N + 1 || aA < 0) {
                 throw new IllegalArgumentException("Value of an array index is to high.");
             }
 
-            if (A[i] < N + 1) {
-                if (R[A[i]-1] < lastMax) {
-                    R[A[i]-1] = lastMax;
+            if (aA < N + 1) {
+                if (R[aA - 1] < lastMax) {
+                    R[aA - 1] = lastMax;
                 }
 
-                R[A[i]-1]++;
+                R[aA - 1]++;
 
-                if (R[A[i]-1] > maxValue) {
-                    maxValue = R[A[i]-1];
+                if (R[aA - 1] > maxValue) {
+                    maxValue = R[aA - 1];
                 }
 
             } else {

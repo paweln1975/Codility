@@ -1,24 +1,20 @@
-package pl.paweln.codility.prefixsums;
-import org.junit.After;
+package pl.paweln.codility.test;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionFactory;
+import pl.paweln.codility.prefixsums.PassingCarsFactory;
 
 public class PassingCarsTest {
 
-    private SolutionFactory solutionFactory = new PassingCarsFactory();
+    private final SolutionFactory solutionFactory = new PassingCarsFactory();
     private CodilitySolution codilitySolution;
 
     @Before
     public void setUp() {
 
         this.codilitySolution = this.solutionFactory.createSolution();
-    }
-
-    @After
-    public void tearDown() {
     }
 
     @Test

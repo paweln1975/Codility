@@ -1,23 +1,19 @@
-package pl.paweln.codility.iterations;
+package pl.paweln.codility.test;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionFactory;
+import pl.paweln.codility.iterations.BinaryGapFactory;
 
 public class BinaryGapTest {
-    private SolutionFactory solutionFactory = new BinaryGapFactory();
+    private final SolutionFactory solutionFactory = new BinaryGapFactory();
     private CodilitySolution s;
 
     @Before
     public void setUp() {
         this.s = this.solutionFactory.createSolution();
-    }
-
-    @After
-    public void tearDown() {
     }
 
     @Test

@@ -1,9 +1,9 @@
-package pl.paweln.codility.counting;
+package pl.paweln.codility.test;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import pl.paweln.codility.counting.MissingInteger;
 
 public class MissingIntegerTest {
     private MissingInteger missingInteger;
@@ -11,10 +11,6 @@ public class MissingIntegerTest {
     @Before
     public void setUp() {
         this.missingInteger = new MissingInteger();
-    }
-
-    @After
-    public void tearDown() {
     }
 
     @Test

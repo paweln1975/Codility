@@ -1,24 +1,20 @@
-package pl.paweln.codility.prefixsums;
+package pl.paweln.codility.test;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionFactory;
+import pl.paweln.codility.prefixsums.GenomicRangeQueryFactory;
 
 public class GenomicRangeQueryTest {
-    private SolutionFactory solutionFactory = new GenomicRangeQueryFactory();
+    private final SolutionFactory solutionFactory = new GenomicRangeQueryFactory();
     private CodilitySolution codilitySolution;
 
     @Before
     public void setUp() {
 
         this.codilitySolution = this.solutionFactory.createSolution();
-    }
-
-    @After
-    public void tearDown() {
     }
 
     @Test

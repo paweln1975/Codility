@@ -60,13 +60,11 @@ public class PermCheck {
 
         Set<Integer> missingPermValues = new HashSet<>();
         for (int i = 0; i < A.length; i++) {
-            missingPermValues.add(Integer.valueOf(i+1));
+            missingPermValues.add(i+1);
         }
 
-        for (int i = 0; i < A.length; i++) {
-            if (missingPermValues.contains(Integer.valueOf(A[i]))) {
-                missingPermValues.remove(Integer.valueOf(A[i]));
-            }
+        for (int aA : A) {
+            missingPermValues.remove(aA);
         }
 
         return missingPermValues.size() == 0 ? 1 : 0;
