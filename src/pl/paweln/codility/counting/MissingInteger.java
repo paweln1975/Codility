@@ -30,15 +30,15 @@ public class MissingInteger {
     public int solution(int[] A) {
         int prevValue = 0;
 
-        // TODO implement quicksort - for training purposes only
+        // TODO implement quick sort - for training purposes only
         Arrays.sort(A);
 
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] > 0) {
-                if (A[i] - prevValue > 1) {
+        for (int aA : A) {
+            if (aA > 0) {
+                if (aA - prevValue > 1) {
                     break;
                 } else {
-                    prevValue = A[i];
+                    prevValue = aA;
                 }
             }
         }

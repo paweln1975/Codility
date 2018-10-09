@@ -1,10 +1,9 @@
-package pl.paweln.codility.counting;
+package pl.paweln.codility.test;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
+import pl.paweln.codility.counting.PermCheck;
 
 
 public class PermCheckTest {
@@ -14,11 +13,7 @@ public class PermCheckTest {
             this.pc = new PermCheck();
         }
 
-        @After
-        public void tearDown() {
-        }
-
-        @Test
+    @Test
         public void solutionSimple() {
         int[] tab = {4, 1, 2, 3};
         Assert.assertEquals(1, pc.solution(tab));

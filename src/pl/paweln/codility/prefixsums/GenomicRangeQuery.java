@@ -49,7 +49,7 @@ import pl.paweln.codility.core.CodilitySolution;
  * string S consists only of upper-case English letters A, C, G, T.
  */
 
-public class GenomicRangeQuery implements CodilitySolution {
+public class GenomicRangeQuery implements CodilitySolution<Integer> {
     @Override
     public int[] solution(String S, int[] P, int[] Q) {
         if (P.length != Q.length) {
@@ -116,7 +116,7 @@ public class GenomicRangeQuery implements CodilitySolution {
     }
 
     @Override
-    public int solution(int[] A, int N) {
+    public Integer solution(int[] A, int N) {
         return 0;
     }
 

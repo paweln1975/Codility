@@ -1,4 +1,7 @@
 package pl.paweln.codility.arrays;
+
+import pl.paweln.codility.core.CodilitySolution;
+
 /*
 A non-empty array A consisting of N integers is given. The array contains an odd number of elements, and each element
 of the array can be paired with another element that has the same value, except for one element that is left unpaired.
@@ -35,12 +38,35 @@ Complexity:
 expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(1) (not counting the storage required for input arguments).
  */
-public class OddOccurrencesInArray {
+public class OddOccurrencesInArray implements CodilitySolution {
+
     public int solution(int[] A) {
         int result = 0;
-        for (int i = 0; i < A.length; i++) {
-            result ^= A[i];
+
+        // XOR operator A xor A = 0, B xor 0 = B, therefore A xor B xor C xor A xor B = C
+        for (int aA : A) {
+            result ^= aA;
         }
         return result;
+    }
+
+    @Override
+    public int solution(int X, int Y, int Z) {
+        return 0;
+    }
+
+    @Override
+    public int[] solution(String S, int[] P, int[] Q) {
+        return new int[0];
+    }
+
+    @Override
+    public int solution(int N) {
+        return 0;
+    }
+
+    @Override
+    public Object solution(int[] A, int N) {
+        return null;
     }
 }

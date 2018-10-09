@@ -1,8 +1,8 @@
 package pl.paweln.codility.core;
 
-public abstract class SolutionFactory {
-    protected abstract CodilitySolution createSpecificSolution();
-    public CodilitySolution createSolution() {
+public abstract class SolutionFactory<T> {
+    protected abstract CodilitySolution<T> createSpecificSolution();
+    public CodilitySolution<T> createSolution() {
         return createSpecificSolution();
     }
 }

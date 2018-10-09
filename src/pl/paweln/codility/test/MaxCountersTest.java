@@ -1,9 +1,9 @@
-package pl.paweln.codility.counting;
+package pl.paweln.codility.test;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import pl.paweln.codility.counting.MaxCounters;
 
 public class MaxCountersTest {
     private MaxCounters mc;
@@ -11,10 +11,6 @@ public class MaxCountersTest {
     @Before
     public void setUp() {
         this.mc = new MaxCounters();
-    }
-
-    @After
-    public void tearDown() {
     }
 
     @Test

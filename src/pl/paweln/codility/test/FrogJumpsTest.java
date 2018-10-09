@@ -1,7 +1,8 @@
-package pl.paweln.codility.timecomplexity;
+package pl.paweln.codility.test;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pl.paweln.codility.timecomplexity.FrogJump;
 
 public class FrogJumpsTest {
 
