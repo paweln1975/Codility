@@ -25,7 +25,8 @@ import pl.paweln.codility.core.CodilitySolution;
  *
  * class Solution { public int solution(int[] A); }
  *
- * that, given a non-empty array A consisting of N integers, returns the starting position of the slice with the minimal average. If there is more than one slice with a minimal average, you should return the smallest starting position of such a slice.
+ * that, given a non-empty array A consisting of N integers, returns the starting position of the slice with the minimal
+ * average. If there is more than one slice with a minimal average, you should return the smallest starting position of such a slice.
  *
  * For example, given array A such that:
  *
@@ -44,20 +45,61 @@ import pl.paweln.codility.core.CodilitySolution;
  * each element of array A is an integer within the range [−10,000..10,000].
  */
 
-public class MinAvgTwoSlice implements CodilitySolution<Integer> {
+public class MinAvgTwoSlice implements CodilitySolution {
+
     @Override
     public int solution(int[] A) {
-        return 1;
+        if (A.length < 2) {
+            throw new IllegalArgumentException("Array too small.");
+        }
+
+        int idxOfMinSliceAvg = 0;
+        float minSliceAvg = 0;
+
+        int[] prefixSums = new int [A.length + 1];
+        for (int i = 1; i <= A.length; i++) {
+            prefixSums[i] = prefixSums[i-1] + A[i-1];
+        }
+
+        for (int sliceLength = 2; sliceLength <= 3; sliceLength++) {
+            if (A.length == 2 && sliceLength == 3) {
+                continue;
+            }
+            for (int i = 1; i < prefixSums.length - sliceLength + 1; i++) {
+                if (i == 1 && sliceLength == 2) {
+                    minSliceAvg = this.calculateSliceAvg(prefixSums, i, i + sliceLength - 1);
+                    idxOfMinSliceAvg = 0;
+                } else {
+                    float tmpSliceAvg = this.calculateSliceAvg(prefixSums, i, i + sliceLength - 1);
+                    if (tmpSliceAvg < minSliceAvg) {
+                        minSliceAvg = tmpSliceAvg;
+                        idxOfMinSliceAvg = i - 1;
+                    }
+
+                }
+            }
+        }
+
+        return idxOfMinSliceAvg;
+    }
+
+    private float calculateSliceAvg (int[]T, int startIdx, int endIdx) {
+        if (endIdx <= startIdx) {
+            throw new IllegalArgumentException("Wrong index values.");
+        }
+        float sum = T[endIdx] - T[startIdx-1];
+        float count = endIdx - startIdx + 1;
+        return sum / count;
+    }
+
+    @Override
+    public Object solution(int[] A, int N) {
+        return null;
     }
 
     @Override
     public int solution(int N) {
         return 0;
-    }
-
-    @Override
-    public Integer solution(int[] A, int N) {
-        return null;
     }
 
     @Override
