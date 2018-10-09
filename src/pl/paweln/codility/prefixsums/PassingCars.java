@@ -44,7 +44,7 @@ import pl.paweln.codility.core.CodilitySolution;
  * each element of array A is an integer that can have one of the following values: 0, 1.
  */
 
-public class PassingCars implements CodilitySolution {
+public class PassingCars implements CodilitySolution<Integer> {
     private final static int MAX_RESULT = 1000000000;
     private final static int VAL_EAST = 0;
     private final static int VAL_WEST = 1;
@@ -84,7 +84,7 @@ public class PassingCars implements CodilitySolution {
     }
 
     @Override
-    public int solution(int[] A, int N) {
+    public Integer solution(int[] A, int N) {
         return 0;
     }
 

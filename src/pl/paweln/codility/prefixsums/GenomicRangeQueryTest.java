@@ -44,4 +44,33 @@ public class GenomicRangeQueryTest {
 
         Assert.assertArrayEquals(expectedResult, result);
     }
+
+    @Test
+    public void testSolutionExtremeInput() {
+        int N = 100000;
+        int M = 50000;
+
+        StringBuilder buff = new StringBuilder(N);
+        char[] tabDNA = new char[] {'A', 'C', 'G', 'T'};
+        for (int i = 0; i < N; i++) {
+            int mod4 = i % tabDNA.length;
+            buff.append(tabDNA[mod4]);
+        }
+
+        String S = buff.toString();
+
+        int[] P = new int [M];
+        int[] Q = new int [M];
+        int[] expectedResult = new int[M];
+
+        for (int i = 0; i < M; i++) {
+            P[i] = 0;
+            Q[i] = N - 1;
+            expectedResult[i] = 1;
+        }
+
+        int[] result = this.codilitySolution.solution(S, P, Q);
+
+        Assert.assertArrayEquals(expectedResult, result);
+    }
 }

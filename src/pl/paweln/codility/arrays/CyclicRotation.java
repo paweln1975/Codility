@@ -1,5 +1,7 @@
 package pl.paweln.codility.arrays;
 
+import pl.paweln.codility.core.CodilitySolution;
+
 /*
 An array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one
 index, and the last element of the array is moved to the first place. For example, the rotation
@@ -40,13 +42,24 @@ N and K are integers within the range [0..100];
 each element of array A is an integer within the range [−1,000..1,000].
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
  */
-public class CyclicRotation {
-    public int[] solution(int[] A, int K) {
+public class CyclicRotation implements CodilitySolution<Integer[]> {
+
+    @Override
+    public Integer[] solution(int[] A, int K) {
         // table length
         int N = A.length;
         int offset;
 
-        if (N == 0 || N == K) return A;
+        if (N == 0) return new Integer[0];
+
+        Integer[] B = new Integer[N];
+
+        if (N == K) {
+            for (int i = 0; i < N; i++) {
+                B[i] = A[i];
+            }
+            return B;
+        }
 
         if (K > N) {
             offset = K % N;
@@ -54,7 +67,6 @@ public class CyclicRotation {
             offset = K;
         }
 
-        int[] B = new int[N];
 
         for (int i = 0; i < N; i++) {
             B[getNewPos(i, offset, N)] = A[i];
@@ -70,4 +82,26 @@ public class CyclicRotation {
             return curr+offset;
         }
     }
+
+    @Override
+    public int solution(int N) {
+        return 0;
+    }
+
+    @Override
+    public int solution(int[] A) {
+        return 0;
+    }
+
+    @Override
+    public int solution(int X, int Y, int Z) {
+        return 0;
+    }
+
+    @Override
+    public int[] solution(String S, int[] P, int[] Q) {
+        return new int[0];
+    }
+
+
 }
