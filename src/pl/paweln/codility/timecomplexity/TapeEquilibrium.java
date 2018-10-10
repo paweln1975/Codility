@@ -48,7 +48,19 @@ expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
  */
 
-public class TapeEquilibrium {
+import pl.paweln.codility.core.CodilitySolution;
+
+public class TapeEquilibrium implements CodilitySolution {
+    @Override
+    public int solution(int N) {
+        return 0;
+    }
+
+    @Override
+    public Object solution(int[] A, int N) {
+        return null;
+    }
+
     public int solution(int[] A) {
         if (A.length < 2) throw new IllegalArgumentException("Array too small. Minimal size is 2.");
 
@@ -75,5 +87,15 @@ public class TapeEquilibrium {
             }
         }
         return diff;
+    }
+
+    @Override
+    public int solution(int X, int Y, int Z) {
+        return 0;
+    }
+
+    @Override
+    public int[] solution(String S, int[] P, int[] Q) {
+        return new int[0];
     }
 }

@@ -23,7 +23,13 @@ import pl.paweln.codility.core.CodilitySolution;
 public class CountDiv implements CodilitySolution {
     @Override
     public int solution(int A, int B, int K) {
-        return 0;
+        if (A > B) throw new IllegalArgumentException("A > B");
+        int result = 0;
+        if (A % K == 0) {
+            result++;
+        }
+        result+= B / K - A / K;
+        return result;
     }
 
     @Override

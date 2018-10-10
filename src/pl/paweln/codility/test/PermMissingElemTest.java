@@ -1,78 +1,74 @@
 package pl.paweln.codility.test;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
-import pl.paweln.codility.timecomplexity.PermMissingElem;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionFactory;
+import pl.paweln.codility.timecomplexity.PermMissingElemFactory;
 
 public class PermMissingElemTest {
+    private final SolutionFactory solutionFactory = new PermMissingElemFactory();
+    private CodilitySolution codilitySolution;
+
+    @Before
+    public void setUp() {
+        this.codilitySolution = this.solutionFactory.createSolution();
+    }
     @Test
     public void testEmpty() {
-        PermMissingElem t = new PermMissingElem();
         int [] tab = {};
-        Assert.assertEquals(1, t.solution(tab));
-        Assert.assertEquals(1, t.solution2(tab));
-        Assert.assertEquals(1, t.solution3(tab));
+        Assert.assertEquals(1, this.codilitySolution.solution(tab));
 
     }
 
     @Test
     public void testOneElementArray() {
-        PermMissingElem t = new PermMissingElem();
+
         int [] tab = {1};
-        Assert.assertEquals(2, t.solution(tab));
-        Assert.assertEquals(2, t.solution2(tab));
-        Assert.assertEquals(2, t.solution3(tab));
+        Assert.assertEquals(2, this.codilitySolution.solution(tab));
 
         tab = new int[] {2};
-        Assert.assertEquals(1, t.solution(tab));
-        Assert.assertEquals(1, t.solution2(tab));
-        Assert.assertEquals(1, t.solution3(tab));
+        Assert.assertEquals(1, this.codilitySolution.solution(tab));
     }
 
     @Test
     public void testMultipleElementArray() {
-        PermMissingElem t = new PermMissingElem();
+
         int [] tab = {1, 5, 7, 8, 9, 2, 3, 6};
-        Assert.assertEquals(4, t.solution(tab));
-        Assert.assertEquals(4, t.solution2(tab));
-        Assert.assertEquals(4, t.solution3(tab));
+        Assert.assertEquals(4, this.codilitySolution.solution(tab));
+
     }
 
     @Test
     public void testMultipleElementArrayMissingFirst() {
-        PermMissingElem t = new PermMissingElem();
+
         int [] tab = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
-        Assert.assertEquals(1, t.solution(tab));
-        Assert.assertEquals(1, t.solution2(tab));
-        Assert.assertEquals(1, t.solution3(tab));
+        Assert.assertEquals(1, this.codilitySolution.solution(tab));
+
     }
 
     @Test
     public void testMultipleElementArrayMissingLast() {
-        PermMissingElem t = new PermMissingElem();
         int [] tab = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
-        Assert.assertEquals(16, t.solution(tab));
-        Assert.assertEquals(16, t.solution2(tab));
-        Assert.assertEquals(16, t.solution3(tab));
+        Assert.assertEquals(16, this.codilitySolution.solution(tab));
     }
 
     @Test
     public void test100000() {
-        PermMissingElem t = new PermMissingElem();
+
         final int N = 100000;
         int [] tab = new int [N];
 
         for (int i = 0; i < N ; i++) {
             tab[i] = i+1;
         }
-        Assert.assertEquals(N + 1, t.solution(tab));
-        Assert.assertEquals(N + 1, t.solution2(tab));
-        Assert.assertEquals(N + 1, t.solution3(tab));
+        Assert.assertEquals(N + 1, this.codilitySolution.solution(tab));
+
 
         // replace one element
         tab[5000] = N + 1;
-        Assert.assertEquals(5001, t.solution(tab));
-        Assert.assertEquals(5001, t.solution2(tab));
-        Assert.assertEquals(5001, t.solution3(tab));
+        Assert.assertEquals(5001, this.codilitySolution.solution(tab));
+
     }
 }
