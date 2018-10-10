@@ -1,4 +1,7 @@
 package pl.paweln.codility.timecomplexity;
+
+import pl.paweln.codility.core.CodilitySolution;
+
 /*
 A small frog wants to get to the other side of the road. The frog is currently located at position X and wants to get
 to a position greater than or equal to Y. The small frog always jumps a fixed distance, D.
@@ -31,7 +34,8 @@ Complexity:
 expected worst-case time complexity is O(1);
 expected worst-case space complexity is O(1).
  */
-public class FrogJump {
+public class FrogJump implements CodilitySolution {
+
     public int solution (int X, int Y, int D) {
         if (X > Y) throw new IllegalArgumentException("X=" + X + " must be lower or equal to y=" + Y);
         if (X == Y) {
@@ -42,5 +46,25 @@ public class FrogJump {
             if ((diff % D) > 0) jumps++;
             return jumps;
         }
+    }
+
+    @Override
+    public int solution(int N) {
+        return 0;
+    }
+
+    @Override
+    public Object solution(int[] A, int N) {
+        return null;
+    }
+
+    @Override
+    public int solution(int[] A) {
+        return 0;
+    }
+
+    @Override
+    public int[] solution(String S, int[] P, int[] Q) {
+        return new int[0];
     }
 }

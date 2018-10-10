@@ -1,5 +1,7 @@
 package pl.paweln.codility.counting;
 
+import pl.paweln.codility.core.CodilitySolution;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -53,7 +55,7 @@ Complexity:
 expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
  */
-public class PermCheck {
+public class PermCheck implements CodilitySolution {
     public int solution(int[] A) {
 
         if (A.length == 0) return 0;
@@ -68,6 +70,26 @@ public class PermCheck {
         }
 
         return missingPermValues.size() == 0 ? 1 : 0;
+    }
+
+    @Override
+    public int solution(int N) {
+        return 0;
+    }
+
+    @Override
+    public Object solution(int[] A, int N) {
+        return null;
+    }
+
+    @Override
+    public int solution(int X, int Y, int Z) {
+        return 0;
+    }
+
+    @Override
+    public int[] solution(String S, int[] P, int[] Q) {
+        return new int[0];
     }
 
 
