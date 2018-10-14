@@ -23,13 +23,23 @@ public class DistinctTest {
     }
 
     @Test
-    public void testPerformance() {
+    public void testPerformanceDifferent() {
         final int N = 100000;
         int[] A = new int[N];
         for (int i = 0; i < A.length; i++) {
             A[i] = N - i;
         }
         Assert.assertEquals(N, s.solution(A));
+    }
+
+    @Test
+    public void testPerformanceTheSame() {
+        final int N = 100000;
+        int[] A = new int[N];
+        for (int i = 0; i < A.length; i++) {
+            A[i] = 10;
+        }
+        Assert.assertEquals(1, s.solution(A));
     }
 
     @Test
