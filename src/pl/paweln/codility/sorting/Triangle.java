@@ -2,6 +2,8 @@ package pl.paweln.codility.sorting;
 
 import pl.paweln.codility.core.CodilitySolution;
 
+import java.util.Arrays;
+
 /*
 An array A consisting of N integers is given. A triplet (P, Q, R) is triangular if 0 ≤ P < Q < R < N and:
 
@@ -40,8 +42,35 @@ each element of array A is an integer within the range [−2,147,483,648..2,147,
 public class Triangle implements CodilitySolution {
     @Override
     public int solution(int[] A) {
+        if (A.length < 3) {
+            throw new IllegalArgumentException("Array to small.");
+        }
+        Arrays.sort(A);
+        for (int i = A.length-1; i >= 2; i--)
+        {
+
+            int l = 0; // index of the first element in A[0..i-1]
+            int r = i-1; // index of the last element in A[0..i-1]
+            while (l < r)
+            {
+                // A triplet found
+                if (isTriplet(A[l], A[r], A[i]))
+                    return 1;
+
+                if (A[l] + A[r] <= A[i])
+                    l++;
+                else
+                    r--;
+            }
+        }
+
         return 0;
     }
+
+    private boolean isTriplet(int X, int Y, int Z) {
+        return (X + Y > Z && X + Z > Y && Z + Y > X);
+    }
+
 
     @Override
     public int solution(int N) {
