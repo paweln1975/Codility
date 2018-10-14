@@ -2,7 +2,9 @@ package pl.paweln.codility.sorting;
 
 import pl.paweln.codility.core.CodilitySolution;
 
+import java.math.BigInteger;
 import java.util.Arrays;
+
 
 /*
 An array A consisting of N integers is given. A triplet (P, Q, R) is triangular if 0 ≤ P < Q < R < N and:
@@ -42,12 +44,17 @@ each element of array A is an integer within the range [−2,147,483,648..2,147,
 public class Triangle implements CodilitySolution {
     @Override
     public int solution(int[] A) {
+
         if (A.length < 3) {
-            throw new IllegalArgumentException("Array to small.");
+            return 0;
         }
+
         Arrays.sort(A);
         for (int i = A.length-1; i >= 2; i--)
         {
+            if (A[i] <= 0) {
+                continue;
+            }
 
             int l = 0; // index of the first element in A[0..i-1]
             int r = i-1; // index of the last element in A[0..i-1]
@@ -57,7 +64,8 @@ public class Triangle implements CodilitySolution {
                 if (isTriplet(A[l], A[r], A[i]))
                     return 1;
 
-                if (A[l] + A[r] <= A[i])
+                //if (A[l] + A[r] <= A[i])
+                if (BigInteger.valueOf(A[l]).add(BigInteger.valueOf(A[r])).compareTo(BigInteger.valueOf(A[i])) <= 0)
                     l++;
                 else
                     r--;
@@ -67,9 +75,18 @@ public class Triangle implements CodilitySolution {
         return 0;
     }
 
-    private boolean isTriplet(int X, int Y, int Z) {
-        return (X + Y > Z && X + Z > Y && Z + Y > X);
+    private boolean isTriplet(int x, int y, int z) {
+        BigInteger X = BigInteger.valueOf(x);
+        BigInteger Y = BigInteger.valueOf(y);
+        BigInteger Z = BigInteger.valueOf(z);
+
+        return X.add(Y).compareTo(Z) > 0 &&
+                X.add(Z).compareTo(Y) > 0 &&
+                Z.add(Y).compareTo(X) > 0;
+
     }
+
+
 
 
     @Override
