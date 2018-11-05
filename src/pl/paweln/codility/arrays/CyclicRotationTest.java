@@ -1,19 +1,21 @@
-package pl.paweln.codility.test;
+package pl.paweln.codility.arrays;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import pl.paweln.codility.arrays.CyclicRotationFactory;
 import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.SolutionFactory;
+import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class CyclicRotationTest {
-    private final SolutionFactory<Integer[]> solutionFactory = new CyclicRotationFactory();
+    private final CodilitySolutionFactory solutionFactory
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.ARRAYS_CYCLIC_ROTATION);
+
     private CodilitySolution<Integer[]> s;
 
     @Before
+    @SuppressWarnings("unchecked")
     public void setUp() {
-        this.s = this.solutionFactory.createSolution();
+        this.s = this.solutionFactory.getDefaultSolution();
     }
 
     @Test

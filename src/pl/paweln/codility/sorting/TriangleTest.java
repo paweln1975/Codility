@@ -1,19 +1,20 @@
-package pl.paweln.codility.test;
+package pl.paweln.codility.sorting;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.SolutionFactory;
-import pl.paweln.codility.sorting.TriangleFactory;
+import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class TriangleTest {
-    private final SolutionFactory solutionFactory = new TriangleFactory();
+    private final CodilitySolutionFactory solutionFactory
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.SORTING_TRIANGLE);
+
     private CodilitySolution s;
 
     @Before
     public void setUp() {
-        this.s = this.solutionFactory.createSolution();
+        this.s = this.solutionFactory.getDefaultSolution();
     }
 
     @Test

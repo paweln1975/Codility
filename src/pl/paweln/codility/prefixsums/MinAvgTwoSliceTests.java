@@ -1,20 +1,20 @@
-package pl.paweln.codility.test;
+package pl.paweln.codility.prefixsums;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.SolutionFactory;
-import pl.paweln.codility.prefixsums.MinAvgTwoSliceFactory;
+import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class MinAvgTwoSliceTests {
-    private final SolutionFactory solutionFactory = new MinAvgTwoSliceFactory();
-    private CodilitySolution codilitySolution;
+    private final CodilitySolutionFactory solutionFactory
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.PREFIX_SUMS_MIN_AVG_TWO_SLICE);
+
+    private CodilitySolution s;
 
     @Before
     public void setUp() {
-
-        this.codilitySolution = this.solutionFactory.createSolution();
+        this.s = this.solutionFactory.getDefaultSolution();
     }
 
     @Test
@@ -22,7 +22,7 @@ public class MinAvgTwoSliceTests {
         int[] A = new int [] {4, 2, 2, 5, 1, 5, 8};
         int expectedResult = 1;
 
-        int result = this.codilitySolution.solution(A);
+        int result = this.s.solution(A);
 
         Assert.assertEquals(expectedResult, result);
     }
@@ -30,7 +30,7 @@ public class MinAvgTwoSliceTests {
     @Test
     public void test2Elements() {
         int[] A = new int[] {5, 6};
-        int result = this.codilitySolution.solution(A);
+        int result = this.s.solution(A);
 
         Assert.assertEquals(0, result);
     }
@@ -38,7 +38,7 @@ public class MinAvgTwoSliceTests {
     @Test
     public void test4Elements() {
         int[] A = new int[] {4, 3, 2, 1};
-        int result = this.codilitySolution.solution(A);
+        int result = this.s.solution(A);
 
         Assert.assertEquals(2, result);
     }
@@ -55,7 +55,7 @@ public class MinAvgTwoSliceTests {
         A[size - 2] = -10000;
         A[size - 1] = -10000;
 
-        int result = this.codilitySolution.solution(A);
+        int result = this.s.solution(A);
 
         Assert.assertEquals(size - 3, result);
     }

@@ -1,20 +1,20 @@
-package pl.paweln.codility.test;
+package pl.paweln.codility.counting;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.SolutionFactory;
-import pl.paweln.codility.counting.MissingInteger;
-import pl.paweln.codility.counting.MissingIntegerFactory;
+import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class MissingIntegerTest {
-    private final SolutionFactory solutionFactory = new MissingIntegerFactory();
+    private final CodilitySolutionFactory solutionFactory
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.COUNTING_MISSING_INTEGER);
+
     private CodilitySolution s;
 
     @Before
     public void setUp() {
-        this.s = this.solutionFactory.createSolution();
+        this.s = this.solutionFactory.getDefaultSolution();
     }
 
     @Test

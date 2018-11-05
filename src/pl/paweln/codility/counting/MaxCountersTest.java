@@ -1,19 +1,21 @@
-package pl.paweln.codility.test;
+package pl.paweln.codility.counting;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.SolutionFactory;
-import pl.paweln.codility.counting.MaxCountersFactory;
+import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class MaxCountersTest {
-    private final SolutionFactory<Integer[]> solutionFactory = new MaxCountersFactory();
+    private final CodilitySolutionFactory solutionFactory
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.COUNTING_MAX_COUNTERS);
+
     private CodilitySolution<Integer[]> s;
 
     @Before
+    @SuppressWarnings("unchecked")
     public void setUp() {
-        this.s = this.solutionFactory.createSolution();
+        this.s = (CodilitySolution<Integer[]>)this.solutionFactory.getDefaultSolution();
     }
 
     @Test

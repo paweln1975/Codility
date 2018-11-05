@@ -1,20 +1,20 @@
-package pl.paweln.codility.test;
+package pl.paweln.codility.prefixsums;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.SolutionFactory;
-import pl.paweln.codility.prefixsums.PassingCarsFactory;
+import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class PassingCarsTest {
 
-    private final SolutionFactory solutionFactory = new PassingCarsFactory();
-    private CodilitySolution codilitySolution;
+    private final CodilitySolutionFactory solutionFactory
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.PREFIX_SUMS_PASSING_CARS);
+
+    private CodilitySolution s;
 
     @Before
     public void setUp() {
-
-        this.codilitySolution = this.solutionFactory.createSolution();
+        this.s = this.solutionFactory.getDefaultSolution();
     }
 
     @Test
@@ -27,19 +27,19 @@ public class PassingCarsTest {
         A[4] = 1;
 
 
-        Assert.assertEquals(5, this.codilitySolution.solution(A));
+        Assert.assertEquals(5, this.s.solution(A));
     }
 
     @Test
     public void testMaxNumberOfCarsAllEast() {
         int[] A = new int[100000];
-        Assert.assertEquals(0, this.codilitySolution.solution(A));
+        Assert.assertEquals(0, this.s.solution(A));
     }
 
     @Test
     public void testMaxNumberOfCarsLastWest() {
         int[] A = new int[100000];
         A[A.length - 1] = 1;
-        Assert.assertEquals(A.length-1, this.codilitySolution.solution(A));
+        Assert.assertEquals(A.length-1, this.s.solution(A));
     }
 }
