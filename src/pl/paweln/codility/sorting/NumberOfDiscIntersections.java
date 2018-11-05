@@ -40,7 +40,7 @@ each element of array A is an integer within the range [0..2,147,483,647].
 
  */
 public class NumberOfDiscIntersections implements CodilitySolution {
-    final static int MAX_INTERSECTIONS = 10000000;
+    private final static int MAX_INTERSECTIONS = 10000000;
     @Override
     public int solution(int[] A) {
 
@@ -95,8 +95,8 @@ public class NumberOfDiscIntersections implements CodilitySolution {
 }
 
 class CircleEnd implements Comparable<CircleEnd> {
-    long position;
-    long start;
+    protected final long position;
+    protected final long start;
     CircleEnd (long position, long start) {
         this.position = position;
         this.start = start;

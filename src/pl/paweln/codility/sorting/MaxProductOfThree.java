@@ -114,47 +114,47 @@ public class MaxProductOfThree implements CodilitySolution {
     // solution from internet - nice one as well with three maxes and 2 minis
     public int solution2(int[] A) {
 
-        int[] maxes = {Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
-        // Invariant: maxes[0] <= maxes[1] <= maxes[2]
+        int[] max_values = {Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE};
+        // Invariant: max_values[0] <= max_values[1] <= max_values[2]
 
-        int[] mins = {Integer.MAX_VALUE, Integer.MAX_VALUE};
-        // Invariant: mins[0] <= mins[1]
+        int[] min_values = {Integer.MAX_VALUE, Integer.MAX_VALUE};
+        // Invariant: min_values[0] <= min_values[1]
 
         // O(n)
         for( int a : A )
         {
-            updateMaxes( a, maxes );
-            updateMins( a, mins );
+            updateMaxValues( a, max_values );
+            updateMinValues( a, min_values );
         }
 
-        int obvious = maxes[0] * maxes[1] * maxes[2];
-        int twoBigNegs = mins[0] * mins[1] * maxes[2];
+        int obvious = max_values[0] * max_values[1] * max_values[2];
+        int twoBigNegs = min_values[0] * min_values[1] * max_values[2];
         return Math.max( obvious, twoBigNegs );
     }
 
-    private static void updateMaxes( int a, int[] maxes )
+    private static void updateMaxValues(int a, int[] pMaxValues )
     {
-        if( a >= maxes[2] ) {
+        if( a >= pMaxValues[2] ) {
             // Found new max, shift down
-            maxes[0] = maxes[1];
-            maxes[1] = maxes[2];
-            maxes[2] = a;
-        } else if( a >= maxes[1] ) {
-            maxes[0] = maxes[1];
-            maxes[1] = a;
-        } else if( a > maxes[0] ) {
-            maxes[0] = a;
+            pMaxValues[0] = pMaxValues[1];
+            pMaxValues[1] = pMaxValues[2];
+            pMaxValues[2] = a;
+        } else if( a >= pMaxValues[1] ) {
+            pMaxValues[0] = pMaxValues[1];
+            pMaxValues[1] = a;
+        } else if( a > pMaxValues[0] ) {
+            pMaxValues[0] = a;
         }
     }
 
-    private static void updateMins( int a, int[] mins )
+    private static void updateMinValues(int a, int[] pMinValues )
     {
-        if( a <= mins[0] ) {
+        if( a <= pMinValues[0] ) {
             // Found new min, shift down
-            mins[1] = mins[0];
-            mins[0] = a;
-        } else if( a < mins[1] ) {
-            mins[1] = a;
+            pMinValues[1] = pMinValues[0];
+            pMinValues[0] = a;
+        } else if( a < pMinValues[1] ) {
+            pMinValues[1] = a;
         }
     }
 }

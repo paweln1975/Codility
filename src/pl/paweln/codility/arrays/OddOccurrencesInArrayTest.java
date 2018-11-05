@@ -1,21 +1,21 @@
-package pl.paweln.codility.test;
+package pl.paweln.codility.arrays;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import pl.paweln.codility.arrays.OddOccurrencesInArrayFactory;
 import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.SolutionFactory;
+import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class OddOccurrencesInArrayTest {
-    private final SolutionFactory solutionFactory = new OddOccurrencesInArrayFactory();
+    private final CodilitySolutionFactory solutionFactory
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.ARRAYS_ODD_OCCURRENCES_IN_ARRAY);
+
     private CodilitySolution s;
 
     @Before
     public void setUp() {
-
-        this.s = this.solutionFactory.createSolution();
+        this.s = this.solutionFactory.getDefaultSolution();
     }
 
     @Test

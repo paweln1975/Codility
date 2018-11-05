@@ -1,20 +1,20 @@
-package pl.paweln.codility.test;
+package pl.paweln.codility.prefixsums;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.SolutionFactory;
-import pl.paweln.codility.prefixsums.GenomicRangeQueryFactory;
+import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class GenomicRangeQueryTest {
-    private final SolutionFactory solutionFactory = new GenomicRangeQueryFactory();
-    private CodilitySolution codilitySolution;
+    private final CodilitySolutionFactory solutionFactory
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.PREFIX_SUMS_GENOMIC_RANGE_QUERY);
+
+    private CodilitySolution s;
 
     @Before
     public void setUp() {
-
-        this.codilitySolution = this.solutionFactory.createSolution();
+        this.s = this.solutionFactory.getDefaultSolution();
     }
 
     @Test
@@ -24,7 +24,7 @@ public class GenomicRangeQueryTest {
         int[] Q = new int [] {4, 5, 6};
         int[] expectedResult = new int[] {2, 4, 1};
 
-        int[] result = this.codilitySolution.solution(S, P, Q);
+        int[] result = this.s.solution(S, P, Q);
 
         Assert.assertArrayEquals(expectedResult, result);
     }
@@ -36,7 +36,7 @@ public class GenomicRangeQueryTest {
         int[] Q = new int [] {0, 1, 1};
         int[] expectedResult = new int[] {1, 1, 2};
 
-        int[] result = this.codilitySolution.solution(S, P, Q);
+        int[] result = this.s.solution(S, P, Q);
 
         Assert.assertArrayEquals(expectedResult, result);
     }
@@ -65,7 +65,7 @@ public class GenomicRangeQueryTest {
             expectedResult[i] = 1;
         }
 
-        int[] result = this.codilitySolution.solution(S, P, Q);
+        int[] result = this.s.solution(S, P, Q);
 
         Assert.assertArrayEquals(expectedResult, result);
     }

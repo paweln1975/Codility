@@ -1,19 +1,20 @@
-package pl.paweln.codility.test;
+package pl.paweln.codility.sorting;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.SolutionFactory;
-import pl.paweln.codility.sorting.MaxProductOfThreeFactory;
+import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class MaxProductOfThreeTest {
-    private final SolutionFactory solutionFactory = new MaxProductOfThreeFactory();
+    private final CodilitySolutionFactory solutionFactory
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.SORTING_MAX_PRODUCT_OF_THREE);
+
     private CodilitySolution s;
 
     @Before
     public void setUp() {
-        this.s = this.solutionFactory.createSolution();
+        this.s = this.solutionFactory.getDefaultSolution();
     }
 
     @Test

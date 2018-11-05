@@ -1,21 +1,20 @@
-package pl.paweln.codility.test;
+package pl.paweln.codility.counting;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.SolutionFactory;
-
-import pl.paweln.codility.counting.FrogRiverOneFactory;
+import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class FrogRiverOneTest {
-    private final SolutionFactory solutionFactory = new FrogRiverOneFactory();
-    private CodilitySolution codilitySolution;
+    private final CodilitySolutionFactory solutionFactory
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.COUNTING_FROG_RIVER_ONE);
+
+    private CodilitySolution s;
 
     @Before
     public void setUp() {
-
-        this.codilitySolution = this.solutionFactory.createSolution();
+        this.s = this.solutionFactory.getDefaultSolution();
     }
 
     @Test
@@ -30,13 +29,13 @@ public class FrogRiverOneTest {
         A[6] = 5;
         A[7] = 4;
 
-        Assert.assertEquals(6, this.codilitySolution.solution(A, 5));
+        Assert.assertEquals(6, this.s.solution(A, 5));
     }
 
     @Test
     public void testSolutionSingleValue() {
         int[] A = new int[] {1};
-        Assert.assertEquals(0, this.codilitySolution.solution(A, 1));
+        Assert.assertEquals(0, this.s.solution(A, 1));
     }
 
     @Test
@@ -45,7 +44,7 @@ public class FrogRiverOneTest {
         for (int i = 0; i < A.length; i++) {
             A[i] = i+1;
         }
-        Assert.assertEquals(9, this.codilitySolution.solution(A, 10));
+        Assert.assertEquals(9, this.s.solution(A, 10));
     }
     @Test
     public void testSolutionMaxValuesMaxPosition() {
@@ -53,6 +52,6 @@ public class FrogRiverOneTest {
         for (int i = 0; i < A.length; i++) {
             A[i] = i+1;
         }
-        Assert.assertEquals(99999, this.codilitySolution.solution(A, A.length));
+        Assert.assertEquals(99999, this.s.solution(A, A.length));
     }
 }
