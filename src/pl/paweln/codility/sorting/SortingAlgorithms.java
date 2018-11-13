@@ -219,4 +219,29 @@ public class SortingAlgorithms {
         return opCount;
     }
 
+    /**
+     * Sortowanie stogowe - poprzez kopcowanie
+     * Drzewo binarne jest hierarchiczną strukturą danych, której elementy będziemy nazywali węzłami (ang. node).
+     * W drzewie binarnym każdy węzeł może posiadać dwa następniki (stąd pochodzi nazwa drzewa - binarny = dwójkowy,
+     * zawierający dwa elementy), które nazwiemy potomkami, dziećmi lub węzłami potomnymi danego węzła (ang. child node).
+     * Jeśli chcemy przetwarzać za pomocą komputera struktury drzew binarnych, to musimy zastanowić się nad sposobem
+     * reprezentacji takich struktur w pamięci. Najprostszym rozwiązaniem jest zastosowanie zwykłej tablicy n
+     * elementowej. Każdy element tej tablicy będzie reprezentował jeden węzeł drzewa binarnego. Pozostaje nam jedynie
+     * określenie związku pomiędzy indeksami elementów w tablicy a położeniem tych elementów w strukturze drzewa
+     * binarnego.
+     * węzeł nadrzędny ma indeks równy (k - 1) / 2 (dzielenie całkowitoliczbowe)
+     * k - węzeł bieżący
+     * 2k+1- lewy potomek
+     * 2k+2 - prawy potomek
+     * Kopiec jest drzewem binarnym, w którym wszystkie węzły spełniają następujący warunek (zwany warunkiem kopca):
+     * Węzeł nadrzędny jest większy lub równy węzłom potomnym
+     *
+     * https://eduinf.waw.pl/inf/utils/010_2010/0411.php
+     * @param tab
+     * @return
+     */
+    public static int heapSort(int[] tab) {
+        int opertionCount = 0;
+        return opertionCount;
+    }
 }

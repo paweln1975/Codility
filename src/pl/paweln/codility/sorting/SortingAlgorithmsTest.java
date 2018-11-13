@@ -120,6 +120,15 @@ public class SortingAlgorithmsTest {
     }
 
     @Test
+    public void testQuickSortSimpleHigherOnLeft() {
+        int[] tab = { 9, 9, 9, 1, 2, 3, 4, 5, 6, 7};
+        int[] sorted = {1, 2, 3, 4, 5, 6, 7, 9, 9, 9};
+        int opCount = SortingAlgorithms.quickSort(tab);
+        System.out.println("Quick sort of tab with size of " + tab.length + " operation count:" + opCount);
+        Assert.assertArrayEquals (sorted, tab);
+    }
+
+    @Test
     public void testQuickSort10000() {
         int size = 10000;
         int[] tab = new int[size];
