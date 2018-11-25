@@ -320,5 +320,104 @@ public class SortingAlgorithms {
         return opCount;
     }
 
+    /**
+     * Sortowanie przez scalanie (podobnie jak algorytm QuickSort, jest algorytmem typu "dziel i zwyciężaj". Jednak
+     * w odróżnieniu od QuickSort, algorytm ten w każdym przypadku osiąga złozoność T(n) = n*log(n). Niestety algorytm
+     * MergeSort posiada większą złożoność pamięciową, potrzebuje do swojego działania dodatkowej, pomocniczej struktury
+     * danych.
+     * Ideą działania algorytmu jest dzielenie zbioru danych na mniejsze zbiory, aż do uzyskania n zbiorów jedno-
+     * elementowych, które same z siebie są posortowane :), następnie zbiory te są łączone w coraz większe zbiory
+     * posortowane, aż do uzyskania jednego, posortowanego zbioru n-elementowego. Etap dzielenia nie jest skomplikowany,
+     * dzielenie następuje bez sprawdzania jakichkolwiek warunków. Dzięki temu, w przeciwieństwie do algorytmu QuickSort,
+     * następuje pełne rozwinięcie wszystkich gałęzi drzewa. Z kolei łączenie zbiorów posortowanych wymaga odpowiedniego
+     * wybierania poszczególnych elementów z łączonych zbiorów z uwzględnieniem faktu, że wielkość zbioru nie musi być
+     * równa (parzysta i nieparzysta ilość elementów), oraz tego, iż wybieranie elementów z poszczególnych zbiorów nie
+     * musi następować naprzemiennie, przez co jeden zbiór może osiągąć swój koniec wcześniej niż drugi. Robi sie to w
+     * następujący sposób. Kopiujemy zawartość zbioru głównego do struktury pomocniczej. Następnie, operując wyłącznie
+     * na kopii, ustawiamy wskaźniki na początki kolejnych zbiorów i porównujemy wskazywane wartości. Mniejszą wartość
+     * wpisujemy do zbioru głównego i przesuwamy odpowiedni wskaźnik o 1 i czynności powtarzamy, aż do momentu, gdy
+     * jeden ze wskaźników osiągnie koniec zbioru. Wówczam mamy do rozpatrzenia dwa przypadki, gdy zbiór 1 osiągnął
+     * koniec i gdy zbiór 2 osiągnął koniec. W przypadku pierwszym nie będzie problemu, elementy w zbiorze głównym są
+     * już posortowane i ułożone na właściwych miejscach. W przypadku drugim trzeba skopiować pozostałe elementy zbioru
+     * pierwszego pokolei na koniec. Po zakończeniu wszystkich operacji otrzmujemy posortowany zbiór główny.
+     * @param tab
+     * @return
+     */
+    public static int mergeSort(int[] tab)
+    {
+        return mergeSortRange(tab,0, tab.length - 1);
+    }
+
+    private static int mergeSortRange(int tab[], int l, int r) {
+        int opCount = 0;
+        int DividePoint = dividePoint(l,r);
+
+        if (r!=l){
+            opCount++;
+
+            mergeSortRange(tab, l, DividePoint);
+            mergeSortRange(tab, DividePoint+1, r);
+
+            //pointers used to refer to content of arrays
+            int ptrA = l;
+            int ptrB = DividePoint+1;
+
+            int i = 0;
+            int[] temptab = new int[r-l+1];
+
+            //join two arrays into one sorted array
+            while(ptrA<=DividePoint && ptrB<=r){
+                opCount ++;
+                if (compare(tab[ptrA], tab[ptrB])){
+                    temptab[i++] = tab[ptrA++];
+                }else{
+                    temptab[i++] = tab[ptrB++];
+                }
+            }
+            if (ptrA > dividePoint(l,r)) {         //if all elements of first array
+                                                //were used add rest of second
+                                                //array to the end of temporary array
+                for (int j = ptrB; j<=r; j++){
+                    temptab[i++] = tab[j];
+                    opCount++;
+                }
+            } else {                              //opposite case
+                for (int j = ptrA; j<=dividePoint(l,r); j++){
+                    opCount++;
+                    temptab[i++] = tab[j];
+                }
+            }
+//copy results
+            copy(tab, temptab, l,r);
+            opCount+= (r-l);
+        }
+        return opCount;
+    }
+
+    private static int dividePoint(int l, int r){
+    //calculates divide point of array
+        int tabLength = r-l+1;
+        if (tabLength%2 == 0){
+            return l-1+(tabLength)/2;
+        }else{
+            return l+tabLength/2;
+        }
+    }
+
+    private static boolean compare(int num1, int num2){
+        if (num1 > num2) return false;
+        if (num1 < num2) return true;
+        else
+            return true;
+    }
+
+    private static void copy(int tab[], int temptab[], int l, int r){
+//copies result from temporary array to original array
+        int j=0;
+        for (int i=l; i<=r; i++){
+            tab[i] = temptab[j++];
+        }
+    }
+
 
 }

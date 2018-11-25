@@ -164,4 +164,27 @@ public class SortingAlgorithmsTest {
         System.out.println("Heap sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
+
+    @Test
+    public void testMergeSortSimple() {
+        int[] tab = { 5, 10, 15, 15, 10, 5, 1};
+        int[] sorted = {1, 5, 5, 10, 10, 15, 15};
+        int opCount = SortingAlgorithms.mergeSort(tab);
+        System.out.println("Merge sort of tab with size of " + tab.length + " operation count:" + opCount);
+        Assert.assertArrayEquals (sorted, tab);
+    }
+
+    @Test
+    public void testMergeSort10000() {
+        int size = 10000;
+        int[] tab = new int[size];
+        int[] sorted = new int[size];
+        for (int i = 0; i < size; i++) {
+            tab[i] = size - i - 1;
+            sorted[i] = i;
+        }
+        int opCount = SortingAlgorithms.mergeSort(tab);
+        System.out.println("Merge sort of tab with size of " + tab.length + " operation count:" + opCount);
+        Assert.assertArrayEquals (sorted, tab);
+    }
 }
