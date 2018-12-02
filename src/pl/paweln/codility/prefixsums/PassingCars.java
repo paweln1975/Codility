@@ -1,6 +1,6 @@
 package pl.paweln.codility.prefixsums;
 
-import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.BaseCodilitySolution;
 
 /**
  * A non-empty array A consisting of N integers is given. The consecutive elements of array A represent consecutive cars on a road.
@@ -44,7 +44,7 @@ import pl.paweln.codility.core.CodilitySolution;
  * each element of array A is an integer that can have one of the following values: 0, 1.
  */
 
-public class PassingCars implements CodilitySolution<Integer> {
+public class PassingCars extends BaseCodilitySolution {
     private final static int MAX_RESULT = 1000000000;
     private final static int VAL_EAST = 0;
     private final static int VAL_WEST = 1;
@@ -73,23 +73,4 @@ public class PassingCars implements CodilitySolution<Integer> {
         return pairsCnt;
     }
 
-    @Override
-    public int solution(int X, int Y, int Z) {
-        return 0;
-    }
-
-    @Override
-    public int solution(int N) {
-        return 0;
-    }
-
-    @Override
-    public Integer solution(int[] A, int N) {
-        return 0;
-    }
-
-    @Override
-    public int[] solution(String S, int[] P, int[] Q) {
-        return new int[0];
-    }
 }

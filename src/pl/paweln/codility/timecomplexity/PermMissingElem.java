@@ -1,7 +1,6 @@
 package pl.paweln.codility.timecomplexity;
 
-import pl.paweln.codility.core.CodilitySolution;
-
+import pl.paweln.codility.core.BaseCodilitySolution;
 import java.math.BigInteger;
 import java.util.Arrays;
 
@@ -35,16 +34,7 @@ Complexity:
 expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(1) (not counting the storage required for input arguments).
  */
-public class PermMissingElem implements CodilitySolution {
-    @Override
-    public int solution(int N) {
-        return 0;
-    }
-
-    @Override
-    public Object solution(int[] A, int N) {
-        return null;
-    }
+public class PermMissingElem extends BaseCodilitySolution {
 
     public int solution (int [] A) {
         int N = A.length;
@@ -59,16 +49,6 @@ public class PermMissingElem implements CodilitySolution {
         BigInteger expectedSum = BigInteger.valueOf(2 + N).multiply(BigInteger.valueOf(1 + N)).divide(BigInteger.valueOf(2));
 
         return expectedSum.subtract(sum).intValue();
-    }
-
-    @Override
-    public int solution(int X, int Y, int Z) {
-        return 0;
-    }
-
-    @Override
-    public int[] solution(String S, int[] P, int[] Q) {
-        return new int[0];
     }
 
 

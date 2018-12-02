@@ -1,5 +1,6 @@
 package pl.paweln.codility.arrays;
 
+import pl.paweln.codility.core.BaseCodilitySolution;
 import pl.paweln.codility.core.CodilitySolution;
 
 /*
@@ -42,17 +43,17 @@ N and K are integers within the range [0..100];
 each element of array A is an integer within the range [−1,000..1,000].
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
  */
-public class CyclicRotation implements CodilitySolution<Integer[]> {
+public class CyclicRotation extends BaseCodilitySolution {
 
     @Override
-    public Integer[] solution(int[] A, int K) {
+    public int[] solutionTab(int[] A, int K) {
         // table length
         int N = A.length;
         int offset;
 
-        if (N == 0) return new Integer[0];
+        if (N == 0) return new int[0];
 
-        Integer[] B = new Integer[N];
+        int[] B = new int[N];
 
         if (N == K) {
             for (int i = 0; i < N; i++) {
@@ -82,26 +83,5 @@ public class CyclicRotation implements CodilitySolution<Integer[]> {
             return curr+offset;
         }
     }
-
-    @Override
-    public int solution(int N) {
-        return 0;
-    }
-
-    @Override
-    public int solution(int[] A) {
-        return 0;
-    }
-
-    @Override
-    public int solution(int X, int Y, int Z) {
-        return 0;
-    }
-
-    @Override
-    public int[] solution(String S, int[] P, int[] Q) {
-        return new int[0];
-    }
-
 
 }

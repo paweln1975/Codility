@@ -10,12 +10,12 @@ public class CyclicRotationTest {
     private final CodilitySolutionFactory solutionFactory
             = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.ARRAYS_CYCLIC_ROTATION);
 
-    private CodilitySolution<Integer[]> s;
+    private CodilitySolution solution;
 
     @Before
     @SuppressWarnings("unchecked")
     public void setUp() {
-        this.s = this.solutionFactory.getDefaultSolution();
+        this.solution = this.solutionFactory.getDefaultSolution();
     }
 
     @Test
@@ -23,7 +23,7 @@ public class CyclicRotationTest {
         int[] A = { 1, 3, 4, 6 };
         int[] result = new int[A.length];
 
-        Integer[] resultInteger = this.s.solution(A, A.length);
+        int[] resultInteger = this.solution.solutionTab(A, A.length);
         for (int i = 0; i < A.length; i++) {
             result[i] = resultInteger[i];
         }
@@ -40,7 +40,7 @@ public class CyclicRotationTest {
 
         int[] result = new int[A.length];
 
-        Integer[] resultInteger = this.s.solution(A, 1);
+        int[] resultInteger = this.solution.solutionTab(A, 1);
         for (int i = 0; i < A.length; i++) {
             result[i] = resultInteger[i];
         }
@@ -56,7 +56,7 @@ public class CyclicRotationTest {
 
         int[] result = new int[A.length];
 
-        Integer[] resultInteger = this.s.solution(A, 35);
+        int[] resultInteger = this.solution.solutionTab(A, 35);
         for (int i = 0; i < A.length; i++) {
             result[i] = resultInteger[i];
         }
@@ -72,7 +72,7 @@ public class CyclicRotationTest {
 
         int[] result = new int[A.length];
 
-        Integer[] resultInteger = this.s.solution(A, 2);
+        int[] resultInteger = this.solution.solutionTab(A, 2);
         for (int i = 0; i < A.length; i++) {
             result[i] = resultInteger[i];
         }

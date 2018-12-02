@@ -15,6 +15,7 @@ import pl.paweln.codility.sorting.Distinct;
 import pl.paweln.codility.sorting.MaxProductOfThree;
 import pl.paweln.codility.sorting.NumberOfDiscIntersections;
 import pl.paweln.codility.sorting.Triangle;
+import pl.paweln.codility.stacks.Brackets;
 import pl.paweln.codility.timecomplexity.FrogJump;
 import pl.paweln.codility.timecomplexity.PermMissingElem;
 import pl.paweln.codility.timecomplexity.TapeEquilibrium;
@@ -40,7 +41,8 @@ public class CodilitySolutionFactory {
         SORTING_DISTINCT,
         SORTING_MAX_PRODUCT_OF_THREE,
         SORTING_TRIANGLE,
-        SORTING_NUMBER_OF_DISCS_INTERSECTIONS
+        SORTING_NUMBER_OF_DISCS_INTERSECTIONS,
+        STACKS_AND_QUEUES_BRACKETS
     }
 
     public CodilitySolutionFactory(TaskType p_defaultType) {
@@ -112,6 +114,9 @@ public class CodilitySolutionFactory {
                 break;
             case SORTING_NUMBER_OF_DISCS_INTERSECTIONS:
                 solution = new NumberOfDiscIntersections();
+                break;
+            case STACKS_AND_QUEUES_BRACKETS:
+                solution = new Brackets();
                 break;
         }
         return solution;
