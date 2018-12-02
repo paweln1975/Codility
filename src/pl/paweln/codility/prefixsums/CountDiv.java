@@ -1,6 +1,6 @@
 package pl.paweln.codility.prefixsums;
 
-import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.BaseCodilitySolution;
 
 /**
  * Write a function:
@@ -20,7 +20,7 @@ import pl.paweln.codility.core.CodilitySolution;
  * K is an integer within the range [1..2,000,000,000];
  * A ≤ B.
  */
-public class CountDiv implements CodilitySolution {
+public class CountDiv extends BaseCodilitySolution {
     @Override
     public int solution(int A, int B, int K) {
         if (A > B) throw new IllegalArgumentException("A > B");
@@ -30,25 +30,5 @@ public class CountDiv implements CodilitySolution {
         }
         result+= B / K - A / K;
         return result;
-    }
-
-    @Override
-    public int solution(int N) {
-        return 0;
-    }
-
-    @Override
-    public Object solution(int[] A, int N) {
-        return null;
-    }
-
-    @Override
-    public int solution(int[] A) {
-        return 0;
-    }
-
-    @Override
-    public int[] solution(String S, int[] P, int[] Q) {
-        return new int[0];
     }
 }

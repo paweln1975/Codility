@@ -1,7 +1,6 @@
 package pl.paweln.codility.sorting;
 
-import pl.paweln.codility.core.CodilitySolution;
-
+import pl.paweln.codility.core.BaseCodilitySolution;
 import java.math.BigInteger;
 import java.util.Arrays;
 
@@ -41,7 +40,7 @@ N is an integer within the range [0..100,000];
 each element of array A is an integer within the range [−2,147,483,648..2,147,483,647].
 */
 
-public class Triangle implements CodilitySolution {
+public class Triangle extends BaseCodilitySolution {
     @Override
     public int solution(int[] A) {
 
@@ -86,26 +85,4 @@ public class Triangle implements CodilitySolution {
 
     }
 
-
-
-
-    @Override
-    public int solution(int N) {
-        return 0;
-    }
-
-    @Override
-    public Object solution(int[] A, int N) {
-        return null;
-    }
-
-    @Override
-    public int solution(int X, int Y, int Z) {
-        return 0;
-    }
-
-    @Override
-    public int[] solution(String S, int[] P, int[] Q) {
-        return new int[0];
-    }
 }

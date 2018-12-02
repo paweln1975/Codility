@@ -63,17 +63,16 @@ expected worst-case time complexity is O(N+M);
 expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
  */
 
-import pl.paweln.codility.core.CodilitySolution;
-
+import pl.paweln.codility.core.BaseCodilitySolution;
 import java.util.Arrays;
 
-public class MaxCounters implements CodilitySolution<Integer[]> {
+public class MaxCounters extends BaseCodilitySolution {
 
-    public Integer[] solution(int[] A, int N) {
+    public int[] solutionTab(int[] A, int N) {
         int lastMax = 0;
         int maxValue = 0;
 
-        Integer[] R = new Integer[N];
+        int[] R = new int[N];
         Arrays.fill(R, 0);
 
         if (N <= 0) {
@@ -111,23 +110,4 @@ public class MaxCounters implements CodilitySolution<Integer[]> {
         return R;
     }
 
-    @Override
-    public int solution(int N) {
-        return 0;
-    }
-
-    @Override
-    public int solution(int[] A) {
-        return 0;
-    }
-
-    @Override
-    public int solution(int X, int Y, int Z) {
-        return 0;
-    }
-
-    @Override
-    public int[] solution(String S, int[] P, int[] Q) {
-        return new int[0];
-    }
 }

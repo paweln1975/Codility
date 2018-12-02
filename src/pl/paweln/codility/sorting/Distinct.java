@@ -1,7 +1,6 @@
 package pl.paweln.codility.sorting;
 
-import pl.paweln.codility.core.CodilitySolution;
-
+import pl.paweln.codility.core.BaseCodilitySolution;
 import java.util.Arrays;
 /*
 Write a function
@@ -22,7 +21,7 @@ N is an integer within the range [0..100,000];
 each element of array A is an integer within the range [−1,000,000..1,000,000].
  */
 
-public class Distinct implements CodilitySolution {
+public class Distinct extends BaseCodilitySolution {
 
     @Override
     public int solution(int[] A) {
@@ -39,25 +38,4 @@ public class Distinct implements CodilitySolution {
         return distinct;
     }
 
-    @Override
-    public int solution(int N) {
-        return 0;
-    }
-
-    @Override
-    public Object solution(int[] A, int N) {
-        return null;
-    }
-
-
-
-    @Override
-    public int solution(int X, int Y, int Z) {
-        return 0;
-    }
-
-    @Override
-    public int[] solution(String S, int[] P, int[] Q) {
-        return new int[0];
-    }
 }

@@ -1,7 +1,6 @@
 package pl.paweln.codility.sorting;
 
-import pl.paweln.codility.core.CodilitySolution;
-
+import pl.paweln.codility.core.BaseCodilitySolution;
 import java.util.Arrays;
 /*
 A non-empty array A consisting of N integers is given. The product of triplet (P, Q, R) equates to
@@ -44,7 +43,7 @@ N is an integer within the range [3..100,000];
 each element of array A is an integer within the range [−1,000..1,000].
  */
 
-public class MaxProductOfThree implements CodilitySolution {
+public class MaxProductOfThree extends BaseCodilitySolution {
     @Override
     public int solution(int[] A) {
         int N = A.length;
@@ -91,25 +90,6 @@ public class MaxProductOfThree implements CodilitySolution {
         return product;
     }
 
-    @Override
-    public int solution(int N) {
-        return 0;
-    }
-
-    @Override
-    public Object solution(int[] A, int N) {
-        return null;
-    }
-
-    @Override
-    public int solution(int X, int Y, int Z) {
-        return 0;
-    }
-
-    @Override
-    public int[] solution(String S, int[] P, int[] Q) {
-        return new int[0];
-    }
 
     // solution from internet - nice one as well with three maxes and 2 minis
     public int solution2(int[] A) {

@@ -1,6 +1,6 @@
 package pl.paweln.codility.prefixsums;
 
-import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.BaseCodilitySolution;
 
 /**
  * A non-empty array A consisting of N integers is given. A pair of integers (P, Q), such that 0 ≤ P < Q < N, is called a slice of array A (notice that the slice contains at least two elements). The average of a slice (P, Q) is the sum of A[P] + A[P + 1] + ... + A[Q] divided by the length of the slice. To be precise, the average equals (A[P] + A[P + 1] + ... + A[Q]) / (Q − P + 1).
@@ -45,7 +45,7 @@ import pl.paweln.codility.core.CodilitySolution;
  * each element of array A is an integer within the range [−10,000..10,000].
  */
 
-public class MinAvgTwoSlice implements CodilitySolution {
+public class MinAvgTwoSlice extends BaseCodilitySolution {
 
     @Override
     public int solution(int[] A) {
@@ -92,23 +92,5 @@ public class MinAvgTwoSlice implements CodilitySolution {
         return sum / count;
     }
 
-    @Override
-    public Object solution(int[] A, int N) {
-        return null;
-    }
 
-    @Override
-    public int solution(int N) {
-        return 0;
-    }
-
-    @Override
-    public int solution(int X, int Y, int Z) {
-        return 0;
-    }
-
-    @Override
-    public int[] solution(String S, int[] P, int[] Q) {
-        return new int[0];
-    }
 }

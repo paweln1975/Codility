@@ -1,6 +1,6 @@
 package pl.paweln.codility.prefixsums;
 
-import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.BaseCodilitySolution;
 
 /**
  * A DNA sequence can be represented as a string consisting of the letters A, C, G and T, which correspond to the types
@@ -49,7 +49,7 @@ import pl.paweln.codility.core.CodilitySolution;
  * string S consists only of upper-case English letters A, C, G, T.
  */
 
-public class GenomicRangeQuery implements CodilitySolution {
+public class GenomicRangeQuery extends BaseCodilitySolution {
     @Override
     public int[] solution(String S, int[] P, int[] Q) {
         if (P.length != Q.length) {
@@ -108,26 +108,6 @@ public class GenomicRangeQuery implements CodilitySolution {
 
         }
         return result;
-    }
-
-    @Override
-    public int solution(int N) {
-        return 0;
-    }
-
-    @Override
-    public Integer solution(int[] A, int N) {
-        return 0;
-    }
-
-    @Override
-    public int solution(int[] A) {
-        return 0;
-    }
-
-    @Override
-    public int solution(int X, int Y, int Z) {
-        return 0;
     }
 
 
