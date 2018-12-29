@@ -57,7 +57,7 @@ import java.util.ListIterator;
  * the elements of A are all distinct.
  */
 public class Fish extends BaseCodilitySolution {
-    List<RiverFish> fishList = new LinkedList<>();
+    private List<RiverFish> fishList = new LinkedList<>();
 
     public int solution(int[] A, int[] B) {
         if (A.length != B.length) {
@@ -86,60 +86,67 @@ public class Fish extends BaseCodilitySolution {
 
         RiverFish prevFish = fishListIterator.next();
         RiverFish nextFish = null;
-        boolean analysisFinised = false;
+        boolean moreFishes = true;
         Direction analysisDirection = Direction.DOWNSTREAM;
 
 
-        while (!analysisFinised) {
+        while (moreFishes) {
             if (analysisDirection == Direction.DOWNSTREAM) {
-                if (fishListIterator.hasNext()) {
+                moreFishes = fishListIterator.hasNext();
+                if (moreFishes) {
                     nextFish = fishListIterator.next();
                     if (isConflict(prevFish, nextFish)) {
                         if (prevFish.size > nextFish.size) {
-                            // eat current fish and continue downstream
+                            // eat next fish
                             fishListIterator.remove();
                         } else {
-                            // eat previous fish and continue upstream
-                            prevFish = nextFish;
-                            RiverFish tmpFish = fishListIterator.previous();
-                            if (tmpFish == prevFish) {
-                                tmpFish = fishListIterator.previous();
-                            }
-                            fishListIterator.remove();
                             analysisDirection = Direction.UPSTREAM;
+                            prevFish = nextFish;
                         }
                     } else {
                         prevFish = nextFish;
                     }
-                } else {
-                    analysisFinised = true;
                 }
             } else {
+                // until the next fish will be eaten or prev fish flows upstream
                 if (fishListIterator.hasPrevious()) {
                     nextFish = fishListIterator.previous();
-                    if (isConflict(nextFish, prevFish)) {
-                        if (prevFish.size > nextFish.size) {
-                            // eat current fish and continue upstream
-                            fishListIterator.remove();
-                        } else {
-                            // eat previous fish and continue downstream
-                            prevFish = nextFish;
-                            fishListIterator.next();
-                            fishListIterator.remove();
-                            analysisDirection = Direction.DOWNSTREAM;
+                    if (nextFish == prevFish) {
+                        if (fishListIterator.hasPrevious()) {
+                            nextFish = fishListIterator.previous();
                         }
-                    } else {
-                        prevFish = nextFish;
                     }
+                    // previous fishes go upstream - change direction
+                    if (nextFish.direction == Direction.UPSTREAM) {
+                        analysisDirection = Direction.DOWNSTREAM;
+                    } else {
+                        if (nextFish.size > prevFish.size) {
+                            analysisDirection = Direction.DOWNSTREAM;
+                            prevFish = nextFish;
+                        } else {
+                            // eat previous
+                            fishListIterator.remove();
+                        }
+                    }
+
                 } else {
-                    // change direction, begin reached
-                    prevFish = nextFish;
                     analysisDirection = Direction.DOWNSTREAM;
+                    prevFish = nextFish;
                 }
             }
-
         }
 
+//        String s = "";
+//        if (fishList.size() == 0 ) {
+//            for (int a : A) {
+//                s += String.valueOf(a) + ", ";
+//            }
+//
+//            for (int b : B) {
+//                s += String.valueOf(b) + ", ";
+//            }
+//            throw new IllegalArgumentException(s);
+//        }
         return fishList.size();
     }
 
@@ -154,7 +161,7 @@ public class Fish extends BaseCodilitySolution {
 
 
 class RiverFish {
-    public RiverFish (int size, Direction direction, int index) {
+    RiverFish (int size, Direction direction, int index) {
         this.direction = direction;
         this.size = size;
         this.index = index;

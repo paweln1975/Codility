@@ -18,10 +18,90 @@ public class FishTest {
     }
 
     @Test
-    public void testExampleOK() {
+    public void testExample() {
 
         int[] A = new int[] {4, 3, 2, 1, 5};
         int[] B = new int[] {0, 1, 0, 0, 0};
         Assert.assertEquals(2, solution.solution(A, B));
+    }
+
+    @Test
+    public void testSimple1() {
+
+        int[] A = new int[] {1, 2, 3};
+        int[] B = new int[] {1, 1, 0};
+        Assert.assertEquals(1, solution.solution(A, B));
+    }
+
+    @Test
+    public void testSimple2() {
+
+        int[] A = new int[] {1, 5, 4, 2, 3};
+        int[] B = new int[] {0, 1, 0, 1, 0};
+        Assert.assertEquals(2, solution.solution(A, B));
+    }
+
+    @Test
+    public void testSimple3() {
+
+        int[] A = new int[] {1, 5, 4, 2, 3};
+        int[] B = new int[] {1, 0, 1, 0, 1};
+        Assert.assertEquals(3, solution.solution(A, B));
+    }
+
+    @Test
+    public void testSimple4() {
+
+        int[] A = new int[] {1, 2};
+        int[] B = new int[] {1, 0};
+        Assert.assertEquals(1, solution.solution(A, B));
+    }
+
+    @Test
+    public void testSimple5() {
+
+        int[] A = new int[] {1, 2};
+        int[] B = new int[] {0, 0};
+        Assert.assertEquals(2, solution.solution(A, B));
+    }
+
+    @Test
+    public void testSimple6() {
+
+        int[] A = new int[] {1, 2};
+        int[] B = new int[] {1, 1};
+        Assert.assertEquals(2, solution.solution(A, B));
+    }
+
+    @Test
+    public void testSimple7() {
+
+        int[] A = new int[] {1, 2};
+        int[] B = new int[] {0, 1};
+        Assert.assertEquals(2, solution.solution(A, B));
+    }
+
+    @Test
+    public void testSimple8() {
+
+        int[] A = new int[] {1, 2, 3, 4, 5};
+        int[] B = new int[] {1, 1, 1, 1, 0};
+        Assert.assertEquals(1, solution.solution(A, B));
+    }
+
+    @Test
+    public void testSimple9() {
+
+        int[] A = new int[] {10, 2, 3, 4, 5, 6, 11, 12, 13};
+        int[] B = new int[] {1, 1, 1, 0, 0, 0, 0, 0, 0};
+        Assert.assertEquals(3, solution.solution(A, B));
+    }
+
+    @Test
+    public void testSimple10() {
+
+        int[] A = new int[] {8, 6, 5, 3, 2, 4, 7};
+        int[] B = new int[] {1, 1, 1, 1, 1, 0, 0};
+        Assert.assertEquals(1, solution.solution(A, B));
     }
 }
