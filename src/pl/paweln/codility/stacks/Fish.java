@@ -82,6 +82,7 @@ public class Fish extends BaseCodilitySolution {
             fishList.add(riverFish);
         }
 
+        // kind of a stack
         ListIterator<RiverFish> fishListIterator = fishList.listIterator();
 
         RiverFish prevFish = fishListIterator.next();
@@ -89,7 +90,7 @@ public class Fish extends BaseCodilitySolution {
         boolean moreFishes = true;
         Direction analysisDirection = Direction.DOWNSTREAM;
 
-
+        // implemenentation based on way how this algorithm works
         while (moreFishes) {
             if (analysisDirection == Direction.DOWNSTREAM) {
                 moreFishes = fishListIterator.hasNext();
@@ -136,17 +137,6 @@ public class Fish extends BaseCodilitySolution {
             }
         }
 
-//        String s = "";
-//        if (fishList.size() == 0 ) {
-//            for (int a : A) {
-//                s += String.valueOf(a) + ", ";
-//            }
-//
-//            for (int b : B) {
-//                s += String.valueOf(b) + ", ";
-//            }
-//            throw new IllegalArgumentException(s);
-//        }
         return fishList.size();
     }
 

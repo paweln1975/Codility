@@ -35,4 +35,9 @@ public abstract class BaseCodilitySolution implements CodilitySolution {
     public int[] solutionTab(int[] A, int N) {
         return new int[0];
     }
+
+    @Override
+    public int solution(int[] A, int[] B) {
+        return 0;
+    }
 }

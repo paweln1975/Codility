@@ -8,4 +8,5 @@ public interface CodilitySolution {
     int solution (int X, int Y, int Z);
     int[] solution (String S, int[] P, int[] Q);
     int solution (String S);
+    int solution(int[] A, int[] B);
 }
