@@ -16,6 +16,9 @@ import pl.paweln.codility.sorting.MaxProductOfThree;
 import pl.paweln.codility.sorting.NumberOfDiscIntersections;
 import pl.paweln.codility.sorting.Triangle;
 import pl.paweln.codility.stacks.Brackets;
+import pl.paweln.codility.stacks.Fish;
+import pl.paweln.codility.stacks.Nesting;
+import pl.paweln.codility.stacks.StoneWall;
 import pl.paweln.codility.timecomplexity.FrogJump;
 import pl.paweln.codility.timecomplexity.PermMissingElem;
 import pl.paweln.codility.timecomplexity.TapeEquilibrium;
@@ -42,7 +45,10 @@ public class CodilitySolutionFactory {
         SORTING_MAX_PRODUCT_OF_THREE,
         SORTING_TRIANGLE,
         SORTING_NUMBER_OF_DISCS_INTERSECTIONS,
-        STACKS_AND_QUEUES_BRACKETS
+        STACKS_AND_QUEUES_BRACKETS,
+        STACKS_AND_QUEUES_FISH,
+        STACKS_AND_QUEUES_NESTING,
+        STACKS_AND_QUEUES_STONE_WALL
     }
 
     public CodilitySolutionFactory(TaskType p_defaultType) {
@@ -55,7 +61,7 @@ public class CodilitySolutionFactory {
         }
         return getSolution(this.defaultTaskType);
     }
-    public CodilitySolution getSolution(TaskType p_type) {
+    private CodilitySolution getSolution(TaskType p_type) {
         if(p_type == null){
             return null;
         }
@@ -117,6 +123,15 @@ public class CodilitySolutionFactory {
                 break;
             case STACKS_AND_QUEUES_BRACKETS:
                 solution = new Brackets();
+                break;
+            case STACKS_AND_QUEUES_FISH:
+                solution = new Fish();
+                break;
+            case STACKS_AND_QUEUES_NESTING:
+                solution = new Nesting();
+                break;
+            case STACKS_AND_QUEUES_STONE_WALL:
+                solution = new StoneWall();
                 break;
         }
         return solution;
