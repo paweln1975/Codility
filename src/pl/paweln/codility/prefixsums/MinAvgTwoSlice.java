@@ -87,8 +87,8 @@ public class MinAvgTwoSlice extends BaseCodilitySolution {
         if (endIdx <= startIdx) {
             throw new IllegalArgumentException("Wrong index values.");
         }
-        float sum = T[endIdx] - T[startIdx-1];
-        float count = endIdx - startIdx + 1;
+        float sum = (float)T[endIdx] - (float)T[startIdx-1];
+        float count = (float)endIdx - (float)startIdx + 1f;
         return sum / count;
     }
 

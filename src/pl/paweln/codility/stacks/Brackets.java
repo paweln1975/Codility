@@ -74,7 +74,7 @@ public class Brackets extends BaseCodilitySolution {
         }
 
         Character last = this.stack.getLast();
-        Character openBracket = null;
+        Character openBracket = BRACKET_OPEN_NORMAL;
 
         switch (c) {
             case BRACKET_CLOSE_NORMAL:

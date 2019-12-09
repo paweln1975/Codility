@@ -27,8 +27,8 @@ import java.util.Stack;
  * string S consists only of the characters "(" and/or ")".
  */
 public class Nesting extends BaseCodilitySolution {
-    final static char BRACKET_OPEN = '(';
-    final static char BRACKET_CLOSE = ')';
+    public final static char BRACKET_OPEN = '(';
+    public final static char BRACKET_CLOSE = ')';
     public int solution(String S) {
         char[] arr = S.toCharArray();
         Stack<Character> stack = new Stack<>();

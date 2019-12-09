@@ -31,7 +31,7 @@ expected worst-case space complexity is O(1).
 import pl.paweln.codility.core.BaseCodilitySolution;
 
 public class BinaryGap extends BaseCodilitySolution {
-    @Override
+
     public int solution(int N) {
         int binGap = 0;
         int tmpBinGap = 0;

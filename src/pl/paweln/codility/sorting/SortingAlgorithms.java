@@ -405,8 +405,8 @@ public class SortingAlgorithms {
     }
 
     private static boolean compare(int num1, int num2){
-        if (num1 > num2) return false;
-        if (num1 < num2) return true;
+        if (num1 > num2)
+            return false;
         else
             return true;
     }

@@ -1,7 +1,8 @@
-package pl.paweln.codility.sorting;
+package test;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pl.paweln.codility.sorting.SortingAlgorithms;
 
 public class SortingAlgorithmsTest {
     @Test

@@ -46,7 +46,7 @@ public class PermMissingElem extends BaseCodilitySolution {
             sum = sum.add(BigInteger.valueOf(elem));
         }
 
-        BigInteger expectedSum = BigInteger.valueOf(2 + N).multiply(BigInteger.valueOf(1 + N)).divide(BigInteger.valueOf(2));
+        BigInteger expectedSum = BigInteger.valueOf(2L + N).multiply(BigInteger.valueOf(1L + N)).divide(BigInteger.valueOf(2));
 
         return expectedSum.subtract(sum).intValue();
     }
@@ -67,8 +67,8 @@ public class PermMissingElem extends BaseCodilitySolution {
 
     public int solution3(int[] A) {
 
-        long N = A.length + 1;
-        long total = N * (N + 1) / 2;
+        long N = 1L + A.length;
+        long total = N * (N + 1L) / 2L;
 
         for (int i : A) {
 

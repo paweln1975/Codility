@@ -1,4 +1,4 @@
-package pl.paweln.codility.prefixsums;
+package test;
 
 import org.junit.Assert;
 import org.junit.Before;

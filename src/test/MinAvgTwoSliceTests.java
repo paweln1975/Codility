@@ -1,4 +1,4 @@
-package pl.paweln.codility.prefixsums;
+package test;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -55,8 +55,9 @@ public class MinAvgTwoSliceTests {
         A[size - 2] = -10000;
         A[size - 1] = -10000;
 
-        int result = this.s.solution(A);
+        long result = this.s.solution(A);
+        long expValue = (long)size - 3L;
 
-        Assert.assertEquals(size - 3, result);
+        Assert.assertEquals(expValue, result);
     }
 }

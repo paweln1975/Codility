@@ -1,10 +1,11 @@
-package pl.paweln.codility.stacks;
+package test;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.CodilitySolutionFactory;
+import pl.paweln.codility.stacks.Nesting;
 
 public class NestingTest {
     private final CodilitySolutionFactory solutionFactory

@@ -1,4 +1,4 @@
-package pl.paweln.codility.stacks;
+package test;
 
 import org.junit.Assert;
 import org.junit.Before;
