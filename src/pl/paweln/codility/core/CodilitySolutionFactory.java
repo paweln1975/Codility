@@ -67,9 +67,7 @@ public class CodilitySolutionFactory {
         }
         CodilitySolution solution = null;
         switch (p_type) {
-            case ITERATION_BINARY_GAP:
-                solution = new BinaryGap();
-                break;
+
             case ARRAYS_CYCLIC_ROTATION:
                 solution = new CyclicRotation();
                 break;

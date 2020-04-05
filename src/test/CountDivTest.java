@@ -23,6 +23,7 @@ public class CountDivTest {
         int B = 11;
         int K = 2;
         Assert.assertEquals(3, s.solution(A, B, K));
+
     }
 
     @Test
