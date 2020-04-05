@@ -1,7 +1,7 @@
 package pl.paweln.codility.arrays;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
-import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.SolutionInputParams;
 
 /*
 A non-empty array A consisting of N integers is given. The array contains an odd number of elements, and each element
@@ -39,9 +39,29 @@ Complexity:
 expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(1) (not counting the storage required for input arguments).
  */
-public class OddOccurrencesInArray extends BaseCodilitySolution {
+public class OddOccurrencesInArray implements Solution {
 
-    public int solution(int[] A) {
+    @Override
+    public int[] solution(SolutionInputParams params) {
+        int[] arr = params.getFirstArray();
+
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException("Array cannot be empty");
+        }
+
+        if (arr.length > 1000000) {
+            throw new IllegalArgumentException("Array size to big");
+        }
+        if (arr.length % 2 == 0) {
+            throw new IllegalArgumentException("Array size must be odd value");
+        }
+
+        return new int[] {this.solution(arr)};
+
+
+    }
+
+    private int solution(int[] A) {
         int result = 0;
 
         // XOR operator A xor A = 0, B xor 0 = B, therefore A xor B xor C xor A xor B = C
@@ -50,4 +70,6 @@ public class OddOccurrencesInArray extends BaseCodilitySolution {
         }
         return result;
     }
+
+
 }

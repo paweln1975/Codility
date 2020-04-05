@@ -71,9 +71,6 @@ public class CodilitySolutionFactory {
             case ARRAYS_CYCLIC_ROTATION:
                 solution = new CyclicRotation();
                 break;
-            case ARRAYS_ODD_OCCURRENCES_IN_ARRAY:
-                solution = new OddOccurrencesInArray();
-                break;
             case TIME_COMPLEXITY_FROG_JUMP:
                 solution = new FrogJump();
                 break;
