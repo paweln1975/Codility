@@ -56,7 +56,7 @@ public class MinAvgTwoSliceTests {
         A[size - 1] = -10000;
 
         long result = this.s.solution(A);
-        long expValue = (long)size - 3L;
+        long expValue = (long)size - 2L;
 
         Assert.assertEquals(expValue, result);
     }
