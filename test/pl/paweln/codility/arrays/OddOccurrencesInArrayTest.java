@@ -1,4 +1,4 @@
-package pl.paweln.codility.iterations;
+package pl.paweln.codility.arrays;
 
 import org.junit.Assert;
 import org.junit.Before;
