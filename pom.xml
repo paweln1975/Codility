@@ -24,6 +24,7 @@
     <build>
         <sourceDirectory>${src.dir}</sourceDirectory>
         <testSourceDirectory>${src.dir}/test</testSourceDirectory>
+        <defaultGoal>install</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -50,8 +51,6 @@
                 </configuration>
             </plugin>
         </plugins>
-
-
     </build>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
