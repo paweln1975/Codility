@@ -1,11 +1,13 @@
 package pl.paweln.codility.core;
 
+import pl.paweln.codility.arrays.CyclicRotation;
 import pl.paweln.codility.arrays.OddOccurrencesInArray;
 import pl.paweln.codility.iterations.BinaryGap;
 
 public class SolutionFactory {
     public enum CodilityTask {
         ITERATION_BINARY_GAP,
+        ARRAYS_CYCLIC_ROTATION,
         ARRAYS_ODD_OCCURRENCES_IN_ARRAY,
     }
 
@@ -18,7 +20,9 @@ public class SolutionFactory {
             case ITERATION_BINARY_GAP:
                 solution = new BinaryGap();
                 break;
-
+            case ARRAYS_CYCLIC_ROTATION:
+                solution = new CyclicRotation();
+                break;
             case ARRAYS_ODD_OCCURRENCES_IN_ARRAY:
                 solution = new OddOccurrencesInArray();
                 break;

@@ -1,7 +1,9 @@
 package pl.paweln.codility.arrays;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
-import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.SolutionInputParams;
+
+import java.util.Arrays;
 
 /*
 An array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one
@@ -43,10 +45,19 @@ N and K are integers within the range [0..100];
 each element of array A is an integer within the range [-1,000..1,000].
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
  */
-public class CyclicRotation extends BaseCodilitySolution {
+public class CyclicRotation implements Solution {
 
     @Override
-    public int[] solutionTab(int[] A, int K) {
+    public int[] solution(SolutionInputParams params) {
+        int[] tab = params.getFirstArray();
+        int k = params.getK();
+
+        if (k < 0 || k > 100) throw new IllegalArgumentException("K must be within the range 0 .. 100");
+        if (tab.length > 100) throw new IllegalArgumentException("Table length must be lower then 100");
+        return this.solution(tab, k);
+    }
+
+    public int[] solution(int[] A, int K) {
         // table length
         int N = A.length;
         int offset;
@@ -56,9 +67,7 @@ public class CyclicRotation extends BaseCodilitySolution {
         int[] B = new int[N];
 
         if (N == K) {
-            for (int i = 0; i < N; i++) {
-                B[i] = A[i];
-            }
+            B = Arrays.copyOf(A, B.length);
             return B;
         }
 
@@ -83,5 +92,6 @@ public class CyclicRotation extends BaseCodilitySolution {
             return curr+offset;
         }
     }
+
 
 }

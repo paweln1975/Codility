@@ -27,9 +27,7 @@ public class CodilitySolutionFactory {
     private final TaskType defaultTaskType;
 
     public enum TaskType {
-        ITERATION_BINARY_GAP,
-        ARRAYS_CYCLIC_ROTATION,
-        ARRAYS_ODD_OCCURRENCES_IN_ARRAY,
+
         TIME_COMPLEXITY_FROG_JUMP,
         TIME_COMPLEXITY_PERM_MISSING_ELEM,
         TIME_COMPLEXITY_TAPE_EQUILIBRIUM,
@@ -68,9 +66,7 @@ public class CodilitySolutionFactory {
         CodilitySolution solution = null;
         switch (p_type) {
 
-            case ARRAYS_CYCLIC_ROTATION:
-                solution = new CyclicRotation();
-                break;
+
             case TIME_COMPLEXITY_FROG_JUMP:
                 solution = new FrogJump();
                 break;
