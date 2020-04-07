@@ -6,7 +6,7 @@
 
     <groupId>pl.paweln.codility</groupId>
     <artifactId>Codility</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.3-SNAPSHOT</version>
 
     <properties>
         <sonar.projectKey>paweln1975_Codility</sonar.projectKey>

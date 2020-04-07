@@ -31,10 +31,7 @@ public class CodilitySolutionFactory {
         TIME_COMPLEXITY_FROG_JUMP,
         TIME_COMPLEXITY_PERM_MISSING_ELEM,
         TIME_COMPLEXITY_TAPE_EQUILIBRIUM,
-        COUNTING_FROG_RIVER_ONE,
-        COUNTING_MAX_COUNTERS,
-        COUNTING_MISSING_INTEGER,
-        COUNTING_PERM_CHECK,
+
         PREFIX_SUMS_COUNT_DIV,
         PREFIX_SUMS_GENOMIC_RANGE_QUERY,
         PREFIX_SUMS_MIN_AVG_TWO_SLICE,
@@ -76,18 +73,10 @@ public class CodilitySolutionFactory {
             case TIME_COMPLEXITY_TAPE_EQUILIBRIUM:
                 solution = new TapeEquilibrium();
                 break;
-            case COUNTING_FROG_RIVER_ONE:
-                solution = new FrogRiverOne();
-                break;
-            case COUNTING_MAX_COUNTERS:
-                solution = new MaxCounters();
-                break;
-            case COUNTING_MISSING_INTEGER:
-                solution = new MissingInteger();
-                break;
-            case COUNTING_PERM_CHECK:
-                solution = new PermCheck();
-                break;
+
+
+
+
             case PREFIX_SUMS_COUNT_DIV:
                 solution = new CountDiv();
                 break;

@@ -5,25 +5,31 @@ import java.security.InvalidParameterException;
 public class SolutionInputParams {
     private int n;
     private int k;
+    private int x;
     private int[] firstArray;
 
     public int getN() {
         return this.n;
     }
     public int getK() { return this.k; }
+    public int getX() { return this.x; }
+
 
     public int[] getFirstArray() { return this.firstArray; }
 
     private SolutionInputParams(SolutionInputParamsBuilder paramsBuilder) {
-        if (!paramsBuilder.isInitialized) throw new InvalidParameterException("None of SolutionInputParams has been set.");
+        if (!paramsBuilder.isInitialized)
+            throw new InvalidParameterException("None of SolutionInputParams has been set.");
         this.n = paramsBuilder.getN();
         this.k = paramsBuilder.getK();
+        this.x = paramsBuilder.getX();
         this.firstArray = paramsBuilder.getFirstArray();
     }
 
     public static class SolutionInputParamsBuilder {
         private int n = 0;
         private int k = 0;
+        private int x = 0;
         private int[] firstArray = new int[] {};
         private boolean isInitialized = false;
 
@@ -33,6 +39,10 @@ public class SolutionInputParams {
 
         private int getK() {
             return k;
+        }
+
+        private int getX() {
+            return x;
         }
 
         private int[] getFirstArray () {
@@ -51,6 +61,12 @@ public class SolutionInputParams {
 
         public SolutionInputParamsBuilder setK(int k) {
             this.k = k;
+            this.isInitialized = true;
+            return this;
+        }
+
+        public SolutionInputParamsBuilder setX(int x) {
+            this.x = x;
             this.isInitialized = true;
             return this;
         }

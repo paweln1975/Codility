@@ -64,11 +64,28 @@ expected worst-case space complexity is O(N) (not counting the storage required 
  */
 
 import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.SolutionInputParams;
+
 import java.util.Arrays;
 
-public class MaxCounters extends BaseCodilitySolution {
+public class MaxCounters implements Solution {
 
-    public int[] solutionTab(int[] A, int N) {
+    @Override
+    public int[] solution(SolutionInputParams params) {
+        int N = params.getN();
+        int[] tab = params.getFirstArray();
+
+        if (tab.length == 0 || tab.length > 100000)
+            throw new IllegalArgumentException("Array size must be within range 1 .. 100000");
+
+        if (N < 0 || N > 100000)
+            throw new IllegalArgumentException("N must be within range 1 .. 100000");
+
+        return this.solution(N, tab);
+    }
+
+    public int[] solution(int N, int[] A) {
         int lastMax = 0;
         int maxValue = 0;
 
@@ -109,5 +126,6 @@ public class MaxCounters extends BaseCodilitySolution {
 
         return R;
     }
+
 
 }
