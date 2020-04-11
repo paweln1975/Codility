@@ -8,7 +8,7 @@ import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class MinAvgTwoSliceTests {
     private final CodilitySolutionFactory solutionFactory
-            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.PREFIX_SUMS_MIN_AVG_TWO_SLICE);
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.SORTING_DISTINCT);
 
     private CodilitySolution s;
 

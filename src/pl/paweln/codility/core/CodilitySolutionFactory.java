@@ -32,10 +32,7 @@ public class CodilitySolutionFactory {
         TIME_COMPLEXITY_PERM_MISSING_ELEM,
         TIME_COMPLEXITY_TAPE_EQUILIBRIUM,
 
-        PREFIX_SUMS_COUNT_DIV,
-        PREFIX_SUMS_GENOMIC_RANGE_QUERY,
-        PREFIX_SUMS_MIN_AVG_TWO_SLICE,
-        PREFIX_SUMS_PASSING_CARS,
+
         SORTING_DISTINCT,
         SORTING_MAX_PRODUCT_OF_THREE,
         SORTING_TRIANGLE,
@@ -77,18 +74,7 @@ public class CodilitySolutionFactory {
 
 
 
-            case PREFIX_SUMS_COUNT_DIV:
-                solution = new CountDiv();
-                break;
-            case PREFIX_SUMS_GENOMIC_RANGE_QUERY:
-                solution = new GenomicRangeQuery();
-                break;
-            case PREFIX_SUMS_MIN_AVG_TWO_SLICE:
-                solution = new MinAvgTwoSlice();
-                break;
-            case PREFIX_SUMS_PASSING_CARS:
-                solution = new PassingCars();
-                break;
+
             case SORTING_DISTINCT:
                 solution = new Distinct();
                 break;

@@ -8,7 +8,7 @@ import pl.paweln.codility.core.CodilitySolutionFactory;
 public class PassingCarsTest {
 
     private final CodilitySolutionFactory solutionFactory
-            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.PREFIX_SUMS_PASSING_CARS);
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.SORTING_DISTINCT);
 
     private CodilitySolution s;
 
