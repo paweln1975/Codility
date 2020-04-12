@@ -33,10 +33,7 @@ public class CodilitySolutionFactory {
         TIME_COMPLEXITY_TAPE_EQUILIBRIUM,
 
 
-        SORTING_DISTINCT,
-        SORTING_MAX_PRODUCT_OF_THREE,
-        SORTING_TRIANGLE,
-        SORTING_NUMBER_OF_DISCS_INTERSECTIONS,
+
         STACKS_AND_QUEUES_BRACKETS,
         STACKS_AND_QUEUES_FISH,
         STACKS_AND_QUEUES_NESTING,
@@ -75,18 +72,7 @@ public class CodilitySolutionFactory {
 
 
 
-            case SORTING_DISTINCT:
-                solution = new Distinct();
-                break;
-            case SORTING_MAX_PRODUCT_OF_THREE:
-                solution = new MaxProductOfThree();
-                break;
-            case SORTING_TRIANGLE:
-                solution = new Triangle();
-                break;
-            case SORTING_NUMBER_OF_DISCS_INTERSECTIONS:
-                solution = new NumberOfDiscIntersections();
-                break;
+
             case STACKS_AND_QUEUES_BRACKETS:
                 solution = new Brackets();
                 break;

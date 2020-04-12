@@ -6,9 +6,11 @@ import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.CodilitySolutionFactory;
 
+import java.util.Arrays;
+
 public class TriangleTest {
     private final CodilitySolutionFactory solutionFactory
-            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.SORTING_TRIANGLE);
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.STACKS_AND_QUEUES_BRACKETS);
 
     private CodilitySolution s;
 
@@ -72,9 +74,7 @@ public class TriangleTest {
     public void testNegativesExtreme() {
         final int N = 100000;
         int[] A = new int[N];
-        for (int i = 0; i < A.length; i++) {
-            A[i] = -1;
-        }
+        Arrays.fill(A, -1);
         Assert.assertEquals(0, s.solution(A));
     }
 

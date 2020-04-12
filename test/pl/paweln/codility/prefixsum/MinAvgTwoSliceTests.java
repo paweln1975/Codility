@@ -1,20 +1,21 @@
-package test;
+package pl.paweln.codility.prefixsum;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.CodilitySolutionFactory;
+import pl.paweln.codility.core.*;
 
 public class MinAvgTwoSliceTests {
-    private final CodilitySolutionFactory solutionFactory
-            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.SORTING_DISTINCT);
+    private final SolutionFactory solutionFactory = new SolutionFactory();
 
-    private CodilitySolution s;
+    private Solution s;
+    private SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
+    private SolutionInputParams params;
 
     @Before
     public void setUp() {
-        this.s = this.solutionFactory.getDefaultSolution();
+        this.s = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.PREFIX_SUMS_MIN_AVG_TWO_SLICE);
+        this.paramsBuilder = new SolutionInputParams.SolutionInputParamsBuilder();
     }
 
     @Test
@@ -22,7 +23,8 @@ public class MinAvgTwoSliceTests {
         int[] A = new int [] {4, 2, 2, 5, 1, 5, 8};
         int expectedResult = 1;
 
-        int result = this.s.solution(A);
+        this.params = this.paramsBuilder.setFirstArray(A).build();
+        int result = this.s.solution(this.params)[0];
 
         Assert.assertEquals(expectedResult, result);
     }
@@ -30,7 +32,8 @@ public class MinAvgTwoSliceTests {
     @Test
     public void test2Elements() {
         int[] A = new int[] {5, 6};
-        int result = this.s.solution(A);
+        this.params = this.paramsBuilder.setFirstArray(A).build();
+        int result = this.s.solution(this.params)[0];
 
         Assert.assertEquals(0, result);
     }
@@ -38,7 +41,8 @@ public class MinAvgTwoSliceTests {
     @Test
     public void test4Elements() {
         int[] A = new int[] {4, 3, 2, 1};
-        int result = this.s.solution(A);
+        this.params = this.paramsBuilder.setFirstArray(A).build();
+        int result = this.s.solution(this.params)[0];
 
         Assert.assertEquals(2, result);
     }
@@ -55,7 +59,9 @@ public class MinAvgTwoSliceTests {
         A[size - 2] = -10000;
         A[size - 1] = -10000;
 
-        long result = this.s.solution(A);
+        this.params = this.paramsBuilder.setFirstArray(A).build();
+        long result = this.s.solution(this.params)[0];
+
         long expValue = (long)size - 2L;
 
         Assert.assertEquals(expValue, result);

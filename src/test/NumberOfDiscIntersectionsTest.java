@@ -8,7 +8,7 @@ import pl.paweln.codility.core.CodilitySolutionFactory;
 
 public class NumberOfDiscIntersectionsTest {
     private final CodilitySolutionFactory solutionFactory
-            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.SORTING_NUMBER_OF_DISCS_INTERSECTIONS);
+            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.STACKS_AND_QUEUES_BRACKETS);
 
     private CodilitySolution s;
 

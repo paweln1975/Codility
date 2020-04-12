@@ -1,6 +1,8 @@
 package pl.paweln.codility.sorting;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.SolutionInputParams;
+
 import java.util.Arrays;
 /*
 Write a function
@@ -21,9 +23,19 @@ N is an integer within the range [0..100,000];
 each element of array A is an integer within the range [−1,000,000..1,000,000].
  */
 
-public class Distinct extends BaseCodilitySolution {
-
+public class Distinct implements Solution {
     @Override
+    public int[] solution(SolutionInputParams params) {
+        int[] A = params.getFirstArray();
+
+        if (A.length > 100000) {
+            throw new IllegalArgumentException("Array too big.");
+        }
+
+
+        return new int[] {this.solution(A)};
+    }
+
     public int solution(int[] A) {
         int distinct = 0;
         if (A.length > 0) {

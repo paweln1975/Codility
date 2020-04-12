@@ -8,6 +8,10 @@ import pl.paweln.codility.prefixsums.CountDiv;
 import pl.paweln.codility.prefixsums.GenomicRangeQuery;
 import pl.paweln.codility.prefixsums.MinAvgTwoSlice;
 import pl.paweln.codility.prefixsums.PassingCars;
+import pl.paweln.codility.sorting.Distinct;
+import pl.paweln.codility.sorting.MaxProductOfThree;
+import pl.paweln.codility.sorting.NumberOfDiscIntersections;
+import pl.paweln.codility.sorting.Triangle;
 
 public class SolutionFactory {
     public enum CodilityTask {
@@ -26,6 +30,11 @@ public class SolutionFactory {
         PREFIX_SUMS_GENOMIC_RANGE_QUERY,
         PREFIX_SUMS_MIN_AVG_TWO_SLICE,
         PREFIX_SUMS_PASSING_CARS,
+
+        SORTING_DISTINCT,
+        SORTING_MAX_PRODUCT_OF_THREE,
+        SORTING_TRIANGLE,
+        SORTING_NUMBER_OF_DISCS_INTERSECTIONS,
     }
 
     public Solution getSolution(CodilityTask pTask) {
@@ -61,14 +70,26 @@ public class SolutionFactory {
             case PREFIX_SUMS_COUNT_DIV:
                 solution = new CountDiv();
                 break;
-//            case PREFIX_SUMS_GENOMIC_RANGE_QUERY:
-//                solution = new GenomicRangeQuery();
+            case PREFIX_SUMS_GENOMIC_RANGE_QUERY:
+                solution = new GenomicRangeQuery();
+                break;
+            case PREFIX_SUMS_MIN_AVG_TWO_SLICE:
+                solution = new MinAvgTwoSlice();
+                break;
+            case PREFIX_SUMS_PASSING_CARS:
+                solution = new PassingCars();
+                break;
+            case SORTING_DISTINCT:
+                solution = new Distinct();
+                break;
+            case SORTING_MAX_PRODUCT_OF_THREE:
+                solution = new MaxProductOfThree();
+                break;
+//            case SORTING_TRIANGLE:
+//                solution = new Triangle();
 //                break;
-//            case PREFIX_SUMS_MIN_AVG_TWO_SLICE:
-//                solution = new MinAvgTwoSlice();
-//                break;
-//            case PREFIX_SUMS_PASSING_CARS:
-//                solution = new PassingCars();
+//            case SORTING_NUMBER_OF_DISCS_INTERSECTIONS:
+//                solution = new NumberOfDiscIntersections();
 //                break;
         }
         return solution;

@@ -1,20 +1,21 @@
-package test;
+package pl.paweln.codility.prefixsum;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import pl.paweln.codility.core.CodilitySolution;
-import pl.paweln.codility.core.CodilitySolutionFactory;
+import pl.paweln.codility.core.*;
 
 public class GenomicRangeQueryTest {
-    private final CodilitySolutionFactory solutionFactory
-            = new CodilitySolutionFactory (CodilitySolutionFactory.TaskType.SORTING_DISTINCT);
+    private final SolutionFactory solutionFactory = new SolutionFactory();
 
-    private CodilitySolution s;
+    private Solution s;
+    private SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
+    private SolutionInputParams params;
 
     @Before
     public void setUp() {
-        this.s = this.solutionFactory.getDefaultSolution();
+        this.s = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.PREFIX_SUMS_GENOMIC_RANGE_QUERY);
+        this.paramsBuilder = new SolutionInputParams.SolutionInputParamsBuilder();
     }
 
     @Test
@@ -24,7 +25,12 @@ public class GenomicRangeQueryTest {
         int[] Q = new int [] {4, 5, 6};
         int[] expectedResult = new int[] {2, 4, 1};
 
-        int[] result = this.s.solution(S, P, Q);
+        this.params = this.paramsBuilder
+                .setStringValue(S)
+                .setFirstArray(P)
+                .setSecondArray(Q).build();
+
+        int[] result = this.s.solution(this.params);
 
         Assert.assertArrayEquals(expectedResult, result);
     }
@@ -36,7 +42,12 @@ public class GenomicRangeQueryTest {
         int[] Q = new int [] {0, 1, 1};
         int[] expectedResult = new int[] {1, 1, 2};
 
-        int[] result = this.s.solution(S, P, Q);
+        this.params = this.paramsBuilder
+                .setStringValue(S)
+                .setFirstArray(P)
+                .setSecondArray(Q).build();
+
+        int[] result = this.s.solution(this.params);
 
         Assert.assertArrayEquals(expectedResult, result);
     }
@@ -65,7 +76,12 @@ public class GenomicRangeQueryTest {
             expectedResult[i] = 1;
         }
 
-        int[] result = this.s.solution(S, P, Q);
+        this.params = this.paramsBuilder
+                .setStringValue(S)
+                .setFirstArray(P)
+                .setSecondArray(Q).build();
+
+        int[] result = this.s.solution(this.params);
 
         Assert.assertArrayEquals(expectedResult, result);
     }

@@ -8,7 +8,9 @@ public class SolutionInputParams {
     private int x;
     private int a;
     private int b;
+    private String s;
     private int[] firstArray;
+    private int[] secondArray;
 
     public int getN() {
         return this.n;
@@ -19,9 +21,11 @@ public class SolutionInputParams {
         return this.a;
     }
     public int getB() { return this.b; }
-
+    public String getStringValue() { return this.s; }
 
     public int[] getFirstArray() { return this.firstArray; }
+    public int[] getSecondArray() { return this.secondArray; }
+
 
     private SolutionInputParams(SolutionInputParamsBuilder paramsBuilder) {
         if (!paramsBuilder.isInitialized)
@@ -31,7 +35,9 @@ public class SolutionInputParams {
         this.x = paramsBuilder.getX();
         this.a = paramsBuilder.getA();
         this.b = paramsBuilder.getB();
+        this.s = paramsBuilder.getStringValue();
         this.firstArray = paramsBuilder.getFirstArray();
+        this.secondArray = paramsBuilder.getSecondArray();
     }
 
     public static class SolutionInputParamsBuilder {
@@ -40,7 +46,9 @@ public class SolutionInputParams {
         private int x = 0;
         private int a = 0;
         private int b = 0;
+        private String s = "";
         private int[] firstArray = new int[] {};
+        private int[] secondArray = new int[] {};
         private boolean isInitialized = false;
 
         private int getN() {
@@ -58,9 +66,13 @@ public class SolutionInputParams {
         private int getB() {
             return b;
         }
+        private String getStringValue() { return s; }
 
         private int[] getFirstArray () {
             return this.firstArray;
+        }
+        private int[] getSecondArray () {
+            return this.secondArray;
         }
 
         private boolean isInitialized() {
@@ -97,8 +109,20 @@ public class SolutionInputParams {
             return this;
         }
 
+        public SolutionInputParamsBuilder setStringValue(String s) {
+            this.s = s;
+            this.isInitialized = true;
+            return this;
+        }
+
         public SolutionInputParamsBuilder setFirstArray(int[] pArray) {
             this.firstArray = pArray;
+            this.isInitialized = true;
+            return this;
+        }
+
+        public SolutionInputParamsBuilder setSecondArray(int[] pArray) {
+            this.secondArray = pArray;
             this.isInitialized = true;
             return this;
         }

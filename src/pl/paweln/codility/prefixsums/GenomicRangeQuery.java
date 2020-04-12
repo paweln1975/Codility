@@ -1,6 +1,7 @@
 package pl.paweln.codility.prefixsums;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.SolutionInputParams;
 
 /**
  * A DNA sequence can be represented as a string consisting of the letters A, C, G and T, which correspond to the types
@@ -49,13 +50,29 @@ import pl.paweln.codility.core.BaseCodilitySolution;
  * string S consists only of upper-case English letters A, C, G, T.
  */
 
-public class GenomicRangeQuery extends BaseCodilitySolution {
+public class GenomicRangeQuery implements Solution {
     @Override
-    public int[] solution(String S, int[] P, int[] Q) {
+    public int[] solution(SolutionInputParams params) {
+        String S = params.getStringValue();
+        int[] P = params.getFirstArray();
+        int[] Q = params.getSecondArray();
+
         if (P.length != Q.length) {
-            throw new IllegalArgumentException("P has different size then Q.");
+            throw new IllegalArgumentException("Tables have different size.");
         }
 
+        if (S.length() == 0 || S.length() > 100000) {
+            throw new IllegalArgumentException("String length is incorrect.");
+        }
+
+        if (P.length == 0 || P.length > 50000) {
+            throw new IllegalArgumentException("First table's length is incorrect.");
+        }
+
+        return this.solution(S, P, Q);
+    }
+
+    public int[] solution(String S, int[] P, int[] Q) {
         int[] result = new int [P.length];
         int dnaLength = S.length();
         int[] resultValues = new int[] {1, 2, 3, 4};
@@ -109,6 +126,7 @@ public class GenomicRangeQuery extends BaseCodilitySolution {
         }
         return result;
     }
+
 
 
 }
