@@ -1,7 +1,6 @@
 package pl.paweln.codility.prefixsums;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
-import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 /**
@@ -47,7 +46,7 @@ import pl.paweln.codility.core.SolutionInputParams;
  * each element of array A is an integer within the range [−10,000..10,000].
  */
 
-public class MinAvgTwoSlice implements Solution {
+public class MinAvgTwoSlice implements CodilitySolution {
 
     @Override
     public int[] solution(SolutionInputParams params) {

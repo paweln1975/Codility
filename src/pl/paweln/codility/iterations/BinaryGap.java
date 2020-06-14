@@ -29,10 +29,10 @@ expected worst-case space complexity is O(1).
 */
 
 
-import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
-public class BinaryGap implements Solution {
+public class BinaryGap implements CodilitySolution {
 
     @Override
     public int[] solution(SolutionInputParams params) {

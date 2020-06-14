@@ -1,7 +1,6 @@
 package pl.paweln.codility.prefixsums;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
-import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 /**
@@ -46,7 +45,7 @@ import pl.paweln.codility.core.SolutionInputParams;
  * each element of array A is an integer that can have one of the following values: 0, 1.
  */
 
-public class PassingCars implements Solution {
+public class PassingCars implements CodilitySolution {
     private final static int MAX_RESULT = 1000000000;
     private final static int VAL_EAST = 0;
     private final static int VAL_WEST = 1;

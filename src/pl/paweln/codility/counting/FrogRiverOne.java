@@ -1,7 +1,6 @@
 package pl.paweln.codility.counting;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
-import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 /*
@@ -58,7 +57,7 @@ Complexity:
 expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(X) (not counting the storage required for input arguments).
  */
-public class FrogRiverOne implements Solution {
+public class FrogRiverOne implements CodilitySolution {
 
     @Override
     public int[] solution(SolutionInputParams params) {

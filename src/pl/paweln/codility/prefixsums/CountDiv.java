@@ -1,6 +1,6 @@
 package pl.paweln.codility.prefixsums;
 
-import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 /**
@@ -21,7 +21,7 @@ import pl.paweln.codility.core.SolutionInputParams;
  * K is an integer within the range [1..2,000,000,000];
  * A ≤ B.
  */
-public class CountDiv implements Solution {
+public class CountDiv implements CodilitySolution {
     @Override
     public int[] solution(SolutionInputParams params) {
         int A = params.getA();

@@ -1,6 +1,6 @@
 package pl.paweln.codility.prefixsums;
 
-import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 /**
@@ -50,7 +50,7 @@ import pl.paweln.codility.core.SolutionInputParams;
  * string S consists only of upper-case English letters A, C, G, T.
  */
 
-public class GenomicRangeQuery implements Solution {
+public class GenomicRangeQuery implements CodilitySolution {
     @Override
     public int[] solution(SolutionInputParams params) {
         String S = params.getStringValue();

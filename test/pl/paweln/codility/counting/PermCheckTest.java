@@ -9,7 +9,7 @@ import pl.paweln.codility.core.*;
 public class PermCheckTest {
     protected final SolutionFactory solutionFactory = new SolutionFactory();
 
-    protected Solution s;
+    protected CodilitySolution s;
     protected SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
     protected SolutionInputParams params;
 

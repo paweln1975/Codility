@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class DistinctTest {
     private final SolutionFactory solutionFactory = new SolutionFactory();
 
-    private Solution s;
+    private CodilitySolution s;
     private SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
     private SolutionInputParams params;
 

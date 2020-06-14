@@ -1,9 +1,6 @@
 package pl.paweln.codility.counting;
 
-import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
-import pl.paweln.codility.core.Solution;
 import pl.paweln.codility.core.SolutionFactory;
 import pl.paweln.codility.core.SolutionInputParams;
 

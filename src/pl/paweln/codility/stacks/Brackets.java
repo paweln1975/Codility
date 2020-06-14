@@ -1,6 +1,7 @@
 package pl.paweln.codility.stacks;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.LinkedList;
 
@@ -26,7 +27,7 @@ import java.util.LinkedList;
  * N is an integer within the range [0..200,000];
  * string S consists only of the following characters: "(", "{", "[", "]", "}" and/or ")".
  */
-public class Brackets extends BaseCodilitySolution {
+public class Brackets implements CodilitySolution {
     private final char BRACKET_OPEN_NORMAL = '(';
     private final char BRACKET_CLOSE_NORMAL = ')';
     private final char BRACKET_OPEN_TAB = '[';
@@ -34,9 +35,20 @@ public class Brackets extends BaseCodilitySolution {
     private final char BRACKET_OPEN_SET = '{';
     private final char BRACKET_CLOSE_SET = '}';
 
-    private LinkedList<Character> stack = new LinkedList<Character>();
+    private LinkedList<Character> stack = new LinkedList<>();
 
     @Override
+    public int[] solution(SolutionInputParams params) {
+        String s = params.getStringValue();
+        int N = s.length();
+        if (N > 200000) {
+            throw new IllegalArgumentException("Length of input string too high.");
+        }
+
+        return new int[] {this.solution(s)};
+    }
+
+
     public int solution (String s) {
 
         char[] tab = s.toCharArray();
@@ -94,4 +106,6 @@ public class Brackets extends BaseCodilitySolution {
 
         this.stack.removeLast();
     }
+
+
 }

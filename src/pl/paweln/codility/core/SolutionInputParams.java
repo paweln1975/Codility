@@ -6,6 +6,8 @@ public class SolutionInputParams {
     private int n;
     private int k;
     private int x;
+    private int y;
+    private int d;
     private int a;
     private int b;
     private String s;
@@ -17,6 +19,8 @@ public class SolutionInputParams {
     }
     public int getK() { return this.k; }
     public int getX() { return this.x; }
+    public int getY() { return this.y; }
+    public int getD() { return this.d; }
     public int getA() {
         return this.a;
     }
@@ -33,6 +37,8 @@ public class SolutionInputParams {
         this.n = paramsBuilder.getN();
         this.k = paramsBuilder.getK();
         this.x = paramsBuilder.getX();
+        this.y = paramsBuilder.getY();
+        this.d = paramsBuilder.getD();
         this.a = paramsBuilder.getA();
         this.b = paramsBuilder.getB();
         this.s = paramsBuilder.getStringValue();
@@ -44,6 +50,8 @@ public class SolutionInputParams {
         private int n = 0;
         private int k = 0;
         private int x = 0;
+        private int y = 0;
+        private int d = 0;
         private int a = 0;
         private int b = 0;
         private String s = "";
@@ -56,6 +64,12 @@ public class SolutionInputParams {
         }
         private int getK() {
             return k;
+        }
+        private int getY() {
+            return y;
+        }
+        private int getD() {
+            return d;
         }
         private int getX() {
             return x;
@@ -93,6 +107,18 @@ public class SolutionInputParams {
 
         public SolutionInputParamsBuilder setX(int x) {
             this.x = x;
+            this.isInitialized = true;
+            return this;
+        }
+
+        public SolutionInputParamsBuilder setY(int y) {
+            this.y = y;
+            this.isInitialized = true;
+            return this;
+        }
+
+        public SolutionInputParamsBuilder setD(int d) {
+            this.d = d;
             this.isInitialized = true;
             return this;
         }

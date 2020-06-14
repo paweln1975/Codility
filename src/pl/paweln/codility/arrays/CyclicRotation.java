@@ -1,6 +1,6 @@
 package pl.paweln.codility.arrays;
 
-import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.Arrays;
@@ -45,7 +45,7 @@ N and K are integers within the range [0..100];
 each element of array A is an integer within the range [-1,000..1,000].
 In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
  */
-public class CyclicRotation implements Solution {
+public class CyclicRotation implements CodilitySolution {
 
     @Override
     public int[] solution(SolutionInputParams params) {

@@ -8,7 +8,7 @@ import pl.paweln.codility.core.*;
 public class FrogRiverOneTest {
     private final SolutionFactory solutionFactory = new SolutionFactory();
 
-    private Solution s;
+    private CodilitySolution s;
     private SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
     private SolutionInputParams params;
 

@@ -1,6 +1,6 @@
 package pl.paweln.codility.sorting;
 
-import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.Arrays;
@@ -45,7 +45,7 @@ N is an integer within the range [3..100,000];
 each element of array A is an integer within the range [−1,000..1,000].
  */
 
-public class MaxProductOfThree implements Solution {
+public class MaxProductOfThree implements CodilitySolution {
     @Override
     public int[] solution(SolutionInputParams params) {
         int[] A = params.getFirstArray();

@@ -1,7 +1,6 @@
 package pl.paweln.codility.counting;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
-import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.Arrays;
@@ -30,7 +29,7 @@ Complexity:
 expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
  */
-public class MissingInteger implements Solution {
+public class MissingInteger implements CodilitySolution {
 
     @Override
     public int[] solution(SolutionInputParams params) {

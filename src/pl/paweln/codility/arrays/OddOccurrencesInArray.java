@@ -1,6 +1,6 @@
 package pl.paweln.codility.arrays;
 
-import pl.paweln.codility.core.Solution;
+import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 /*
@@ -39,7 +39,7 @@ Complexity:
 expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(1) (not counting the storage required for input arguments).
  */
-public class OddOccurrencesInArray implements Solution {
+public class OddOccurrencesInArray implements CodilitySolution {
 
     @Override
     public int[] solution(SolutionInputParams params) {

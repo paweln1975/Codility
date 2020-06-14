@@ -1,6 +1,7 @@
 package pl.paweln.codility.timecomplexity;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
 
 /*
 A small frog wants to get to the other side of the road. The frog is currently located at position X and wants to get
@@ -34,10 +35,19 @@ Complexity:
 expected worst-case time complexity is O(1);
 expected worst-case space complexity is O(1).
  */
-public class FrogJump extends BaseCodilitySolution {
+public class FrogJump implements CodilitySolution {
+    @Override
+    public int[] solution(SolutionInputParams params) {
+        int X = params.getX();
+        int Y = params.getY();
+        int D = params.getD();
+        if (X > Y) throw new IllegalArgumentException("X=" + X + " must be lower or equal to y=" + Y);
+
+        return new int[] {this.solution(X, Y, D)};
+    }
 
     public int solution (int X, int Y, int D) {
-        if (X > Y) throw new IllegalArgumentException("X=" + X + " must be lower or equal to y=" + Y);
+
         if (X == Y) {
             return 0;
         } else {
@@ -47,4 +57,6 @@ public class FrogJump extends BaseCodilitySolution {
             return jumps;
         }
     }
+
+
 }
