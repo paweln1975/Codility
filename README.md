@@ -3,11 +3,14 @@ This is about mastering in algorithms from Codility site and verifying tools lik
 
 
 ##TODOs
-- [ ] changing the interface to be aligned with clean code rules
-- [ ] changing the package of the automated tests
-- [ ] maven - versioning and SNAPSHOT, how to work with versions, releaseing, tagging
+- [X] changing the interface to be aligned with clean code rules
+- [x] changing the package of the automated tests
+- [ ] maven - versioning and SNAPSHOTs, how to work with versions 
+- [ ] releaseing, tagging
 - [ ] next algorithm
 - [ ] full automation in project retrieving from github and building
+- [ ] sorting algorithm with subclasses per each algorithm
+- [ ] multiple solutions handling for classes MaxProductOfThree and PermMissingElem - test them
 
 
 Examples of formatting
