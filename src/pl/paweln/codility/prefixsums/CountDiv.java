@@ -1,6 +1,7 @@
 package pl.paweln.codility.prefixsums;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
 
 /**
  * Write a function:
@@ -20,8 +21,21 @@ import pl.paweln.codility.core.BaseCodilitySolution;
  * K is an integer within the range [1..2,000,000,000];
  * A ≤ B.
  */
-public class CountDiv extends BaseCodilitySolution {
+public class CountDiv implements CodilitySolution {
     @Override
+    public int[] solution(SolutionInputParams params) {
+        int A = params.getA();
+        int B = params.getB();
+        int K = params.getK();
+
+        if (A > B) throw new IllegalArgumentException("A > B");
+        if (A < 0 || A > 2000000000) throw new IllegalArgumentException("Invalid A value - not in range.");
+        if (B > 2000000000) throw new IllegalArgumentException("Invalid B value - not in range.");
+        if (K < 1 || K > 2000000000) throw new IllegalArgumentException("Invalid K value - not in range.");
+
+        return new int[] {this.solution(A, B, K)};
+    }
+
     public int solution(int A, int B, int K) {
         if (A > B) throw new IllegalArgumentException("A > B");
         int result = 0;
@@ -31,4 +45,6 @@ public class CountDiv extends BaseCodilitySolution {
         result+= B / K - A / K;
         return result;
     }
+
+
 }

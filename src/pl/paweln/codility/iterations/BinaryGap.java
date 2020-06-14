@@ -28,11 +28,21 @@ expected worst-case time complexity is O(log(N));
 expected worst-case space complexity is O(1).
 */
 
-import pl.paweln.codility.core.BaseCodilitySolution;
 
-public class BinaryGap extends BaseCodilitySolution {
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
 
-    public int solution(int N) {
+public class BinaryGap implements CodilitySolution {
+
+    @Override
+    public int[] solution(SolutionInputParams params) {
+        int N = params.getN();
+        if (N < 0) throw new IllegalArgumentException("InputParameterValidation: N cannot be negative.");
+
+        return new int[] {this.solution(N)};
+    }
+
+    private int solution(int N) {
         int binGap = 0;
         int tmpBinGap = 0;
         boolean foundStart = false;
@@ -48,4 +58,6 @@ public class BinaryGap extends BaseCodilitySolution {
         }
         return binGap;
     }
+
+
 }

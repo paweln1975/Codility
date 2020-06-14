@@ -1,6 +1,7 @@
 package pl.paweln.codility.prefixsums;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
 
 /**
  * A non-empty array A consisting of N integers is given. A pair of integers (P, Q), such that 0 ≤ P < Q < N, is called a slice of array A (notice that the slice contains at least two elements). The average of a slice (P, Q) is the sum of A[P] + A[P + 1] + ... + A[Q] divided by the length of the slice. To be precise, the average equals (A[P] + A[P + 1] + ... + A[Q]) / (Q − P + 1).
@@ -45,13 +46,26 @@ import pl.paweln.codility.core.BaseCodilitySolution;
  * each element of array A is an integer within the range [−10,000..10,000].
  */
 
-public class MinAvgTwoSlice extends BaseCodilitySolution {
+public class MinAvgTwoSlice implements CodilitySolution {
 
     @Override
-    public int solution(int[] A) {
+    public int[] solution(SolutionInputParams params) {
+        int[] A = params.getFirstArray();
+
         if (A.length < 2) {
             throw new IllegalArgumentException("Array too small.");
         }
+
+        if (A.length > 100000) {
+            throw new IllegalArgumentException("Array too big.");
+        }
+
+
+        return new int[] {this.solution(A)};
+    }
+
+    public int solution(int[] A) {
+
 
         int idxOfMinSliceAvg = 0;
         float minSliceAvg = 0;
@@ -91,6 +105,7 @@ public class MinAvgTwoSlice extends BaseCodilitySolution {
         float count = (float)endIdx - (float)startIdx + 1f;
         return sum / count;
     }
+
 
 
 }

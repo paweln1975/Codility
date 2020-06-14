@@ -1,6 +1,7 @@
 package pl.paweln.codility.stacks;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -56,10 +57,13 @@ import java.util.ListIterator;
  * each element of array B is an integer that can have one of the following values: 0, 1;
  * the elements of A are all distinct.
  */
-public class Fish extends BaseCodilitySolution {
+public class Fish implements CodilitySolution {
     private List<RiverFish> fishList = new LinkedList<>();
 
-    public int solution(int[] A, int[] B) {
+    @Override
+    public int[] solution(SolutionInputParams params) {
+        int[] A = params.getFirstArray();
+        int[] B = params.getSecondArray();
         if (A.length != B.length) {
             throw new IllegalArgumentException("Arrays sizes are not equal.");
         }
@@ -67,6 +71,10 @@ public class Fish extends BaseCodilitySolution {
             throw new IllegalArgumentException("Arrays are empty");
         }
 
+        return new int[] {this.solution(A, B)};
+    }
+
+    public int solution(int[] A, int[] B) {
         if (A.length == 1) {
             return A.length;
         }
@@ -145,6 +153,7 @@ public class Fish extends BaseCodilitySolution {
                 left.direction == Direction.DOWNSTREAM &&
                 right.direction == Direction.UPSTREAM;
     }
+
 
 }
 

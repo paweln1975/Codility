@@ -1,6 +1,8 @@
 package pl.paweln.codility.counting;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -54,7 +56,17 @@ Complexity:
 expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
  */
-public class PermCheck extends BaseCodilitySolution {
+public class PermCheck implements CodilitySolution {
+    @Override
+    public int[] solution(SolutionInputParams params) {
+        int[] tab = params.getFirstArray();
+
+        if (tab.length == 0 || tab.length > 100000)
+            throw new IllegalArgumentException("Array size must be within range 1 .. 100000");
+
+        return new int[] {this.solution(tab)};
+    }
+
     public int solution(int[] A) {
 
         if (A.length == 0) return 0;
@@ -71,33 +83,6 @@ public class PermCheck extends BaseCodilitySolution {
         return missingPermValues.size() == 0 ? 1 : 0;
     }
 
-    public int solution2(int[] A) {
 
-        if (A.length == 0) return 0;
-
-        int sumOfElements = 0;
-        int expectedSumOfElements = 0;
-        int[] countArray = new int[A.length + 1];
-
-        for (int i = 0; i < A.length; i++) {
-
-            if (A[i] >= countArray.length)
-                return 0;
-
-            if (countArray[A[i]] != 0)
-                return 0;
-
-            countArray[A[i]]++;
-
-            sumOfElements += A[i];
-            expectedSumOfElements += i + 1;
-
-        }
-
-        if (sumOfElements == expectedSumOfElements)
-            return 1;
-        else
-            return 0;
-    }
 
 }

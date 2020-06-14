@@ -1,7 +1,7 @@
 package pl.paweln.codility.sorting;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
 import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.Arrays;
 
@@ -40,12 +40,18 @@ N is an integer within the range [0..100,000];
 each element of array A is an integer within the range [0..2,147,483,647].
 
  */
-public class NumberOfDiscIntersections extends BaseCodilitySolution implements CodilitySolution {
+public class NumberOfDiscIntersections implements CodilitySolution {
     private final static int MAX_INTERSECTIONS = 10000000;
+
     @Override
+    public int[] solution(SolutionInputParams params) {
+        int[] A = params.getFirstArray();
+
+        return new int[] {this.solution(A)};
+    }
+
+
     public int solution(int[] A) {
-
-
         CircleEnd[] circleEnds = new CircleEnd[2* A.length];
         for (int i = 0; i < A.length; i++) {
             // create start circle position
@@ -74,7 +80,8 @@ public class NumberOfDiscIntersections extends BaseCodilitySolution implements C
         return intersections;
     }
 
-    
+
+
 }
 
 class CircleEnd implements Comparable<CircleEnd> {

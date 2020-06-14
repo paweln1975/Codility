@@ -1,6 +1,7 @@
 package pl.paweln.codility.stacks;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.Stack;
 
@@ -34,7 +35,17 @@ import java.util.Stack;
  * N is an integer within the range [1..100,000];
  * each element of array H is an integer within the range [1..1,000,000,000].
  */
-public class StoneWall extends BaseCodilitySolution {
+public class StoneWall implements CodilitySolution {
+    @Override
+    public int[] solution(SolutionInputParams params) {
+        int[] H = params.getFirstArray();
+        int N = H.length;
+        if (N > 100000) {
+            throw new IllegalArgumentException("Array to big.");
+        }
+        return new int[] {this.solution(H)};
+    }
+
     // solution available here: https://codility.com/media/train/solution-stone-wall.pdf
     public int solution (int[] H) {
         Stack<Integer> stack = new Stack<>();
@@ -57,4 +68,6 @@ public class StoneWall extends BaseCodilitySolution {
         }
         return count;
     }
+
+
 }

@@ -1,6 +1,7 @@
 package pl.paweln.codility.stacks;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.Stack;
 
@@ -26,9 +27,21 @@ import java.util.Stack;
  * N is an integer within the range [0..1,000,000];
  * string S consists only of the characters "(" and/or ")".
  */
-public class Nesting extends BaseCodilitySolution {
+public class Nesting implements CodilitySolution {
     public final static char BRACKET_OPEN = '(';
     public final static char BRACKET_CLOSE = ')';
+
+    @Override
+    public int[] solution(SolutionInputParams params) {
+        String s = params.getStringValue();
+        int N = s.length();
+        if (N > 1000000) {
+            throw new IllegalArgumentException("Length of input string too high.");
+        }
+
+        return new int[] {this.solution(s)};
+    }
+
     public int solution(String S) {
         char[] arr = S.toCharArray();
         Stack<Character> stack = new Stack<>();
@@ -50,4 +63,6 @@ public class Nesting extends BaseCodilitySolution {
         }
         return stack.empty() ? 1 : 0;
     }
+
+
 }

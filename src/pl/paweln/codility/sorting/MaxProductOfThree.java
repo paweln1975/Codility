@@ -1,6 +1,8 @@
 package pl.paweln.codility.sorting;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
+
 import java.util.Arrays;
 /*
 A non-empty array A consisting of N integers is given. The product of triplet (P, Q, R) equates to
@@ -43,17 +45,28 @@ N is an integer within the range [3..100,000];
 each element of array A is an integer within the range [−1,000..1,000].
  */
 
-public class MaxProductOfThree extends BaseCodilitySolution {
+public class MaxProductOfThree implements CodilitySolution {
     @Override
+    public int[] solution(SolutionInputParams params) {
+        int[] A = params.getFirstArray();
+
+        if (A.length < 3) {
+            throw new IllegalArgumentException("Array too small. Minimal length is 3.");
+        }
+
+        if (A.length > 100000) {
+            throw new IllegalArgumentException("Array too big.");
+        }
+
+
+        return new int[] {this.solution(A)};
+    }
+
     public int solution(int[] A) {
         int N = A.length;
         int product;
         int positiveCounter = 0;
         int[] values = new int[3];
-
-        if (N < 3) {
-            throw new IllegalArgumentException("Array too small. Minimal length is 3.");
-        }
 
         if (N == 3) {
             product = A[N-1] * A[N-2] * A[N-3];

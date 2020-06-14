@@ -6,7 +6,7 @@
 
     <groupId>pl.paweln.codility</groupId>
     <artifactId>Codility</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.3-SNAPSHOT</version>
 
     <properties>
         <sonar.projectKey>paweln1975_Codility</sonar.projectKey>
@@ -16,6 +16,7 @@
         <sonar.tests>src/test</sonar.tests>
         <sonar.test.inclusions>**/*Test.java</sonar.test.inclusions>
         <src.dir>src</src.dir>
+        <test.dir>test</test.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -23,7 +24,7 @@
 
     <build>
         <sourceDirectory>${src.dir}</sourceDirectory>
-        <testSourceDirectory>${src.dir}/test</testSourceDirectory>
+        <testSourceDirectory>${test.dir}</testSourceDirectory>
         <defaultGoal>install</defaultGoal>
         <plugins>
             <plugin>

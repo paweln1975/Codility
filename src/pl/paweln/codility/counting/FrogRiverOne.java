@@ -1,6 +1,7 @@
 package pl.paweln.codility.counting;
 
-import pl.paweln.codility.core.BaseCodilitySolution;
+import pl.paweln.codility.core.CodilitySolution;
+import pl.paweln.codility.core.SolutionInputParams;
 
 /*
 A small frog wants to get to the other side of a river. The frog is initially located on one bank of the river
@@ -56,8 +57,23 @@ Complexity:
 expected worst-case time complexity is O(N);
 expected worst-case space complexity is O(X) (not counting the storage required for input arguments).
  */
-public class FrogRiverOne extends BaseCodilitySolution {
-    public int solution(int[] A, int X) {
+public class FrogRiverOne implements CodilitySolution {
+
+    @Override
+    public int[] solution(SolutionInputParams params) {
+        int X = params.getX();
+        int[] tab = params.getFirstArray();
+
+        if (tab.length == 0 || tab.length > 100000)
+            throw new IllegalArgumentException("Array size must be within range 1 .. 100000");
+
+        if (X < 0 || X > 100000)
+            throw new IllegalArgumentException("X must be within range 1 .. 100000");
+
+        return new int[] {this.solution(X, tab)};
+    }
+
+    public int solution(int X, int[] A) {
         int[] tabPositions = new int[X];
         int expectedSum = (1 + X) * X / 2;
         int pos = 0;
@@ -81,6 +97,7 @@ public class FrogRiverOne extends BaseCodilitySolution {
             return -1;
         }
     }
+
 
 
 }
