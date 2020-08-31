@@ -4,6 +4,7 @@ import pl.paweln.codility.arrays.CyclicRotation;
 import pl.paweln.codility.arrays.OddOccurrencesInArray;
 import pl.paweln.codility.counting.*;
 import pl.paweln.codility.iterations.BinaryGap;
+import pl.paweln.codility.leader.Dominator;
 import pl.paweln.codility.prefixsums.CountDiv;
 import pl.paweln.codility.prefixsums.GenomicRangeQuery;
 import pl.paweln.codility.prefixsums.MinAvgTwoSlice;
@@ -50,7 +51,9 @@ public class SolutionFactory {
 
         TIME_COMPLEXITY_FROG_JUMP,
         TIME_COMPLEXITY_PERM_MISSING_ELEM,
-        TIME_COMPLEXITY_TAPE_EQUILIBRIUM
+        TIME_COMPLEXITY_TAPE_EQUILIBRIUM,
+
+        LEADER_DOMINATOR,
     }
 
     public CodilitySolution getSolution(CodilityTask pTask) {
@@ -127,6 +130,9 @@ public class SolutionFactory {
                 break;
             case TIME_COMPLEXITY_TAPE_EQUILIBRIUM:
                 codilitySolution = new TapeEquilibrium();
+                break;
+            case LEADER_DOMINATOR:
+                codilitySolution = new Dominator();
                 break;
         }
         return codilitySolution;
