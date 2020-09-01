@@ -5,10 +5,17 @@ This is about mastering in algorithms from Codility site and verifying tools lik
 ##TODOs
 - [X] changing the interface to be aligned with clean code rules
 - [x] changing the package of the automated tests
+
+- next algorithms:
+-  [x] Leader: Dominator
+-  [ ] Leader: EquiLeader
+
+- building:
+- [ ] full automation in project retrieving from github and building
 - [ ] maven - versioning and SNAPSHOTs, how to work with versions 
 - [ ] releaseing, tagging
-- [ ] next algorithm
-- [ ] full automation in project retrieving from github and building
+
+- code refactoring:
 - [ ] sorting algorithm with subclasses per each algorithm
 - [ ] multiple solutions handling for classes MaxProductOfThree and PermMissingElem - test them
 
