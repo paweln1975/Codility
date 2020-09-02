@@ -5,6 +5,9 @@ import pl.paweln.codility.arrays.OddOccurrencesInArray;
 import pl.paweln.codility.counting.*;
 import pl.paweln.codility.iterations.BinaryGap;
 import pl.paweln.codility.leader.Dominator;
+import pl.paweln.codility.leader.DominatorN2;
+import pl.paweln.codility.leader.DominatorNLogN;
+import pl.paweln.codility.leader.EquiLeader;
 import pl.paweln.codility.prefixsums.CountDiv;
 import pl.paweln.codility.prefixsums.GenomicRangeQuery;
 import pl.paweln.codility.prefixsums.MinAvgTwoSlice;
@@ -54,6 +57,9 @@ public class SolutionFactory {
         TIME_COMPLEXITY_TAPE_EQUILIBRIUM,
 
         LEADER_DOMINATOR,
+        LEADER_DOMINATOR_N2,
+        LEADER_DOMINATOR_LOG,
+        LEADER_EQUILEADER,
     }
 
     public CodilitySolution getSolution(CodilityTask pTask) {
@@ -133,6 +139,15 @@ public class SolutionFactory {
                 break;
             case LEADER_DOMINATOR:
                 codilitySolution = new Dominator();
+                break;
+            case LEADER_DOMINATOR_N2:
+                codilitySolution = new DominatorN2();
+                break;
+            case LEADER_DOMINATOR_LOG:
+                codilitySolution = new DominatorNLogN();
+                break;
+            case LEADER_EQUILEADER:
+                codilitySolution = new EquiLeader();
                 break;
         }
         return codilitySolution;
