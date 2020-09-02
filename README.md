@@ -8,7 +8,10 @@ This is about mastering in algorithms from Codility site and verifying tools lik
 
 - next algorithms:
 -  [x] Leader: Dominator
--  [ ] Leader: EquiLeader
+-  [x] Leader: EquiLeader
+-  [ ] Maximum Slide Problem: MaxDoubleSliceSum
+-  [ ] Maximum Slide Problem: MaxProfit
+-  [ ] Maximum Slide Problem: MaxSliceSum
 
 - building:
 - [ ] full automation in project retrieving from github and building

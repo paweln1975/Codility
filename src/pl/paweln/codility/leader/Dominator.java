@@ -3,7 +3,6 @@ package pl.paweln.codility.leader;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
-import java.util.Arrays;
 
 /*
 An array A consisting of N integers is given. The dominator of array A is the value that occurs in more than half of the
@@ -47,9 +46,6 @@ public class Dominator implements CodilitySolution {
         return new int[] {this.solution(A)};
     }
 
-    public int solution(int[] A) {
-        return this.solutionOptimal(A);
-    }
 
     /**
      * if the sequence A0, A1, . . . ,An-1 contains a leader, then after removing a pair of
@@ -62,7 +58,7 @@ public class Dominator implements CodilitySolution {
      * @param A input array
      * @return index of the leader otherwise -1
      */
-    private int solutionOptimal(int[] A) {
+    public int solution(int[] A) {
         int stackSize = 0;
         int lastValue = 0;
         int halfSize = A.length/2;
@@ -93,80 +89,6 @@ public class Dominator implements CodilitySolution {
                     }
                 }
             }
-        }
-
-        return idx;
-    }
-
-    /**
-     * quadratic computational complexity
-     * count the occurrences of every element
-     * @param A input array
-     * @return index of the leader otherwise -1
-     */
-    private int solutionNotOptimal1 (int[] A) {
-
-        int idx = -1;
-        int halfSize = A.length/2;
-        for (int i = 0; i < A.length; i++) {
-            int count = 0;
-            for (int value : A) {
-                if (value == A[i]) {
-                    count++;
-                }
-            }
-            if (count > halfSize) {
-                idx = i;
-                break;
-            }
-        }
-        return idx;
-    }
-
-    /**
-     * nlog(n) complexity
-     * Having sorted the sequence, count slices of the same values and find the leader
-     * if the leader occurs somewhere in our sequence, then it must occur at index n/2
-     * (the central element). This is because, given that the leader occurs in more
-     * than half the total values in the sequence, there are more leader values than will fit on either
-     * side of the central element in the sequence.
-     * @param A input array
-     * @return index of the leader otherwise -1
-     */
-    private int solutionNotOptimal2 (int[] A) {
-        //
-        int idx = -1;
-        int candidate;
-        boolean dominatorFound = false;
-
-        int[] B = Arrays.copyOf(A, A.length);
-        Arrays.sort(B);
-
-        int halfSize = A.length/2;
-
-        if (halfSize < A.length) {
-            candidate = B[halfSize];
-            int count = 0;
-            for (int value : B) {
-                if (value == candidate) {
-                    count++;
-                    if (count > halfSize) {
-                        dominatorFound = true;
-                        break;
-                    }
-                }
-            }
-
-            if (dominatorFound) {
-                for (int i = 0; i < A.length; i++) {
-                    if (A[i] == candidate) {
-                        idx = i;
-                        break;
-                    }
-                }
-            }
-
-
         }
 
         return idx;

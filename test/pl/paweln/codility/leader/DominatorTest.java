@@ -12,11 +12,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class DominatorTest {
-    private final SolutionFactory solutionFactory = new SolutionFactory();
-
-    private CodilitySolution s;
-    private SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
-    private SolutionInputParams params;
+    protected final SolutionFactory solutionFactory = new SolutionFactory();
+    protected CodilitySolution s;
+    protected SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
+    protected SolutionInputParams params;
 
     @Before
     public void setUp() {
