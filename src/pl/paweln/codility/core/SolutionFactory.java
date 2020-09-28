@@ -12,6 +12,9 @@ import pl.paweln.codility.prefixsums.CountDiv;
 import pl.paweln.codility.prefixsums.GenomicRangeQuery;
 import pl.paweln.codility.prefixsums.MinAvgTwoSlice;
 import pl.paweln.codility.prefixsums.PassingCars;
+import pl.paweln.codility.slice.MaxDoubleSliceSum;
+import pl.paweln.codility.slice.MaxProfit;
+import pl.paweln.codility.slice.MaxSlice;
 import pl.paweln.codility.sorting.Distinct;
 import pl.paweln.codility.sorting.MaxProductOfThree;
 import pl.paweln.codility.sorting.NumberOfDiscIntersections;
@@ -60,6 +63,11 @@ public class SolutionFactory {
         LEADER_DOMINATOR_N2,
         LEADER_DOMINATOR_LOG,
         LEADER_EQUILEADER,
+
+        SLICE_MAX_SLICE,
+        SLICE_MAX_DOUBLE_SLICE_SUM,
+        SLICE_MAX_PROFIT,
+
     }
 
     public CodilitySolution getSolution(CodilityTask pTask) {
@@ -148,6 +156,15 @@ public class SolutionFactory {
                 break;
             case LEADER_EQUILEADER:
                 codilitySolution = new EquiLeader();
+                break;
+            case SLICE_MAX_SLICE:
+                codilitySolution = new MaxSlice();
+                break;
+            case SLICE_MAX_DOUBLE_SLICE_SUM:
+                codilitySolution = new MaxDoubleSliceSum();
+                break;
+            case SLICE_MAX_PROFIT:
+                codilitySolution = new MaxProfit();
                 break;
         }
         return codilitySolution;
