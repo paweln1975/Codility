@@ -12,6 +12,7 @@ import pl.paweln.codility.prefixsums.CountDiv;
 import pl.paweln.codility.prefixsums.GenomicRangeQuery;
 import pl.paweln.codility.prefixsums.MinAvgTwoSlice;
 import pl.paweln.codility.prefixsums.PassingCars;
+import pl.paweln.codility.prime.CountFactors;
 import pl.paweln.codility.slice.MaxDoubleSliceSum;
 import pl.paweln.codility.slice.MaxProfit;
 import pl.paweln.codility.slice.MaxSlice;
@@ -67,6 +68,8 @@ public class SolutionFactory {
         SLICE_MAX_SLICE,
         SLICE_MAX_DOUBLE_SLICE_SUM,
         SLICE_MAX_PROFIT,
+
+        PRIME_COUNT_FACTORS,
 
     }
 
@@ -165,6 +168,9 @@ public class SolutionFactory {
                 break;
             case SLICE_MAX_PROFIT:
                 codilitySolution = new MaxProfit();
+                break;
+            case PRIME_COUNT_FACTORS:
+                codilitySolution = new CountFactors();
                 break;
         }
         return codilitySolution;
