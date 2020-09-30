@@ -11,8 +11,7 @@
         <url>https://github.com/paweln1975/Codility</url>
         <tag>v1.0</tag>
   </scm>
-
-    <properties>
+  <properties>
         <project.scm.id>github</project.scm.id>
         <sonar.projectKey>paweln1975_Codility</sonar.projectKey>
         <sonar.organization>paweln1975</sonar.organization>
