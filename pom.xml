@@ -10,8 +10,15 @@
         <developerConnection>scm:git:https://github.com/paweln1975/Codility</developerConnection>
         <url>https://github.com/paweln1975/Codility</url>
         <tag>v1.0</tag>
-  </scm>
-  <properties>
+    </scm>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/paweln1975/Codility</url>
+        </repository>
+    </distributionManagement>
+    <properties>
         <project.scm.id>github</project.scm.id>
         <sonar.projectKey>paweln1975_Codility</sonar.projectKey>
         <sonar.organization>paweln1975</sonar.organization>
