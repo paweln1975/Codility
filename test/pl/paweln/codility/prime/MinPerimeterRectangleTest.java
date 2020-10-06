@@ -75,11 +75,11 @@ public class MinPerimeterRectangleTest {
 
     @Test
     public void testMax() {
-        int N = 10000000;
+        int N = 1000000000;
         this.params = this.paramsBuilder.setN(N).build();
         int minPerimeter = this.s.solution(this.params)[0];
 
-        Assert.assertEquals(12650, minPerimeter);
+        Assert.assertEquals(126500, minPerimeter);
     }
 
 }
