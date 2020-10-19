@@ -13,7 +13,7 @@ public class CountFactors implements CodilitySolution {
         return new int[] {this.solution(N)};
     }
 
-    public int solution (int N) {
+    private int solution (int N) {
         long i = 2;
         int countFactors;
 
