@@ -13,6 +13,7 @@ import pl.paweln.codility.prefixsums.GenomicRangeQuery;
 import pl.paweln.codility.prefixsums.MinAvgTwoSlice;
 import pl.paweln.codility.prefixsums.PassingCars;
 import pl.paweln.codility.prime.CountFactors;
+import pl.paweln.codility.prime.Flags;
 import pl.paweln.codility.prime.MinPerimeterRectangle;
 import pl.paweln.codility.slice.MaxDoubleSliceSum;
 import pl.paweln.codility.slice.MaxProfit;
@@ -72,7 +73,7 @@ public class SolutionFactory {
 
         PRIME_COUNT_FACTORS,
         PRIME_MIN_PERIMETER,
-
+        PRIME_FLAGS,
 
     }
 
@@ -177,6 +178,9 @@ public class SolutionFactory {
                 break;
             case PRIME_MIN_PERIMETER:
                 codilitySolution = new MinPerimeterRectangle();
+                break;
+            case PRIME_FLAGS:
+                codilitySolution = new Flags();
                 break;
         }
         return codilitySolution;
