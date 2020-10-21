@@ -109,8 +109,8 @@ public class BinaryGapTest {
     }
 
     @Test
-    public void test2147483647() {
-        int n = 2147483647;
+    public void testMax() {
+        int n = Integer.MAX_VALUE;
         this.params = this.paramsBuilder
                 .setN(n)
                 .build();

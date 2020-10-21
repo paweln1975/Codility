@@ -13,7 +13,7 @@ public class Flags implements CodilitySolution {
         }
 
         if (A.length > 400000) {
-            throw new IllegalArgumentException("Max array size is 400000. Array too big N = " + A.length);
+            throw new IllegalArgumentException("Max array size is 400000. Array is too big N = " + A.length);
         }
         return new int[] {this.solution(A)};
     }
