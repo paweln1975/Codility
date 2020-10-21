@@ -15,6 +15,7 @@ import pl.paweln.codility.prefixsums.PassingCars;
 import pl.paweln.codility.prime.CountFactors;
 import pl.paweln.codility.prime.Flags;
 import pl.paweln.codility.prime.MinPerimeterRectangle;
+import pl.paweln.codility.prime.Peaks;
 import pl.paweln.codility.slice.MaxDoubleSliceSum;
 import pl.paweln.codility.slice.MaxProfit;
 import pl.paweln.codility.slice.MaxSlice;
@@ -74,6 +75,7 @@ public class SolutionFactory {
         PRIME_COUNT_FACTORS,
         PRIME_MIN_PERIMETER,
         PRIME_FLAGS,
+        PRIME_PEAKS,
 
     }
 
@@ -182,6 +184,8 @@ public class SolutionFactory {
             case PRIME_FLAGS:
                 codilitySolution = new Flags();
                 break;
+            case PRIME_PEAKS:
+                codilitySolution = new Peaks();
         }
         return codilitySolution;
     }
