@@ -83,7 +83,7 @@ public class CountFactorsTest {
     }
 
     @Test
-    public void testMaxInt() {
+    public void testMax() {
         int N = Integer.MAX_VALUE;
         this.params = this.paramsBuilder.setN(N).build();
         int countFactors = this.s.solution(this.params)[0];
