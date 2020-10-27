@@ -1,11 +1,11 @@
-# **Codility project**
-This project contains my solutions of codility lesson available on www.codility.com.
+# Codility project
+This project contains my solutions of codility lessons available on www.codility.com.
 All of them were tested by using junit tests and codility engine and gained 100% correctness.
 
-## **Usage**
+## Usage
 
-Make sure that javac is in the PATH environment variable.
-Make sure that JAVA_HOME is set.
+Make sure that javac is in the *PATH* environment variable.
+Make sure that *JAVA_HOME* is set.
 
 ### Getting the repo
 
@@ -40,7 +40,7 @@ mvn release:prepare
 mvn release:perform
 ```
 
-In case of failure use the command
+In case of failure use the command:
 
 ```
 mvn release:rollback
