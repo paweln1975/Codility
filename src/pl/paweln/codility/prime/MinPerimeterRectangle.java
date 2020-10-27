@@ -12,7 +12,7 @@ public class MinPerimeterRectangle implements CodilitySolution {
         }
 
         if (N > 1000000000) {
-            throw new IllegalArgumentException("Value of N too big. Max value is 1,000,000,000.");
+            throw new IllegalArgumentException("Value of N too big. Max value is 1 000 000 000.");
         }
         return new int[] {this.solution(N)};
     }

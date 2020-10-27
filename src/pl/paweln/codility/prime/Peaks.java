@@ -10,7 +10,7 @@ public class Peaks implements CodilitySolution {
 
         if (A.length == 0) throw new IllegalArgumentException("Array cannot be empty.");
 
-        if (A.length > 100000) throw new IllegalArgumentException("Max array size is 100000. Array too big N = " + A.length);
+        if (A.length > 100000) throw new IllegalArgumentException("Array too big N = " + A.length  + " Max array size is 100000.");
 
         return new int[] {this.solution(A)};
     }
