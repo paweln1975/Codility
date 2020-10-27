@@ -9,7 +9,7 @@
         <connection>scm:git:git://github.com/paweln1975/Codility</connection>
         <developerConnection>scm:git:https://github.com/paweln1975/Codility</developerConnection>
         <url>https://github.com/paweln1975/Codility</url>
-        <tag>v1.1</tag>
+        <tag>v1.3</tag>
     </scm>
     <distributionManagement>
         <repository>
