@@ -1,72 +1,47 @@
-# Codility project
-This is about mastering in algorithms from Codility site and verifying tools like junit, maven, git and others
+# **Codility project**
+This project contains my solutions of codility lesson available on www.codility.com.
+All of them were tested by using junit tests and codility engine and gained 100% correctness.
 
+## **Usage**
 
-##TODOs
-- [X] changing the interface to be aligned with clean code rules
-- [x] changing the package of the automated tests
+Make sure that javac is in the PATH environment variable.
+Make sure that JAVA_HOME is set.
 
-- next algorithms:
--  [x] Leader: Dominator
--  [x] Leader: EquiLeader
--  [ ] Maximum Slide Problem: MaxDoubleSliceSum
--  [ ] Maximum Slide Problem: MaxProfit
--  [ ] Maximum Slide Problem: MaxSliceSum
-
-- building:
-- [ ] full automation in project retrieving from github and building
-- [ ] maven - versioning and SNAPSHOTs, how to work with versions 
-- [ ] releaseing, tagging
-
-- code refactoring:
-- [ ] sorting algorithm with subclasses per each algorithm
-- [ ] multiple solutions handling for classes MaxProductOfThree and PermMissingElem - test them
-
-
-Examples of formatting
-
-#Level 1
-##Level 2
-###Level 3
-
-**This is bold text** 
-
-*This text is italicized*
-
-~~This was mistaken text~~
-
-**Bold and _nested italic_ **
-
-***All bold and italic***
-
-> This is quote
+### Getting the repo
 
 ```
-function test() {
-  console.log("This is fenced code block");
-}
+git clone https://github.com/paweln1975/Codility
 ```
 
-```java
-public class HelloWorld {
-    public int helloWorld() {
-      System.out.println("This is java code block");
-    }
-}
+### Compiling the project using maven
+```
+mvn compile
 ```
 
+### Run all junit tests
+```
+mvn test
+```
 
-This project is using [GitHub Pages](https://github.com/paweln1975/Codility).
+### Create jar file Codility-X.Y-SNAPSHOT.jar
 
-- List item 1
-- List item 2
-- List item 3
+Compiles the code, executes test and finally build a jar file.
 
-1. Numbered list item 1
-2. Numbered list item 2
-3. Numbered list item 3
-   - Nested item
-   
-- [ ] Task 1
-- [x] Task 2
-        
+```
+mvn package
+```
+
+### Performing the release
+
+Creates a new tag and adds the artefact the repo (github is used).
+
+```
+mvn release:prepare
+mvn release:perform
+```
+
+In case of failure use the command
+
+```
+mvn release:rollback
+```
