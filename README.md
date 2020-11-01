@@ -40,8 +40,13 @@ mvn release:prepare
 mvn release:perform
 ```
 
-In case of failure use the command:
+In case of failure of the release use the command:
 
 ```
 mvn release:rollback
+```
+
+Install maven wrapper (possibility to distribute project without having maven installed)
+```
+mvn -N io.takari:maven:wrapper
 ```
