@@ -32,6 +32,11 @@ mvn package
 ```
 
 ### Performing the release
+Checks the release process without modifying anything
+
+```
+mvn release:prepare -DdryRun=true
+```
 
 Creates a new tag and adds the artefact the repo (github is used).
 
@@ -46,6 +51,7 @@ In case of failure of the release use the command:
 mvn release:rollback
 ```
 
+### Installing maven wrapper
 Install maven wrapper (possibility to distribute project without having maven installed)
 ```
 mvn -N io.takari:maven:wrapper

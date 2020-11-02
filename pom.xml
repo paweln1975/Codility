@@ -5,29 +5,7 @@
     <groupId>pl.paweln</groupId>
     <artifactId>Codility</artifactId>
     <version>1.4-SNAPSHOT</version>
-    <scm>
-        <connection>scm:git:git://github.com/paweln1975/Codility</connection>
-        <developerConnection>scm:git:https://github.com/paweln1975/Codility</developerConnection>
-        <url>https://github.com/paweln1975/Codility</url>
-        <tag>v1.3</tag>
-    </scm>
-    <!--distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/paweln1975/Codility</url>
-        </repository>
-    </distributionManagement-->
-    <distributionManagement>
-        <repository>
-            <id>myMavenRepo.write</id>
-            <url>${myMavenRepo.write.url}</url>
-        </repository>
-        <snapshotRepository>
-            <id>myMavenRepo.write</id>
-            <url>${myMavenRepo.write.url}</url>
-        </snapshotRepository>
-    </distributionManagement>
+
     <properties>
         <project.scm.id>github</project.scm.id>
         <sonar.projectKey>paweln1975_Codility</sonar.projectKey>
@@ -45,10 +23,38 @@
         <maven.compiler.release>8</maven.compiler.release>
     </properties>
 
+    <scm>
+        <connection>scm:git:git://github.com/paweln1975/Codility</connection>
+        <developerConnection>scm:git:https://github.com/paweln1975/Codility</developerConnection>
+        <url>https://github.com/paweln1975/Codility</url>
+        <tag>v1.3</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>packagecloud.my_repo_releases</id>
+            <url>packagecloud+https://packagecloud.io/paweln1975/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>packagecloud.my_repo_snapshots</id>
+            <url>packagecloud+https://packagecloud.io/paweln1975/snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+
     <build>
         <sourceDirectory>${src.dir}</sourceDirectory>
         <testSourceDirectory>${test.dir}</testSourceDirectory>
         <defaultGoal>install</defaultGoal>
+
+        <extensions>
+            <extension>
+                <groupId>io.packagecloud.maven.wagon</groupId>
+                <artifactId>maven-packagecloud-wagon</artifactId>
+                <version>0.0.6</version>
+            </extension>
+        </extensions>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -109,19 +115,19 @@
             </plugin>
         </plugins>
     </build>
+
+
+
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all -->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <version>1.3</version>
         </dependency>
-
     </dependencies>
 </project>
