@@ -7,6 +7,17 @@ public class CountNonDivisible implements CodilitySolution {
     @Override
     public int[] solution(SolutionInputParams params) {
         int[] array = params.getFirstArray();
+
+        int N = array.length;
+
+        if (N < 1) {
+            throw new IllegalArgumentException("Array cannot be empty.");
+        }
+
+        if (N > 50000) {
+            throw new IllegalArgumentException("Array too big. Max array size is 50 000.");
+        }
+
         return this.solution(array);
     }
 
@@ -18,6 +29,12 @@ public class CountNonDivisible implements CodilitySolution {
         int[] result = new int[size];
 
         for (int k : A) {
+            if (k <= 0) {
+                throw new IllegalArgumentException("Value of an array element must be greater then 0");
+            }
+            if (k > 2 * size) {
+                throw new IllegalArgumentException("Value of an array element to big. Max value is " + 2 * size + ". Actual value found = " + k);
+            }
             occurrences[k]++;
         }
 
