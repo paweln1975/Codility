@@ -16,6 +16,9 @@ import pl.paweln.codility.prime.CountFactors;
 import pl.paweln.codility.prime.Flags;
 import pl.paweln.codility.prime.MinPerimeterRectangle;
 import pl.paweln.codility.prime.Peaks;
+import pl.paweln.codility.sieveoferatosthenes.CountNonDivisible;
+import pl.paweln.codility.sieveoferatosthenes.CountSemiprimes;
+import pl.paweln.codility.sieveoferatosthenes.SieveOfEratosthenes;
 import pl.paweln.codility.slice.MaxDoubleSliceSum;
 import pl.paweln.codility.slice.MaxProfit;
 import pl.paweln.codility.slice.MaxSlice;
@@ -76,6 +79,10 @@ public class SolutionFactory {
         PRIME_MIN_PERIMETER,
         PRIME_FLAGS,
         PRIME_PEAKS,
+
+        SIEVE_ERATOSTHENES_COUNT_NON_DIVISIBLE,
+        SIEVE_ERATOSTHENES_BASE_ALGORITHM,
+        SIEVE_ERATOSTHENES_COUNT_SEMIPRIMES,
 
     }
 
@@ -186,6 +193,16 @@ public class SolutionFactory {
                 break;
             case PRIME_PEAKS:
                 codilitySolution = new Peaks();
+                break;
+            case SIEVE_ERATOSTHENES_COUNT_NON_DIVISIBLE:
+                codilitySolution = new CountNonDivisible();
+                break;
+            case SIEVE_ERATOSTHENES_BASE_ALGORITHM:
+                codilitySolution = new SieveOfEratosthenes();
+                break;
+            case SIEVE_ERATOSTHENES_COUNT_SEMIPRIMES:
+                codilitySolution = new CountSemiprimes();
+                break;
         }
         return codilitySolution;
     }
