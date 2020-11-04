@@ -26,7 +26,7 @@ public class MinPerimeterRectangle implements CodilitySolution {
         } else {
             minPerimeter = 2 * (N + 1);
         }
-        long square = i * i;
+        long square = (long)i * (long)i;
         while (square <= N) {
             if (N % i == 0) {
                 int pairFactor =  N / i;
