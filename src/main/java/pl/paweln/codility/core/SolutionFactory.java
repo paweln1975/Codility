@@ -1,5 +1,7 @@
 package pl.paweln.codility.core;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import pl.paweln.codility.arrays.CyclicRotation;
 import pl.paweln.codility.arrays.OddOccurrencesInArray;
 import pl.paweln.codility.counting.*;
@@ -35,6 +37,7 @@ import pl.paweln.codility.timecomplexity.PermMissingElem;
 import pl.paweln.codility.timecomplexity.TapeEquilibrium;
 
 public class SolutionFactory {
+    private static final Logger logger = LogManager.getLogger();
     public enum CodilityTask {
         ITERATION_BINARY_GAP,
 
@@ -204,6 +207,7 @@ public class SolutionFactory {
                 codilitySolution = new CountSemiprimes();
                 break;
         }
+        logger.debug("Created algorithm class instance: " + codilitySolution.getClass().getName());
         return codilitySolution;
     }
 }
