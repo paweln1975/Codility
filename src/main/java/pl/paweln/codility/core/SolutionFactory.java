@@ -24,17 +24,12 @@ import pl.paweln.codility.sieveoferatosthenes.SieveOfEratosthenes;
 import pl.paweln.codility.slice.MaxDoubleSliceSum;
 import pl.paweln.codility.slice.MaxProfit;
 import pl.paweln.codility.slice.MaxSlice;
-import pl.paweln.codility.sorting.Distinct;
-import pl.paweln.codility.sorting.MaxProductOfThree;
-import pl.paweln.codility.sorting.NumberOfDiscIntersections;
-import pl.paweln.codility.sorting.Triangle;
+import pl.paweln.codility.sorting.*;
 import pl.paweln.codility.stacks.Brackets;
 import pl.paweln.codility.stacks.Fish;
 import pl.paweln.codility.stacks.Nesting;
 import pl.paweln.codility.stacks.StoneWall;
-import pl.paweln.codility.timecomplexity.FrogJump;
-import pl.paweln.codility.timecomplexity.PermMissingElem;
-import pl.paweln.codility.timecomplexity.TapeEquilibrium;
+import pl.paweln.codility.timecomplexity.*;
 
 public class SolutionFactory {
     private static final Logger logger = LogManager.getLogger();
@@ -48,7 +43,7 @@ public class SolutionFactory {
         COUNTING_MAX_COUNTERS,
         COUNTING_MISSING_INTEGER,
         COUNTING_PERM_CHECK,
-        COUNTING_PERM_CHECK2,
+        COUNTING_PERM_CHECK_2,
 
         PREFIX_SUMS_COUNT_DIV,
         PREFIX_SUMS_GENOMIC_RANGE_QUERY,
@@ -57,6 +52,7 @@ public class SolutionFactory {
 
         SORTING_DISTINCT,
         SORTING_MAX_PRODUCT_OF_THREE,
+        SORTING_MAX_PRODUCT_OF_THREE_2,
         SORTING_TRIANGLE,
         SORTING_NUMBER_OF_DISCS_INTERSECTIONS,
 
@@ -67,6 +63,8 @@ public class SolutionFactory {
 
         TIME_COMPLEXITY_FROG_JUMP,
         TIME_COMPLEXITY_PERM_MISSING_ELEM,
+        TIME_COMPLEXITY_PERM_MISSING_ELEM_2,
+        TIME_COMPLEXITY_PERM_MISSING_ELEM_3,
         TIME_COMPLEXITY_TAPE_EQUILIBRIUM,
 
         LEADER_DOMINATOR,
@@ -116,7 +114,7 @@ public class SolutionFactory {
             case COUNTING_PERM_CHECK:
                 codilitySolution = new PermCheck();
                 break;
-            case COUNTING_PERM_CHECK2:
+            case COUNTING_PERM_CHECK_2:
                 codilitySolution = new PermCheck2();
                 break;
             case PREFIX_SUMS_COUNT_DIV:
@@ -136,6 +134,9 @@ public class SolutionFactory {
                 break;
             case SORTING_MAX_PRODUCT_OF_THREE:
                 codilitySolution = new MaxProductOfThree();
+                break;
+            case SORTING_MAX_PRODUCT_OF_THREE_2:
+                codilitySolution = new MaxProductOfThree2();
                 break;
             case SORTING_TRIANGLE:
                 codilitySolution = new Triangle();
@@ -160,6 +161,12 @@ public class SolutionFactory {
                 break;
             case TIME_COMPLEXITY_PERM_MISSING_ELEM:
                 codilitySolution = new PermMissingElem();
+                break;
+            case TIME_COMPLEXITY_PERM_MISSING_ELEM_2:
+                codilitySolution = new PermMissingElem2();
+                break;
+            case TIME_COMPLEXITY_PERM_MISSING_ELEM_3:
+                codilitySolution = new PermMissingElem3();
                 break;
             case TIME_COMPLEXITY_TAPE_EQUILIBRIUM:
                 codilitySolution = new TapeEquilibrium();

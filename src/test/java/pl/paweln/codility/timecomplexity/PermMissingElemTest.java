@@ -6,11 +6,11 @@ import org.junit.Test;
 import pl.paweln.codility.core.*;
 
 public class PermMissingElemTest {
-    private final SolutionFactory solutionFactory = new SolutionFactory();
+    protected final SolutionFactory solutionFactory = new SolutionFactory();
 
-    private CodilitySolution s;
-    private SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
-    private SolutionInputParams params;
+    protected CodilitySolution s;
+    protected SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
+    protected SolutionInputParams params;
 
     @Before
     public void setUp() {
