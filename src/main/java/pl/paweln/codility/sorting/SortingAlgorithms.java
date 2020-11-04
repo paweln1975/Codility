@@ -8,8 +8,6 @@ public class SortingAlgorithms {
      * się to najczęściej za pomocą zmiennej logicznej.
      * Algorytm nosi nazwę bąbelkowego, gdyż najmniejsze liczby "wypływają" z dołu tablicy na jej szczyt, podobnie
      * jak bąbelki powietrza w wodzie.
-     * @param tab
-     * @return
      */
 
     public static int bubbleSort(int [] tab) {
@@ -37,8 +35,6 @@ public class SortingAlgorithms {
      * ale począwszy od elementu drugiego (pierwszy - najmniejszy jest już wstawiony na odpowiednie miejsce), po jego
      * znalezieniu jest on zamieniany z drugim elementem. Czynność tą powtarzamy kolejno na elementach od trzeciego,
      * czwartego, aż do n-tego.
-     * @param tab
-     * @return
      */
     public static int selectionSort(int[] tab) {
         int min, indexMin;
@@ -97,13 +93,12 @@ public class SortingAlgorithms {
      * ją do pierwszej. Ponieważ jest ona posortowana, to szukamy dla naszej liczby takiego miejsca, aby liczba na lewo
      * była niewiększa a liczba na prawo niemniejsza. Wstawienie liczby do posortowanej tablicy wymaga więc czasu O(n).
      * Wynika z tego złożoność algorytmy: O(n2)
-     * @param tab
-     * @return
+
      */
     public static int insertionSort(int[] tab) {
         int operationCount = 0;
         int j, currentElem;
-        // beggining from second element
+        // begining from second element
         for (int i = 1; i < tab.length; i++) {
             j = i;
             currentElem = tab[i];
@@ -131,20 +126,19 @@ public class SortingAlgorithms {
      * 3. Proces tworzenia tablicy wynikowej odbył się w jednym kroku
      * Algorytm ten posiada jednak również dodatkową wadę: do przechowywania liczby wyrazów ciągu musimy użyć tablicy,
      * o liczbie elementów równej największemu elementowi ciągu.
-     * @param tab
-     * @return
+
      */
     public static int countingSort(int[] tab) {
-        int operationCount = 0;
+        int operationCount;
         int size = 0;
 
         // find max value
-        for (int i = 0; i < tab.length; i++) {
-            if (tab[i] < 0) {
+        for (int j : tab) {
+            if (j < 0) {
                 throw new IllegalArgumentException("Cannot sort negative element with counting sort.");
             }
-            if (tab[i] > size) {
-                size = tab[i];
+            if (j > size) {
+                size = j;
             }
         }
 
@@ -152,8 +146,8 @@ public class SortingAlgorithms {
 
         // count how many times a value exists in the source table
         int[] countTab = new int[size];
-        for (int i = 0; i < tab.length; i++) {
-            countTab[tab[i]]++;
+        for (int j : tab) {
+            countTab[j]++;
         }
 
         operationCount = 2*size;
@@ -186,11 +180,9 @@ public class SortingAlgorithms {
      * sortowanych zbiorów danych. W najgorszym przypadku musimy liczyć się z wyborem wartości będącej ekstremum
      * sortowanego zbioru. Jednak nawet w takim przypadku algorytm Quicksort nadal działa poprawnie.
      *
-     * @param tab
-     * @return
      */
     public static int quickSort(int[] tab) {
-        int operationCount = 0;
+        int operationCount;
         operationCount = qs(tab, 0, tab.length-1);
         return operationCount;
     }
@@ -237,22 +229,21 @@ public class SortingAlgorithms {
      * Węzeł nadrzędny jest większy lub równy węzłom potomnym
      *
      * https://eduinf.waw.pl/inf/utils/010_2010/0411.php
-     * @param tab
-     * @return
+
      */
     public static int heapSort(int[] tab) {
-        int opertionCount = 0;
+        int operationCount = 0;
         // zbudowanie kopca
         for (int k = (tab.length + 1) / 2; k >= 0; k--)
-            opertionCount+= siftDown(tab[k], tab, k, tab.length - 1);
+            operationCount+= siftDown(tab[k], tab, k, tab.length - 1);
 
         // sortowanie
         for (int k = tab.length - 1; k > 0; k--) {
             int item = tab[k]; //pobieramy aktualnie ostatni element
             tab[k] = tab[0]; //przenosimy wierzchołek kopca do ostatniego elementu
-            opertionCount += siftDown(item, tab, 0, k-1); //odtwarzamy warunek kopca w zakresie od 1 do k–1
+            operationCount += siftDown(item, tab, 0, k-1); //odtwarzamy warunek kopca w zakresie od 1 do k–1
         }
-        return opertionCount;
+        return operationCount;
     }
 
     public static int siftDown(int key, int[] num, int root, int last) {
@@ -340,15 +331,13 @@ public class SortingAlgorithms {
      * koniec i gdy zbiór 2 osiągnął koniec. W przypadku pierwszym nie będzie problemu, elementy w zbiorze głównym są
      * już posortowane i ułożone na właściwych miejscach. W przypadku drugim trzeba skopiować pozostałe elementy zbioru
      * pierwszego pokolei na koniec. Po zakończeniu wszystkich operacji otrzmujemy posortowany zbiór główny.
-     * @param tab
-     * @return
      */
     public static int mergeSort(int[] tab)
     {
         return mergeSortRange(tab,0, tab.length - 1);
     }
 
-    private static int mergeSortRange(int tab[], int l, int r) {
+    private static int mergeSortRange(int[] tab, int l, int r) {
         int opCount = 0;
         int DividePoint = dividePoint(l,r);
 
@@ -405,13 +394,10 @@ public class SortingAlgorithms {
     }
 
     private static boolean compare(int num1, int num2){
-        if (num1 > num2)
-            return false;
-        else
-            return true;
+        return num1 <= num2;
     }
 
-    private static void copy(int tab[], int temptab[], int l, int r){
+    private static void copy(int[] tab, int[] temptab, int l, int r){
 //copies result from temporary array to original array
         int j=0;
         for (int i=l; i<=r; i++){
