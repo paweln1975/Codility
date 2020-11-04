@@ -207,7 +207,9 @@ public class SolutionFactory {
                 codilitySolution = new CountSemiprimes();
                 break;
         }
-        logger.debug("Created algorithm class instance: " + codilitySolution.getClass().getName());
+        if (codilitySolution != null) {
+            logger.debug("Created algorithm class instance: " + codilitySolution.getClass().getName());
+        }
         return codilitySolution;
     }
 }
