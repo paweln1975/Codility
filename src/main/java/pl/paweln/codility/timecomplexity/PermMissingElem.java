@@ -12,12 +12,12 @@ public class PermMissingElem implements CodilitySolution {
         int[] A = params.getFirstArray();
         int N = A.length;
         if (N > 100000) {
-            throw new IllegalArgumentException("Array to big.");
+            throw new IllegalArgumentException("Array to big. Max array size is 100 000.");
         }
         return new int[] {this.solution(A)};
     }
 
-    private int solution (int [] A) {
+    public int solution (int [] A) {
         int N = A.length;
         if (N == 0) return 1;
 
@@ -31,33 +31,4 @@ public class PermMissingElem implements CodilitySolution {
 
         return expectedSum.subtract(sum).intValue();
     }
-
-
-    public int solution2(int[] A) {
-        int previous = 0;
-        if (A.length != 0) {
-            Arrays.sort(A);
-            for (int i : A) {
-                if (++previous != i) {
-                    return previous;
-                }
-            }
-        }
-        return ++previous;
-    }
-
-    public int solution3(int[] A) {
-
-        long N = 1L + A.length;
-        long total = N * (N + 1L) / 2L;
-
-        for (int i : A) {
-
-            total -= i;
-        }
-
-        return (int)total;
-    }
-
-
 }
