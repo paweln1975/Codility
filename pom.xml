@@ -8,11 +8,14 @@
 
     <properties>
         <project.scm.id>github</project.scm.id>
+        <sonar.projectKey>paweln1975_Codility</sonar.projectKey>
+        <sonar.organization>paweln1975</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <!--sonar.projectKey>paweln1975_Codility</sonar.projectKey>
         <sonar.projectName>Codility</sonar.projectName>
         <sonar.organization>paweln1975</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.login>3c765c821804ff00bfc2e06254f7ec25ea8134b1</sonar.login>
+        <sonar.login>b5a9640fa37ab685bfbb74a058bcae14318ab8ba</sonar.login>
         <sonar.sources>./src/main/java</sonar.sources>
         <sonar.tests>./src/test/java</sonar.tests>
         <sonar.test.inclusions>**/*Test.java</sonar.test.inclusions-->
