@@ -1,7 +1,11 @@
 package pl.paweln.codility.core;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Codility {
+    private static final Logger logger = LogManager.getLogger();
     public static void main(String[] args) {
-        System.out.println("Currently nothing happens. Will do in the next version.");
+        logger.debug("Starting Codility algorithms execution.");
     }
 }

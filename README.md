@@ -10,7 +10,7 @@ Make sure that *JAVA_HOME* is set.
 ### Getting the repo
 
 ```
-git clone https://github.com/paweln1975/Codility
+git clone https://github.com/paweln1975/Codility.git
 ```
 
 ### Compiling the project using maven

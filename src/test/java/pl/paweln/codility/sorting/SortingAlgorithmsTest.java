@@ -1,15 +1,19 @@
 package pl.paweln.codility.sorting;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class SortingAlgorithmsTest {
+    private static final Logger logger = LogManager.getLogger();
+    
     @Test
     public void testBubbleSortSimple() {
         int[] tab = { 5, 10, 15, 15, 10, 5, 1};
         int[] sorted = {1, 5, 5, 10, 10, 15, 15};
         int opCount = SortingAlgorithms.bubbleSort(tab);
-        System.out.println("Bubble sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Bubble sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -23,7 +27,7 @@ public class SortingAlgorithmsTest {
             sorted[i] = i;
         }
         int opCount = SortingAlgorithms.bubbleSort(tab);
-        System.out.println("Bubble sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Bubble sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -32,7 +36,7 @@ public class SortingAlgorithmsTest {
         int[] tab = { 5, 10, 15, 15, 10, 5, 1};
         int[] sorted = {1, 5, 5, 10, 10, 15, 15};
         int opCount = SortingAlgorithms.selectionSort(tab);
-        System.out.println("Selection sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Selection sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -46,7 +50,7 @@ public class SortingAlgorithmsTest {
             sorted[i] = i;
         }
         int opCount = SortingAlgorithms.selectionSort(tab);
-        System.out.println("Selection sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Selection sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -60,7 +64,7 @@ public class SortingAlgorithmsTest {
             sorted[i] = i;
         }
         int opCount = SortingAlgorithms.selectionSortBackward(tab);
-        System.out.println("Back selection sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Back selection sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -69,7 +73,7 @@ public class SortingAlgorithmsTest {
         int[] tab = { 5, 10, 15, 15, 10, 5, 1};
         int[] sorted = {1, 5, 5, 10, 10, 15, 15};
         int opCount = SortingAlgorithms.insertionSort(tab);
-        System.out.println("Insertion sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Insertion sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -83,7 +87,7 @@ public class SortingAlgorithmsTest {
             sorted[i] = i;
         }
         int opCount = SortingAlgorithms.insertionSort(tab);
-        System.out.println("Insertion sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Insertion sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -92,7 +96,7 @@ public class SortingAlgorithmsTest {
         int[] tab = { 5, 10, 15, 15, 10, 5, 1};
         int[] sorted = {1, 5, 5, 10, 10, 15, 15};
         int opCount = SortingAlgorithms.countingSort(tab);
-        System.out.println("Counting sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Counting sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -106,7 +110,7 @@ public class SortingAlgorithmsTest {
             sorted[i] = i;
         }
         int opCount = SortingAlgorithms.countingSort(tab);
-        System.out.println("Counting sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Counting sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -115,7 +119,7 @@ public class SortingAlgorithmsTest {
         int[] tab = { 5, 10, 15, 15, 10, 5, 1};
         int[] sorted = {1, 5, 5, 10, 10, 15, 15};
         int opCount = SortingAlgorithms.quickSort(tab);
-        System.out.println("Quick sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Quick sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -124,7 +128,7 @@ public class SortingAlgorithmsTest {
         int[] tab = { 9, 9, 9, 1, 2, 3, 4, 5, 6, 7};
         int[] sorted = {1, 2, 3, 4, 5, 6, 7, 9, 9, 9};
         int opCount = SortingAlgorithms.quickSort(tab);
-        System.out.println("Quick sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Quick sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -138,7 +142,7 @@ public class SortingAlgorithmsTest {
             sorted[i] = i;
         }
         int opCount = SortingAlgorithms.quickSort(tab);
-        System.out.println("Quick sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Quick sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -147,7 +151,7 @@ public class SortingAlgorithmsTest {
         int[] tab = { 5, 10, 15, 15, 10, 5, 1};
         int[] sorted = {1, 5, 5, 10, 10, 15, 15};
         int opCount = SortingAlgorithms.heapSort(tab);
-        System.out.println("Heap sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Heap sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -161,7 +165,7 @@ public class SortingAlgorithmsTest {
             sorted[i] = i;
         }
         int opCount = SortingAlgorithms.heapSort(tab);
-        System.out.println("Heap sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Heap sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -170,7 +174,7 @@ public class SortingAlgorithmsTest {
         int[] tab = { 5, 10, 15, 15, 10, 5, 1};
         int[] sorted = {1, 5, 5, 10, 10, 15, 15};
         int opCount = SortingAlgorithms.mergeSort(tab);
-        System.out.println("Merge sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Merge sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 
@@ -184,7 +188,7 @@ public class SortingAlgorithmsTest {
             sorted[i] = i;
         }
         int opCount = SortingAlgorithms.mergeSort(tab);
-        System.out.println("Merge sort of tab with size of " + tab.length + " operation count:" + opCount);
+        logger.debug("Merge sort of tab with size of " + tab.length + " operation count:" + opCount);
         Assert.assertArrayEquals (sorted, tab);
     }
 }

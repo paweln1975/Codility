@@ -1,6 +1,7 @@
 package pl.paweln.codility.sorting;
 
 public class SortingAlgorithms {
+
     /**
      * Sprawdzamy całą tablicę od końca, jeżeli trafimy na parę elementów, w której większy poprzedza mniejszy to
      * zamieniamy je miejscami. Po przejściu całej tablicy znów zaczynamy przeszukiwać tą tablicę od końca. Czynność
