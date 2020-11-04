@@ -14,8 +14,6 @@
         <sonar.login>3c765c821804ff00bfc2e06254f7ec25ea8134b1</sonar.login>
         <sonar.tests>src/test</sonar.tests>
         <sonar.test.inclusions>**/*Test.java</sonar.test.inclusions>
-        <src.dir>src</src.dir>
-        <test.dir>test</test.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -43,8 +41,7 @@
 
 
     <build>
-        <sourceDirectory>${src.dir}</sourceDirectory>
-        <testSourceDirectory>${test.dir}</testSourceDirectory>
+
         <defaultGoal>install</defaultGoal>
 
         <extensions>
