@@ -4,7 +4,7 @@
 
     <groupId>pl.paweln</groupId>
     <artifactId>Codility</artifactId>
-    <version>1.5-SNAPSHOT</version>
+    <version>1.4-SNAPSHOT</version>
 
     <properties>
         <project.scm.id>github</project.scm.id>
