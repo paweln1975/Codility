@@ -25,7 +25,7 @@ mvn test
 
 ### Create jar file Codility-X.Y-SNAPSHOT.jar
 
-Compiles the code, executes test and finally build a jar file.
+Compiles the code, executes test and finally build a jar file and prepares the binary distribution.
 
 ```
 mvn package

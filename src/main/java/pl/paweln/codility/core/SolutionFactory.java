@@ -1,7 +1,7 @@
 package pl.paweln.codility.core;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import pl.paweln.codility.arrays.CyclicRotation;
 import pl.paweln.codility.arrays.OddOccurrencesInArray;
 import pl.paweln.codility.counting.*;
@@ -32,7 +32,7 @@ import pl.paweln.codility.stacks.StoneWall;
 import pl.paweln.codility.timecomplexity.*;
 
 public class SolutionFactory {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Log logger = LogFactory.getLog(SolutionFactory.class);
     public enum CodilityTask {
         ITERATION_BINARY_GAP,
 
@@ -215,7 +215,7 @@ public class SolutionFactory {
                 break;
         }
         if (codilitySolution != null) {
-            logger.debug("Created algorithm class instance: " + codilitySolution.getClass().getName());
+            logger.debug("Created algorithm class instance: " + codilitySolution.getClass().getCanonicalName());
         }
         return codilitySolution;
     }

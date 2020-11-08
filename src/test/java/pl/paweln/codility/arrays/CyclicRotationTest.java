@@ -21,6 +21,22 @@ public class CyclicRotationTest {
     }
 
     @Test
+    public void testShiftExample() {
+        int[] A = { 3, 8, 9, 7, 6 };
+        int[] resultExpected = {9, 7, 6, 3, 8};
+        int K = 3;
+
+        this.params = this.paramsBuilder
+                .setFirstArray(A)
+                .setK(K)
+                .build();
+
+        int[] result = this.s.solution(this.params);
+
+        Assert.assertArrayEquals(resultExpected, result);
+    }
+
+    @Test
     public void testShiftNone() {
         int[] A = { 1, 3, 4, 6 };
         int[] resultExpected = Arrays.copyOf(A, A.length);
