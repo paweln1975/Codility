@@ -39,6 +39,15 @@ public class OddOccurrencesInArrayTest {
     }
 
     @Test
+    public void testExample() {
+        int[] A = {9, 3, 9, 3, 9, 7, 9};
+        this.params = this.paramsBuilder
+                .setFirstArray(A).build();
+
+        Assert.assertEquals(7, s.solution(this.params)[0]);
+    }
+
+    @Test
     public void testSimple2() {
         int[] A = {100000, 100000, 100000, 100, 100000, 100000, 100000};
         this.params = this.paramsBuilder
@@ -84,4 +93,5 @@ public class OddOccurrencesInArrayTest {
         Assert.assertEquals(50, s.solution(this.params)[0]);
 
     }
+
 }

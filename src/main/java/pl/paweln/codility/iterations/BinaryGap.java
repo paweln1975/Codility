@@ -1,9 +1,14 @@
 package pl.paweln.codility.iterations;
 
+import pl.paweln.codility.core.AbstractCodility;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
-public class BinaryGap implements CodilitySolution {
+public class BinaryGap extends AbstractCodility implements CodilitySolution {
+
+    public BinaryGap() {
+        defaultParams = paramsBuilder.setN(1041).build();
+    }
 
     @Override
     public int[] solution(SolutionInputParams params) {

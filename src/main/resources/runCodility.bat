@@ -1,0 +1,1 @@
+java -jar Codility-1.4-SNAPSHOT.jar

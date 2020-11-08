@@ -1,9 +1,16 @@
 package pl.paweln.codility.arrays;
 
+import pl.paweln.codility.core.AbstractCodility;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
-public class OddOccurrencesInArray implements CodilitySolution {
+public class OddOccurrencesInArray extends AbstractCodility implements CodilitySolution {
+
+    public OddOccurrencesInArray() {
+        int[] A = {9, 3, 9, 3, 9, 7, 9};
+        this.defaultParams =this.paramsBuilder
+            .setFirstArray(A).build();
+    }
 
     @Override
     public int[] solution(SolutionInputParams params) {

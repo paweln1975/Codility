@@ -87,7 +87,7 @@ public class BinaryGapTest {
     }
 
     @Test
-    public void test1041() {
+    public void testExample() {
         int n = 1041;
         this.params = this.paramsBuilder
                 .setN(n)

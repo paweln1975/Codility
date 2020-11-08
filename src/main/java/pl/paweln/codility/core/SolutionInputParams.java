@@ -1,6 +1,7 @@
 package pl.paweln.codility.core;
 
 import java.security.InvalidParameterException;
+import java.util.Arrays;
 
 public class SolutionInputParams {
     private int n;
@@ -13,6 +14,17 @@ public class SolutionInputParams {
     private String s;
     private int[] firstArray;
     private int[] secondArray;
+
+    private boolean isNinitialized;
+    private boolean isKinitialized;
+    private boolean isXinitialized;
+    private boolean isYinitialized;
+    private boolean isAinitialized;
+    private boolean isBinitialized;
+    private boolean isSinitialized;
+    private boolean isDinitialized;
+    private boolean isFAinitialized;
+    private boolean isSAinitialized;
 
     public int getN() {
         return this.n;
@@ -32,7 +44,7 @@ public class SolutionInputParams {
 
 
     private SolutionInputParams(SolutionInputParamsBuilder paramsBuilder) {
-        if (!paramsBuilder.isInitialized)
+        if (!paramsBuilder.isAnyInitialized)
             throw new InvalidParameterException("None of SolutionInputParams has been set.");
         this.n = paramsBuilder.getN();
         this.k = paramsBuilder.getK();
@@ -44,6 +56,34 @@ public class SolutionInputParams {
         this.s = paramsBuilder.getStringValue();
         this.firstArray = paramsBuilder.getFirstArray();
         this.secondArray = paramsBuilder.getSecondArray();
+
+        this.isNinitialized = paramsBuilder.isNinitialized();
+        this.isKinitialized = paramsBuilder.isKinitialized();
+        this.isXinitialized = paramsBuilder.isXinitialized();
+        this.isYinitialized = paramsBuilder.isYinitialized();
+        this.isDinitialized = paramsBuilder.isDinitialized();
+        this.isAinitialized = paramsBuilder.isAinitialized();
+        this.isBinitialized = paramsBuilder.isBinitialized();
+        this.isSinitialized = paramsBuilder.isSinitialized();
+        this.isFAinitialized = paramsBuilder.isFAinitialized();
+        this.isSAinitialized = paramsBuilder.isSAinitialized();
+    }
+
+    public String toString() {
+        String s = "";
+
+        s+= (this.isNinitialized ? "N=" + this.n : "" );
+        s+= (this.isKinitialized ? (s.length() > 0 ? ", " : "") + "K=" + this.k : "" );
+        s+= (this.isXinitialized ? (s.length() > 0 ? ", " : "") + "X=" + this.x : "" );
+        s+= (this.isYinitialized ? (s.length() > 0 ? ", " : "") + "Y=" + this.y : "" );
+        s+= (this.isDinitialized ? (s.length() > 0 ? ", " : "") + "D=" + this.d : "" );
+        s+= (this.isAinitialized ? (s.length() > 0 ? ", " : "") + "A=" + this.a : "" );
+        s+= (this.isBinitialized ? (s.length() > 0 ? ", " : "") + "B=" + this.b : "" );
+        s+= (this.isSinitialized ? (s.length() > 0 ? ", " : "") + "S=" + this.s : "" );
+        s+= (this.isFAinitialized ? (s.length() > 0 ? ", " : "") + "FA=" + Arrays.toString(this.firstArray) : "" );
+        s+= (this.isSAinitialized ? (s.length() > 0 ? ", " : "") + "SA=" + Arrays.toString(this.secondArray) : "" );
+
+        return s;
     }
 
     public static class SolutionInputParamsBuilder {
@@ -57,7 +97,60 @@ public class SolutionInputParams {
         private String s = "";
         private int[] firstArray = new int[] {};
         private int[] secondArray = new int[] {};
-        private boolean isInitialized = false;
+        private boolean isAnyInitialized = false;
+
+        private boolean isNinitialized = false;
+        private boolean isKinitialized = false;
+        private boolean isXinitialized = false;
+        private boolean isYinitialized = false;
+        private boolean isAinitialized = false;
+        private boolean isBinitialized = false;
+        private boolean isSinitialized = false;
+        private boolean isDinitialized = false;
+        private boolean isFAinitialized = false;
+        private boolean isSAinitialized = false;
+
+        public boolean isKinitialized() {
+            return isKinitialized;
+        }
+
+        public boolean isXinitialized() {
+            return isXinitialized;
+        }
+
+        public boolean isYinitialized() {
+            return isYinitialized;
+        }
+
+        public boolean isDinitialized() {
+            return isDinitialized;
+        }
+
+        public boolean isAinitialized() {
+            return isAinitialized;
+        }
+
+        public boolean isBinitialized() {
+            return isBinitialized;
+        }
+
+        public boolean isSinitialized() {
+            return isSinitialized;
+        }
+
+        public boolean isFAinitialized() {
+            return isFAinitialized;
+        }
+
+        public boolean isSAinitialized() {
+            return isSAinitialized;
+        }
+
+
+
+        public boolean isNinitialized() {
+            return isNinitialized;
+        }
 
         private int getN() {
             return n;
@@ -89,67 +182,77 @@ public class SolutionInputParams {
             return this.secondArray;
         }
 
-        private boolean isInitialized() {
-            return this.isInitialized;
+        private boolean isAnyInitialized() {
+            return this.isAnyInitialized;
         }
 
         public SolutionInputParamsBuilder setN(int n) {
             this.n = n;
-            this.isInitialized = true;
+            this.isAnyInitialized = true;
+            this.isNinitialized = true;
             return this;
         }
 
         public SolutionInputParamsBuilder setK(int k) {
             this.k = k;
-            this.isInitialized = true;
+            this.isAnyInitialized = true;
+            this.isKinitialized = true;
             return this;
         }
 
         public SolutionInputParamsBuilder setX(int x) {
             this.x = x;
-            this.isInitialized = true;
+            this.isAnyInitialized = true;
+            this.isXinitialized = true;
             return this;
         }
 
         public SolutionInputParamsBuilder setY(int y) {
             this.y = y;
-            this.isInitialized = true;
+            this.isAnyInitialized = true;
+            this.isYinitialized = true;
             return this;
         }
 
         public SolutionInputParamsBuilder setD(int d) {
             this.d = d;
-            this.isInitialized = true;
+            this.isAnyInitialized = true;
+            this.isDinitialized = true;
             return this;
         }
 
         public SolutionInputParamsBuilder setA(int a) {
             this.a = a;
-            this.isInitialized = true;
+            this.isAnyInitialized = true;
+            this.isAinitialized = true;
             return this;
         }
 
         public SolutionInputParamsBuilder setB(int b) {
             this.b = b;
-            this.isInitialized = true;
+            this.isAnyInitialized = true;
+            this.isBinitialized = true;
             return this;
         }
 
         public SolutionInputParamsBuilder setStringValue(String s) {
             this.s = s;
-            this.isInitialized = true;
+            this.isAnyInitialized = true;
+            this.isSinitialized = true;
             return this;
         }
 
         public SolutionInputParamsBuilder setFirstArray(int[] pArray) {
             this.firstArray = pArray;
-            this.isInitialized = true;
+            this.isAnyInitialized = true;
+            this.isFAinitialized = true;
             return this;
         }
 
         public SolutionInputParamsBuilder setSecondArray(int[] pArray) {
             this.secondArray = pArray;
-            this.isInitialized = true;
+            this.isAnyInitialized = true;
+            this.isSAinitialized = true;
             return this;
         }
 

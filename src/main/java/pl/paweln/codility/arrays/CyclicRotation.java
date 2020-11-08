@@ -1,11 +1,23 @@
 package pl.paweln.codility.arrays;
 
+import pl.paweln.codility.core.AbstractCodility;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.Arrays;
 
-public class CyclicRotation implements CodilitySolution {
+public class CyclicRotation extends AbstractCodility implements CodilitySolution {
+    public CyclicRotation() {
+
+        int[] A = { 3, 8, 9, 7, 6 };
+        int K = 3;
+
+        defaultParams = paramsBuilder
+                .setFirstArray(A)
+                .setK(K)
+                .build();
+    }
+
 
     @Override
     public int[] solution(SolutionInputParams params) {
