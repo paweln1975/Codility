@@ -2,6 +2,8 @@
 This project contains my solutions of codility lessons available on www.codility.com.
 All of them were tested by using junit tests and codility engine and gained 100% correctness.
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=paweln1975_Codility&metric=alert_status)](https://sonarcloud.io/dashboard?id=paweln1975_Codility)
+
 ## Usage
 
 Make sure that javac is in the *PATH* environment variable.
