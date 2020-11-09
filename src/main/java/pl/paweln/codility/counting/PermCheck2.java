@@ -1,6 +1,8 @@
 package pl.paweln.codility.counting;
 
 public class PermCheck2 extends PermCheck {
+
+    @Override
     public int solution(int[] A) {
 
         if (A.length == 0) return 0;
