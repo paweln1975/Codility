@@ -14,10 +14,10 @@ public class PermCheck implements CodilitySolution {
         if (tab.length == 0 || tab.length > 100000)
             throw new IllegalArgumentException("Array size must be within range 1 .. 100000.");
 
-        return new int[] {this.solution(tab)};
+        return new int[] {solution(tab)};
     }
 
-    private int solution(int[] A) {
+    public int solution(int[] A) {
 
         if (A.length == 0) return 0;
 

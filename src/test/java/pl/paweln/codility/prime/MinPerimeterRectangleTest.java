@@ -82,4 +82,21 @@ public class MinPerimeterRectangleTest {
         Assert.assertEquals(126500, minPerimeter);
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void testValidationsNegativeN() {
+        int N = -1;
+        this.params = this.paramsBuilder.setN(N).build();
+        this.s.solution(this.params);
+
+        N = 1000000001;
+        this.params = this.paramsBuilder.setN(N).build();
+        this.s.solution(this.params);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testValidationsTooBigN() {
+        int N = 1000000001;
+        this.params = this.paramsBuilder.setN(N).build();
+        this.s.solution(this.params);
+    }
 }
