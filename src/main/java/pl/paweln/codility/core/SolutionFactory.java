@@ -5,6 +5,9 @@ import org.apache.commons.logging.LogFactory;
 import pl.paweln.codility.arrays.CyclicRotation;
 import pl.paweln.codility.arrays.OddOccurrencesInArray;
 import pl.paweln.codility.counting.*;
+import pl.paweln.codility.euclidean.EuclideanBinary;
+import pl.paweln.codility.euclidean.EuclideanModulo;
+import pl.paweln.codility.euclidean.EuclideanSubtract;
 import pl.paweln.codility.iterations.BinaryGap;
 import pl.paweln.codility.leader.Dominator;
 import pl.paweln.codility.leader.DominatorN2;
@@ -84,6 +87,10 @@ public class SolutionFactory {
         SIEVE_ERATOSTHENES_COUNT_NON_DIVISIBLE,
         SIEVE_ERATOSTHENES_BASE_ALGORITHM,
         SIEVE_ERATOSTHENES_COUNT_SEMIPRIMES,
+
+        EUCLIDEAN_SUBTRACT,
+        EUCLIDEAN_MODULO,
+        EUCLIDEAN_BINARY,
 
     }
 
@@ -213,10 +220,17 @@ public class SolutionFactory {
             case SIEVE_ERATOSTHENES_COUNT_SEMIPRIMES:
                 codilitySolution = new CountSemiprimes();
                 break;
+            case EUCLIDEAN_SUBTRACT:
+                codilitySolution = new EuclideanSubtract();
+                break;
+            case EUCLIDEAN_MODULO:
+                codilitySolution = new EuclideanModulo();
+                break;
+            case EUCLIDEAN_BINARY:
+                codilitySolution = new EuclideanBinary();
+                break;
         }
-        if (codilitySolution != null) {
-            logger.debug("Created algorithm class instance: " + codilitySolution.getClass().getCanonicalName());
-        }
+        logger.debug("Created algorithm class instance: " + codilitySolution.getClass().getCanonicalName());
         return codilitySolution;
     }
 }

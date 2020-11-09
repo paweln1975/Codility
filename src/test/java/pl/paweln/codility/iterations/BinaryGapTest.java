@@ -14,7 +14,7 @@ public class BinaryGapTest {
     private SolutionInputParams params;
 
     @Before
-    public void setUp() {
+    public void setup() {
         this.s = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.ITERATION_BINARY_GAP);
         this.paramsBuilder = new SolutionInputParams.SolutionInputParamsBuilder();
     }

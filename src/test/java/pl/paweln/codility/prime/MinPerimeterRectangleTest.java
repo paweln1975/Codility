@@ -83,7 +83,7 @@ public class MinPerimeterRectangleTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void testValidationsNegativeN() {
+    public void testValidationNegativeN() {
         int N = -1;
         this.params = this.paramsBuilder.setN(N).build();
         this.s.solution(this.params);
@@ -94,7 +94,7 @@ public class MinPerimeterRectangleTest {
     }
 
     @Test (expected = IllegalArgumentException.class)
-    public void testValidationsTooBigN() {
+    public void testValidationTooBigN() {
         int N = 1000000001;
         this.params = this.paramsBuilder.setN(N).build();
         this.s.solution(this.params);
