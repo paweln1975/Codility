@@ -34,7 +34,7 @@ public class MinPerimeterRectangle implements CodilitySolution {
                 minPerimeter = Math.min(perimeter, minPerimeter);
             }
             i++;
-            square = i * i;
+            square = (long)i * i;
         }
         return minPerimeter;
     }
