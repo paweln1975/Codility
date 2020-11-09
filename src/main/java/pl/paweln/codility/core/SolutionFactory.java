@@ -230,7 +230,10 @@ public class SolutionFactory {
                 codilitySolution = new EuclideanBinary();
                 break;
         }
-        logger.debug("Created algorithm class instance: " + codilitySolution.getClass().getCanonicalName());
+
+        if (codilitySolution != null) {
+            logger.debug("Created algorithm class instance: " + codilitySolution.getClass().getCanonicalName());
+        }
         return codilitySolution;
     }
 }

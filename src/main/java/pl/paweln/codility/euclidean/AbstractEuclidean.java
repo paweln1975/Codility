@@ -6,6 +6,12 @@ import pl.paweln.codility.core.SolutionInputParams;
 
 public abstract class AbstractEuclidean extends AbstractCodility implements CodilitySolution {
 
+    public AbstractEuclidean() {
+        this.defaultParams = this.paramsBuilder.
+                setA(10).
+                setB(5).build();
+    }
+
     @Override
     public int[] solution(SolutionInputParams params) {
         int A = params.getA();
