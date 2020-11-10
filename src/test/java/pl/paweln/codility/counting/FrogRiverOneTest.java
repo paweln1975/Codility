@@ -13,13 +13,13 @@ public class FrogRiverOneTest {
     private SolutionInputParams params;
 
     @Before
-    public void setUp() {
+    public void setup() {
         this.s = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.COUNTING_FROG_RIVER_ONE);
         this.paramsBuilder = new SolutionInputParams.SolutionInputParamsBuilder();
     }
 
     @Test
-    public void testSolutionExample() {
+    public void testExample() {
         int[] A = new int[] {1, 3, 1, 4, 2, 3, 5, 4};
 
         this.params = this.paramsBuilder
@@ -30,7 +30,7 @@ public class FrogRiverOneTest {
     }
 
     @Test
-    public void testSolutionSingleValue() {
+    public void testSingleValue() {
         int[] A = new int[] {1};
         this.params = this.paramsBuilder
                 .setFirstArray(A)
@@ -41,7 +41,7 @@ public class FrogRiverOneTest {
     }
 
     @Test
-    public void testSolutionMaxValues10position() {
+    public void testMaxValues10position() {
         int[] A = new int[100000];
         for (int i = 0; i < A.length; i++) {
             A[i] = i+1;
@@ -54,7 +54,7 @@ public class FrogRiverOneTest {
         Assert.assertEquals(9, this.s.solution(this.params)[0]);
     }
     @Test
-    public void testSolutionMaxValuesMaxPosition() {
+    public void testMaxValuesMaxPosition() {
         int[] A = new int[100000];
         for (int i = 0; i < A.length; i++) {
             A[i] = i+1;

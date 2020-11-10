@@ -13,7 +13,7 @@ public class Brackets implements CodilitySolution {
     private final char BRACKET_OPEN_SET = '{';
     private final char BRACKET_CLOSE_SET = '}';
 
-    private LinkedList<Character> stack = new LinkedList<>();
+    private final LinkedList<Character> stack = new LinkedList<>();
 
     @Override
     public int[] solution(SolutionInputParams params) {

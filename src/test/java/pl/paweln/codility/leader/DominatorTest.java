@@ -151,7 +151,6 @@ public class DominatorTest {
     @Test
     public void testNonDominatorHalfTheSame() {
         int arraySize = 100;
-        List<Integer> listCorrectValues = new LinkedList<>();
 
         int [] A = new int[arraySize];
         for (int i = 0; i < A.length; i++) {

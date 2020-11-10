@@ -1,10 +1,18 @@
 package pl.paweln.codility.counting;
 
+import pl.paweln.codility.core.AbstractCodility;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
-public class FrogRiverOne implements CodilitySolution {
+public class FrogRiverOne extends AbstractCodility {
 
+    public FrogRiverOne() {
+        int[] A = new int[] {1, 3, 1, 4, 2, 3, 5, 4};
+
+        this.defaultParams = this.paramsBuilder
+                .setFirstArray(A)
+                .setX(5).build();
+    }
     @Override
     public int[] solution(SolutionInputParams params) {
         int X = params.getX();
