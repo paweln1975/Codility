@@ -4,7 +4,6 @@ import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 import java.math.BigInteger;
-import java.util.Arrays;
 
 public class PermMissingElem implements CodilitySolution {
     @Override

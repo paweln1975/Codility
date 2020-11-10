@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class Fish implements CodilitySolution {
-    private List<RiverFish> fishList = new LinkedList<>();
+    private final List<RiverFish> fishList = new LinkedList<>();
 
     @Override
     public int[] solution(SolutionInputParams params) {
@@ -115,9 +115,9 @@ class RiverFish {
         this.size = size;
         this.index = index;
     }
-    Direction direction;
-    int size;
-    int index;
+    final Direction direction;
+    final int size;
+    final int index;
 }
 
 enum Direction {

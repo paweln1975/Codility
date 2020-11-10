@@ -5,6 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import pl.paweln.codility.arrays.CyclicRotation;
 import pl.paweln.codility.arrays.OddOccurrencesInArray;
 import pl.paweln.codility.counting.*;
+import pl.paweln.codility.euclidean.ChocolatesByNumbers;
 import pl.paweln.codility.euclidean.EuclideanBinary;
 import pl.paweln.codility.euclidean.EuclideanModulo;
 import pl.paweln.codility.euclidean.EuclideanSubtract;
@@ -91,6 +92,7 @@ public class SolutionFactory {
         EUCLIDEAN_SUBTRACT,
         EUCLIDEAN_MODULO,
         EUCLIDEAN_BINARY,
+        EUCLIDEAN_CHOCOLATES_BY_NUMBERS,
 
     }
 
@@ -228,6 +230,9 @@ public class SolutionFactory {
                 break;
             case EUCLIDEAN_BINARY:
                 codilitySolution = new EuclideanBinary();
+                break;
+            case EUCLIDEAN_CHOCOLATES_BY_NUMBERS:
+                codilitySolution = new ChocolatesByNumbers();
                 break;
         }
 

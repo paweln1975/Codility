@@ -5,7 +5,7 @@ import org.apache.commons.logging.LogFactory;
 
 public abstract class AbstractCodility implements CodilitySolution {
     protected SolutionInputParams defaultParams;
-    protected SolutionInputParams.SolutionInputParamsBuilder
+    protected final SolutionInputParams.SolutionInputParamsBuilder
             paramsBuilder;
 
     private static final Log logger = LogFactory.getLog(AbstractCodility.class);

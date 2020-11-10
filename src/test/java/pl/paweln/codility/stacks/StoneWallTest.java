@@ -8,21 +8,20 @@ import pl.paweln.codility.core.*;
 public class StoneWallTest {
     private final SolutionFactory solutionFactory = new SolutionFactory();
 
-    private CodilitySolution s;
+    private CodilitySolution codilitySolution;
     private SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
-    private SolutionInputParams params;
 
     @Before
-    public void setUp() {
-        this.s = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.STACKS_STONE_WALL);
+    public void setup() {
+        this.codilitySolution = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.STACKS_STONE_WALL);
         this.paramsBuilder = new SolutionInputParams.SolutionInputParamsBuilder();
     }
 
     @Test
     public void testExample() {
         int[] tab = new int[] {8, 8, 5, 7, 9, 8, 7, 4, 8};
-        this.params = this.paramsBuilder.setFirstArray(tab).build();
-        int actualValue = this.s.solution(this.params)[0];
+        SolutionInputParams params = this.paramsBuilder.setFirstArray(tab).build();
+        int actualValue = this.codilitySolution.solution(params)[0];
         Assert.assertEquals(7, actualValue);
     }
 }

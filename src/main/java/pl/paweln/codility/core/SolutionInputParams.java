@@ -4,27 +4,27 @@ import java.security.InvalidParameterException;
 import java.util.Arrays;
 
 public class SolutionInputParams {
-    private int n;
-    private int k;
-    private int x;
-    private int y;
-    private int d;
-    private int a;
-    private int b;
-    private String s;
-    private int[] firstArray;
-    private int[] secondArray;
+    private final int n;
+    private final int k;
+    private final int x;
+    private final int y;
+    private final int d;
+    private final int a;
+    private final int b;
+    private final String s;
+    private final int[] firstArray;
+    private final int[] secondArray;
 
-    private boolean isNinitialized;
-    private boolean isKinitialized;
-    private boolean isXinitialized;
-    private boolean isYinitialized;
-    private boolean isAinitialized;
-    private boolean isBinitialized;
-    private boolean isSinitialized;
-    private boolean isDinitialized;
-    private boolean isFAinitialized;
-    private boolean isSAinitialized;
+    private final boolean isNinitialized;
+    private final boolean isKinitialized;
+    private final boolean isXinitialized;
+    private final boolean isYinitialized;
+    private final boolean isAinitialized;
+    private final boolean isBinitialized;
+    private final boolean isSinitialized;
+    private final boolean isDinitialized;
+    private final boolean isFAinitialized;
+    private final boolean isSAinitialized;
 
     public int getN() {
         return this.n;
@@ -180,10 +180,6 @@ public class SolutionInputParams {
         }
         private int[] getSecondArray () {
             return this.secondArray;
-        }
-
-        private boolean isAnyInitialized() {
-            return this.isAnyInitialized;
         }
 
         public SolutionInputParamsBuilder setN(int n) {
