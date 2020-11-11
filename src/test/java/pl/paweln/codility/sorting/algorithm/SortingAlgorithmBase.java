@@ -7,8 +7,7 @@ import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionFactory;
 import pl.paweln.codility.core.SolutionInputParams;
 
-@Ignore
-public class SortingAlgorithmTest {
+public class SortingAlgorithmBase {
     protected final SolutionFactory solutionFactory = new SolutionFactory();
 
     protected CodilitySolution codilitySolution;

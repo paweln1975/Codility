@@ -51,5 +51,22 @@ public class MaxCountersTest {
 
         Assert.assertArrayEquals(expArr, retArr);
     }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testValidationArr() {
+        int [] tabA = new int[0];
+        this.params = this.paramsBuilder
+                .setFirstArray(tabA).build();
+        this.codilitySolution.solution(this.params);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testValidationKValue() {
+        int [] tabA = new int[] {2, 3};
+        int n = -10;
+        this.params = this.paramsBuilder
+                .setFirstArray(tabA).setN(n).build();
+        this.codilitySolution.solution(this.params);
+    }
 }
 

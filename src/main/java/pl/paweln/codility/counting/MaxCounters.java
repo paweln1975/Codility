@@ -20,7 +20,7 @@ public class MaxCounters extends AbstractCodility {
         int n = params.getN();
         int[] tab = params.getFirstArray();
 
-        if (tab.length == 0 || tab.length > 100000)
+        if (tab == null || tab.length == 0 || tab.length > 100000)
             throw new IllegalArgumentException("Array size must be within range 1 .. 100000.");
 
         if (n < 0 || n > 100000)

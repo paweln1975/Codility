@@ -90,4 +90,12 @@ public class MissingIntegerTest {
                 .setFirstArray(testArr).build();
         Assert.assertEquals(1, this.codilitySolution.solution(this.params)[0]);
     }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testValidationArr() {
+        int[] tabA = new int[0];
+        this.params = this.paramsBuilder
+                .setFirstArray(tabA).build();
+        this.codilitySolution.solution(this.params);
+    }
 }

@@ -9,7 +9,7 @@ public class PermCheck2Test extends PermCheckTest {
 
     @Before
     public void setUp() {
-        this.s = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.COUNTING_PERM_CHECK_2);
+        this.codilitySolution = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.COUNTING_PERM_CHECK_2);
         this.paramsBuilder = new SolutionInputParams.SolutionInputParamsBuilder();
     }
 

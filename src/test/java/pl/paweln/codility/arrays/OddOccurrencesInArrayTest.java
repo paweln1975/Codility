@@ -94,4 +94,21 @@ public class OddOccurrencesInArrayTest {
 
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void testValidationArr() {
+        int [] tabA = new int[0];
+        this.params = this.paramsBuilder
+                .setFirstArray(tabA).build();
+        this.codilitySolution.solution(this.params);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testValidationArrOddSize() {
+        int [] tabA = new int[] {2, 3};
+        this.params = this.paramsBuilder
+                .setFirstArray(tabA).build();
+        this.codilitySolution.solution(this.params);
+    }
+
+
 }

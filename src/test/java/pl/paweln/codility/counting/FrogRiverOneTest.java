@@ -66,4 +66,21 @@ public class FrogRiverOneTest {
 
         Assert.assertEquals(99999, this.codilitySolution.solution(this.params)[0]);
     }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testValidationArr() {
+        int [] tabA = new int[0];
+        this.params = this.paramsBuilder
+                .setFirstArray(tabA).build();
+        this.codilitySolution.solution(this.params);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testValidationXValue() {
+        int [] tabA = new int[] {2, 3};
+        int x = -10;
+        this.params = this.paramsBuilder
+                .setFirstArray(tabA).setX(x).build();
+        this.codilitySolution.solution(this.params);
+    }
 }

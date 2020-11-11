@@ -4,7 +4,7 @@ import org.junit.Before;
 import pl.paweln.codility.core.SolutionFactory;
 import pl.paweln.codility.core.SolutionInputParams;
 
-public class QuickSortTest extends SortingAlgorithmTest {
+public class MergeSortBase extends SortingAlgorithmBase {
     @Before
     public void setup() {
         this.codilitySolution = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.SORTING_MERGE_SORT);

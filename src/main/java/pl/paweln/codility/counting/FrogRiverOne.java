@@ -17,7 +17,7 @@ public class FrogRiverOne extends AbstractCodility {
         int x = params.getX();
         int[] tab = params.getFirstArray();
 
-        if (tab.length == 0 || tab.length > 100000)
+        if (tab == null || tab.length == 0 || tab.length > 100000)
             throw new IllegalArgumentException("Array size must be within range 1 .. 100000.");
 
         if (x < 0 || x > 100000)

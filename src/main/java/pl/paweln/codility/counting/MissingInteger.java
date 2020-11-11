@@ -19,7 +19,7 @@ public class MissingInteger extends AbstractCodility {
     public int[] solution(SolutionInputParams params) {
         int[] tab = params.getFirstArray();
 
-        if (tab.length == 0 || tab.length > 100000)
+        if (tab == null || tab.length == 0 || tab.length > 100000)
             throw new IllegalArgumentException("Array size must be within range 1 .. 100000.");
 
         return new int[] {this.solution(tab)};
