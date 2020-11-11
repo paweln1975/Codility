@@ -1,7 +1,6 @@
 package pl.paweln.codility.sorting.algorithm;
 
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionFactory;
