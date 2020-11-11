@@ -9,12 +9,12 @@ import java.util.Arrays;
 public class CyclicRotation extends AbstractCodility implements CodilitySolution {
     public CyclicRotation() {
 
-        int[] A = { 3, 8, 9, 7, 6 };
-        int K = 3;
+        int[] tabA = { 3, 8, 9, 7, 6 };
+        int k = 3;
 
         defaultParams = paramsBuilder
-                .setFirstArray(A)
-                .setK(K)
+                .setFirstArray(tabA)
+                .setK(k)
                 .build();
     }
 
@@ -30,27 +30,27 @@ public class CyclicRotation extends AbstractCodility implements CodilitySolution
     }
 
     private int[] solution(int[] A, int K) {
-        int N = A.length;
+        int n = A.length;
         int offset;
 
-        if (N == 0) return new int[0];
+        if (n == 0) return new int[0];
 
-        int[] B = new int[N];
+        int[] B = new int[n];
 
-        if (N == K) {
+        if (n == K) {
             B = Arrays.copyOf(A, B.length);
             return B;
         }
 
-        if (K > N) {
-            offset = K % N;
+        if (K > n) {
+            offset = K % n;
         } else {
             offset = K;
         }
 
 
-        for (int i = 0; i < N; i++) {
-            B[getNewPos(i, offset, N)] = A[i];
+        for (int i = 0; i < n; i++) {
+            B[getNewPos(i, offset, n)] = A[i];
         }
 
         return B;

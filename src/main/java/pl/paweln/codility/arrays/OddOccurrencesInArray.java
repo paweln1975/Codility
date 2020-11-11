@@ -7,24 +7,21 @@ import pl.paweln.codility.core.SolutionInputParams;
 public class OddOccurrencesInArray extends AbstractCodility implements CodilitySolution {
 
     public OddOccurrencesInArray() {
-        int[] A = {9, 3, 9, 3, 9, 7, 9};
+        int[] tabA = {9, 3, 9, 3, 9, 7, 9};
         this.defaultParams =this.paramsBuilder
-            .setFirstArray(A).build();
+            .setFirstArray(tabA).build();
     }
 
     @Override
     public int[] solution(SolutionInputParams params) {
         int[] arr = params.getFirstArray();
 
-        if (arr == null || arr.length == 0) {
-            throw new IllegalArgumentException("Array cannot be empty");
+        if (arr == null || arr.length == 0 || arr.length > 1000000) {
+            throw new IllegalArgumentException("Array size must be within 2..1 000 000");
         }
 
-        if (arr.length > 1000000) {
-            throw new IllegalArgumentException("Array size to big");
-        }
         if (arr.length % 2 == 0) {
-            throw new IllegalArgumentException("Array size must be odd value");
+            throw new IllegalArgumentException("Array size must be odd value.");
         }
 
         return new int[] {this.solution(arr)};

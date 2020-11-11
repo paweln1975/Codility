@@ -1,30 +1,29 @@
 package pl.paweln.codility.counting;
 
 import pl.paweln.codility.core.AbstractCodility;
-import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 public class FrogRiverOne extends AbstractCodility {
 
     public FrogRiverOne() {
-        int[] A = new int[] {1, 3, 1, 4, 2, 3, 5, 4};
+        int[] tabA = new int[] {1, 3, 1, 4, 2, 3, 5, 4};
 
         this.defaultParams = this.paramsBuilder
-                .setFirstArray(A)
+                .setFirstArray(tabA)
                 .setX(5).build();
     }
     @Override
     public int[] solution(SolutionInputParams params) {
-        int X = params.getX();
+        int x = params.getX();
         int[] tab = params.getFirstArray();
 
-        if (tab.length == 0 || tab.length > 100000)
+        if (tab == null || tab.length == 0 || tab.length > 100000)
             throw new IllegalArgumentException("Array size must be within range 1 .. 100000.");
 
-        if (X < 0 || X > 100000)
+        if (x < 0 || x > 100000)
             throw new IllegalArgumentException("X must be within range 1 .. 100000.");
 
-        return new int[] {this.solution(X, tab)};
+        return new int[] {this.solution(x, tab)};
     }
 
     private int solution(int X, int[] A) {

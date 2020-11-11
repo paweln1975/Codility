@@ -8,62 +8,79 @@ import pl.paweln.codility.core.*;
 public class FrogRiverOneTest {
     private final SolutionFactory solutionFactory = new SolutionFactory();
 
-    private CodilitySolution s;
+    private CodilitySolution codilitySolution;
     private SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
     private SolutionInputParams params;
 
     @Before
     public void setup() {
-        this.s = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.COUNTING_FROG_RIVER_ONE);
+        this.codilitySolution = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.COUNTING_FROG_RIVER_ONE);
         this.paramsBuilder = new SolutionInputParams.SolutionInputParamsBuilder();
     }
 
     @Test
     public void testExample() {
-        int[] A = new int[] {1, 3, 1, 4, 2, 3, 5, 4};
+        int[] tabA = new int[] {1, 3, 1, 4, 2, 3, 5, 4};
 
         this.params = this.paramsBuilder
-                .setFirstArray(A)
+                .setFirstArray(tabA)
                 .setX(5).build();
 
-        Assert.assertEquals(6, this.s.solution(this.params)[0]);
+        Assert.assertEquals(6, this.codilitySolution.solution(this.params)[0]);
     }
 
     @Test
     public void testSingleValue() {
-        int[] A = new int[] {1};
+        int[] tabA = new int[] {1};
         this.params = this.paramsBuilder
-                .setFirstArray(A)
+                .setFirstArray(tabA)
                 .setX(1).build();
 
-        Assert.assertEquals(0, this.s.solution(this.params)[0]);
+        Assert.assertEquals(0, this.codilitySolution.solution(this.params)[0]);
 
     }
 
     @Test
     public void testMaxValues10position() {
-        int[] A = new int[100000];
-        for (int i = 0; i < A.length; i++) {
-            A[i] = i+1;
+        int[] tabA = new int[100000];
+        for (int i = 0; i < tabA.length; i++) {
+            tabA[i] = i+1;
         }
 
         this.params = this.paramsBuilder
-                .setFirstArray(A)
+                .setFirstArray(tabA)
                 .setX(10).build();
 
-        Assert.assertEquals(9, this.s.solution(this.params)[0]);
+        Assert.assertEquals(9, this.codilitySolution.solution(this.params)[0]);
     }
     @Test
     public void testMaxValuesMaxPosition() {
-        int[] A = new int[100000];
-        for (int i = 0; i < A.length; i++) {
-            A[i] = i+1;
+        int[] tabA = new int[100000];
+        for (int i = 0; i < tabA.length; i++) {
+            tabA[i] = i+1;
         }
 
         this.params = this.paramsBuilder
-                .setFirstArray(A)
-                .setX(A.length).build();
+                .setFirstArray(tabA)
+                .setX(tabA.length).build();
 
-        Assert.assertEquals(99999, this.s.solution(this.params)[0]);
+        Assert.assertEquals(99999, this.codilitySolution.solution(this.params)[0]);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testValidationArr() {
+        int [] tabA = new int[0];
+        this.params = this.paramsBuilder
+                .setFirstArray(tabA).build();
+        this.codilitySolution.solution(this.params);
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void testValidationXValue() {
+        int [] tabA = new int[] {2, 3};
+        int x = -10;
+        this.params = this.paramsBuilder
+                .setFirstArray(tabA).setX(x).build();
+        this.codilitySolution.solution(this.params);
     }
 }

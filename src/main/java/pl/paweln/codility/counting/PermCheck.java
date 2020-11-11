@@ -1,12 +1,21 @@
 package pl.paweln.codility.counting;
 
+import pl.paweln.codility.core.AbstractCodility;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class PermCheck implements CodilitySolution {
+public class PermCheck extends AbstractCodility {
+
+    public PermCheck() {
+        int[] testArr = new int[] {4, 1, 2, 3};
+
+        this.defaultParams = this.paramsBuilder
+                .setFirstArray(testArr).build();
+    }
+
     @Override
     public int[] solution(SolutionInputParams params) {
         int[] tab = params.getFirstArray();
