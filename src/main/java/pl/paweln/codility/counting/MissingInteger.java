@@ -1,7 +1,6 @@
 package pl.paweln.codility.counting;
 
 import pl.paweln.codility.core.AbstractCodility;
-import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.Arrays;

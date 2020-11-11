@@ -65,6 +65,7 @@ public class SolutionFactory {
         SORTING_SELECTION_SORT,
         SORTING_COUNTING_SORT,
         SORTING_HEAP_SORT,
+        SORTING_HEAP_SORT_2,
         SORTING_INSERTION_SORT,
         SORTING_MERGE_SORT,
         SORTING_QUICK_SORT,
@@ -251,6 +252,9 @@ public class SolutionFactory {
                 break;
             case SORTING_HEAP_SORT:
                 codilitySolution = new HeapSort();
+                break;
+            case SORTING_HEAP_SORT_2:
+                codilitySolution = new HeapSort2();
                 break;
             case SORTING_MERGE_SORT:
                 codilitySolution = new MergeSort();
