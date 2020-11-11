@@ -7,9 +7,9 @@ import pl.paweln.codility.core.SolutionInputParams;
 public class OddOccurrencesInArray extends AbstractCodility implements CodilitySolution {
 
     public OddOccurrencesInArray() {
-        int[] A = {9, 3, 9, 3, 9, 7, 9};
+        int[] tabA = {9, 3, 9, 3, 9, 7, 9};
         this.defaultParams =this.paramsBuilder
-            .setFirstArray(A).build();
+            .setFirstArray(tabA).build();
     }
 
     @Override

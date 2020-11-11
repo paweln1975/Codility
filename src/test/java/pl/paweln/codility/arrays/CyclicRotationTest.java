@@ -10,59 +10,59 @@ import java.util.Arrays;
 public class CyclicRotationTest {
     private final SolutionFactory solutionFactory = new SolutionFactory();
 
-    private CodilitySolution s;
+    private CodilitySolution codilitySolution;
     private SolutionInputParams.SolutionInputParamsBuilder paramsBuilder;
     private SolutionInputParams params;
 
     @Before
-    public void setUp() {
-        this.s = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.ARRAYS_CYCLIC_ROTATION);
+    public void setup() {
+        this.codilitySolution = this.solutionFactory.getSolution(SolutionFactory.CodilityTask.ARRAYS_CYCLIC_ROTATION);
         this.paramsBuilder = new SolutionInputParams.SolutionInputParamsBuilder();
     }
 
     @Test
     public void testEmpty() {
-        int[] A = {};
+        int[] tabA = {};
         int[] resultExpected = {};
-        int K = 3;
+        int k = 3;
 
         this.params = this.paramsBuilder
-                .setFirstArray(A)
-                .setK(K)
+                .setFirstArray(tabA)
+                .setK(k)
                 .build();
 
-        int[] result = this.s.solution(this.params);
+        int[] result = this.codilitySolution.solution(this.params);
 
         Assert.assertArrayEquals(resultExpected, result);
     }
 
     @Test
     public void testShiftExample() {
-        int[] A = { 3, 8, 9, 7, 6 };
+        int[] tabA = { 3, 8, 9, 7, 6 };
         int[] resultExpected = {9, 7, 6, 3, 8};
-        int K = 3;
+        int k = 3;
 
         this.params = this.paramsBuilder
-                .setFirstArray(A)
-                .setK(K)
+                .setFirstArray(tabA)
+                .setK(k)
                 .build();
 
-        int[] result = this.s.solution(this.params);
+        int[] result = this.codilitySolution.solution(this.params);
 
         Assert.assertArrayEquals(resultExpected, result);
     }
 
     @Test
     public void testShiftNone() {
-        int[] A = { 1, 3, 4, 6 };
-        int[] resultExpected = Arrays.copyOf(A, A.length);
+        int[] tabA = { 1, 3, 4, 6 };
+        int[] resultExpected = Arrays.copyOf(tabA, tabA.length);
 
         this.params = this.paramsBuilder
-                .setFirstArray(A)
-                .setK(A.length)
+                .setFirstArray(tabA)
+                .setK(tabA.length)
                 .build();
 
-        int[] result = this.s.solution(this.params);
+        int[] result = this.codilitySolution.solution(this.params);
 
         Assert.assertArrayEquals(resultExpected, result);
 
@@ -70,45 +70,45 @@ public class CyclicRotationTest {
 
     @Test
     public void testShift1() {
-        int[] A = { 1, 3, 4, 6 };
+        int[] tabA = { 1, 3, 4, 6 };
         int[] resultExpected = { 6, 1, 3, 4 };
 
         this.params = this.paramsBuilder
-                .setFirstArray(A)
+                .setFirstArray(tabA)
                 .setK(1)
                 .build();
 
-        int[] result = this.s.solution(this.params);
+        int[] result = this.codilitySolution.solution(this.params);
 
         Assert.assertArrayEquals(resultExpected, result);
     }
 
     @Test
     public void testShift35() {
-        int[] A = { 1, 3, 4, 6, 3, 2, 10, 15 };
+        int[] tabA = { 1, 3, 4, 6, 3, 2, 10, 15 };
         int[] resultExpected = { 2, 10, 15, 1, 3, 4, 6, 3 };
 
         this.params = this.paramsBuilder
-                .setFirstArray(A)
+                .setFirstArray(tabA)
                 .setK(35)
                 .build();
 
-        int[] result = this.s.solution(this.params);
+        int[] result = this.codilitySolution.solution(this.params);
 
         Assert.assertArrayEquals(resultExpected, result);
     }
 
     @Test
     public void testShift2() {
-        int[] A = { 1, 3, 4, 6, 3, 2, 10, 15 };
+        int[] tabA = { 1, 3, 4, 6, 3, 2, 10, 15 };
         int[] resultExpected = { 10, 15, 1, 3, 4, 6, 3, 2 };
 
         this.params = this.paramsBuilder
-                .setFirstArray(A)
+                .setFirstArray(tabA)
                 .setK(2)
                 .build();
 
-        int[] result = this.s.solution(this.params);
+        int[] result = this.codilitySolution.solution(this.params);
 
         Assert.assertArrayEquals(resultExpected, result);
 
@@ -116,28 +116,28 @@ public class CyclicRotationTest {
 
     @Test (expected = IllegalArgumentException.class)
     public void testValidationInvalidK() {
-        int[] A = { 1, 3, 4, 6, 3, 2, 10, 15 };
-        int K = 150;
+        int[] tabA = { 1, 3, 4, 6, 3, 2, 10, 15 };
+        int k = 150;
 
         this.params = this.paramsBuilder
-                .setFirstArray(A)
-                .setK(K)
+                .setFirstArray(tabA)
+                .setK(k)
                 .build();
 
-        this.s.solution(this.params);
+        this.codilitySolution.solution(this.params);
     }
 
     @Test (expected = IllegalArgumentException.class)
     public void testValidationTooBigTable() {
-        int[] A = new int[200];
-        int K = 1;
+        int[] tabA = new int[200];
+        int k = 1;
 
         this.params = this.paramsBuilder
-                .setFirstArray(A)
-                .setK(K)
+                .setFirstArray(tabA)
+                .setK(k)
                 .build();
 
-        this.s.solution(this.params);
+        this.codilitySolution.solution(this.params);
     }
 
 }

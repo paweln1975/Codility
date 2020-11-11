@@ -29,6 +29,7 @@ import pl.paweln.codility.slice.MaxDoubleSliceSum;
 import pl.paweln.codility.slice.MaxProfit;
 import pl.paweln.codility.slice.MaxSlice;
 import pl.paweln.codility.sorting.*;
+import pl.paweln.codility.sorting.algorithm.BubbleSort;
 import pl.paweln.codility.stacks.Brackets;
 import pl.paweln.codility.stacks.Fish;
 import pl.paweln.codility.stacks.Nesting;
@@ -59,6 +60,8 @@ public class SolutionFactory {
         SORTING_MAX_PRODUCT_OF_THREE_2,
         SORTING_TRIANGLE,
         SORTING_NUMBER_OF_DISCS_INTERSECTIONS,
+
+        SORTING_BUBBLE_SORT,
 
         STACKS_BRACKETS,
         STACKS_FISH,
@@ -233,6 +236,9 @@ public class SolutionFactory {
                 break;
             case EUCLIDEAN_CHOCOLATES_BY_NUMBERS:
                 codilitySolution = new ChocolatesByNumbers();
+                break;
+            case SORTING_BUBBLE_SORT:
+                codilitySolution = new BubbleSort();
                 break;
         }
 
