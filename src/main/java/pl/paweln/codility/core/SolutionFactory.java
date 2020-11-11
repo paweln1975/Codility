@@ -29,7 +29,7 @@ import pl.paweln.codility.slice.MaxDoubleSliceSum;
 import pl.paweln.codility.slice.MaxProfit;
 import pl.paweln.codility.slice.MaxSlice;
 import pl.paweln.codility.sorting.*;
-import pl.paweln.codility.sorting.algorithm.BubbleSort;
+import pl.paweln.codility.sorting.algorithm.*;
 import pl.paweln.codility.stacks.Brackets;
 import pl.paweln.codility.stacks.Fish;
 import pl.paweln.codility.stacks.Nesting;
@@ -62,6 +62,12 @@ public class SolutionFactory {
         SORTING_NUMBER_OF_DISCS_INTERSECTIONS,
 
         SORTING_BUBBLE_SORT,
+        SORTING_SELECTION_SORT,
+        SORTING_COUNTING_SORT,
+        SORTING_HEAP_SORT,
+        SORTING_INSERTION_SORT,
+        SORTING_MERGE_SORT,
+        SORTING_QUICK_SORT,
 
         STACKS_BRACKETS,
         STACKS_FISH,
@@ -239,6 +245,24 @@ public class SolutionFactory {
                 break;
             case SORTING_BUBBLE_SORT:
                 codilitySolution = new BubbleSort();
+                break;
+            case SORTING_SELECTION_SORT:
+                codilitySolution = new SelectionSort();
+                break;
+            case SORTING_HEAP_SORT:
+                codilitySolution = new HeapSort();
+                break;
+            case SORTING_MERGE_SORT:
+                codilitySolution = new MergeSort();
+                break;
+            case SORTING_QUICK_SORT:
+                codilitySolution = new QuickSort();
+                break;
+            case SORTING_COUNTING_SORT:
+                codilitySolution = new CountingSort();
+                break;
+            case SORTING_INSERTION_SORT:
+                codilitySolution = new InsertionSort();
                 break;
         }
 

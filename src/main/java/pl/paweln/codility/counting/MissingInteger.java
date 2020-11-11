@@ -1,11 +1,19 @@
 package pl.paweln.codility.counting;
 
+import pl.paweln.codility.core.AbstractCodility;
 import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionInputParams;
 
 import java.util.Arrays;
 
-public class MissingInteger implements CodilitySolution {
+public class MissingInteger extends AbstractCodility {
+
+    public MissingInteger() {
+        int[] testArr = new int[] {1, 3, 6, 4, 1, 2};
+
+        this.defaultParams = this.paramsBuilder
+                .setFirstArray(testArr).build();
+    }
 
     @Override
     public int[] solution(SolutionInputParams params) {
