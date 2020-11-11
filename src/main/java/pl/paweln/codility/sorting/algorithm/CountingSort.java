@@ -24,7 +24,7 @@ public class CountingSort extends SortingAlgorithm {
             countTab[j]++;
         }
 
-        operationCount = 2*size;
+        operationCount = 2*(long)size;
 
         int c = 0;
         // generate output tab
