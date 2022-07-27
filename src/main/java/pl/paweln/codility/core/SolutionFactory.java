@@ -27,6 +27,7 @@ import pl.paweln.codility.sieveoferatosthenes.CountSemiprimes;
 import pl.paweln.codility.sieveoferatosthenes.SieveOfEratosthenes;
 import pl.paweln.codility.slice.MaxDoubleSliceSum;
 import pl.paweln.codility.slice.MaxProfit;
+import pl.paweln.codility.slice.MaxProfitKadane;
 import pl.paweln.codility.slice.MaxSlice;
 import pl.paweln.codility.sorting.*;
 import pl.paweln.codility.sorting.algorithm.*;
@@ -89,6 +90,7 @@ public class SolutionFactory {
         SLICE_MAX_SLICE,
         SLICE_MAX_DOUBLE_SLICE_SUM,
         SLICE_MAX_PROFIT,
+        SLICE_MAX_PROFIT_KADANE,
 
         PRIME_COUNT_FACTORS,
         PRIME_MIN_PERIMETER,
@@ -210,6 +212,9 @@ public class SolutionFactory {
                 break;
             case SLICE_MAX_PROFIT:
                 codilitySolution = new MaxProfit();
+                break;
+            case SLICE_MAX_PROFIT_KADANE:
+                codilitySolution = new MaxProfitKadane();
                 break;
             case PRIME_COUNT_FACTORS:
                 codilitySolution = new CountFactors();

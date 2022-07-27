@@ -11,7 +11,7 @@ public class MaxProfit implements CodilitySolution {
     }
 
 
-    private int solution(int[] A) {
+    protected int solution(int[] A) {
         int max_ending = 0;
         int max_slice = 0;
 
@@ -30,6 +30,5 @@ public class MaxProfit implements CodilitySolution {
         }
         return max_slice;
     }
-
 
 }
