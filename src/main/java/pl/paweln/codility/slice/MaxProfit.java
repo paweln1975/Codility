@@ -11,7 +11,7 @@ public class MaxProfit implements CodilitySolution {
     }
 
 
-    private int solution(int[] A) {
+    protected int solution(int[] A) {
         int max_ending = 0;
         int max_slice = 0;
 
@@ -29,43 +29,6 @@ public class MaxProfit implements CodilitySolution {
             max_slice = Math.max(max_slice, max_ending);
         }
         return max_slice;
-    }
-
-    private int altSolution(int[] A) {
-        int bestEarnings = 0;
-
-        int dayOfPurchase = 0;
-        for (int currentDayIndex = 1; currentDayIndex < A.length - 1; ++currentDayIndex) {
-            if (A[currentDayIndex] < A[dayOfPurchase]) {
-                dayOfPurchase = currentDayIndex;
-            }
-            int dayOfSale = currentDayIndex + 1;
-            int purchasePrice = A[dayOfPurchase];
-            int salePrice = A[dayOfSale];
-            int earnings = salePrice - purchasePrice;
-            if (earnings > bestEarnings) {
-                bestEarnings = earnings;
-            }
-        }
-        return bestEarnings;
-    }
-
-    private int kadaneSolution(int[] A) {
-        if(A.length == 1 || A.length == 0){
-            return 0;
-        }
-
-        int maxSoFar = 0;
-        int maxEndingHere;
-        int minPrice = A[0];
-
-        for(int i = 1; i < A.length; i++){
-            maxEndingHere = Math.max(0, A[i] - minPrice);
-            minPrice = Math.min(minPrice, A[i]);
-            maxSoFar = Math.max(maxEndingHere, maxSoFar);
-        }
-
-        return maxSoFar;
     }
 
 }
