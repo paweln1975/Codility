@@ -1,6 +1,5 @@
 package pl.paweln.codility.core;
 
-import jdk.nashorn.internal.AssertsEnabled;
 import org.junit.Assert;
 import org.junit.Test;
 

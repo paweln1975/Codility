@@ -6,7 +6,7 @@ import pl.paweln.codility.core.CodilitySolution;
 import pl.paweln.codility.core.SolutionFactory;
 import pl.paweln.codility.core.SolutionInputParams;
 
-public class SortingAlgorithmBase {
+public abstract class SortingAlgorithmBase {
     protected final SolutionFactory solutionFactory = new SolutionFactory();
 
     protected CodilitySolution codilitySolution;

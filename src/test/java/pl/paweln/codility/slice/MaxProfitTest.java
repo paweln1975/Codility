@@ -37,4 +37,31 @@ public class MaxProfitTest {
 
         Assert.assertEquals(0, maxProfit);
     }
+
+    @Test
+    public void testSimple() {
+        int[] A = {5, 4, 6, 2, 4, 5, 1, 3, 3};
+        this.params = this.paramsBuilder.setFirstArray(A).build();
+        int maxProfit = this.s.solution(this.params)[0];
+
+        Assert.assertEquals(3, maxProfit);
+    }
+
+    @Test
+    public void testLowerPriceLater() {
+        int[] A = {2, 6, 1, 4};
+        this.params = this.paramsBuilder.setFirstArray(A).build();
+        int maxProfit = this.s.solution(this.params)[0];
+
+        Assert.assertEquals(4, maxProfit);
+    }
+
+    @Test
+    public void testSimple2() {
+        int[] A = {2, 6, 1, 4, 7};
+        this.params = this.paramsBuilder.setFirstArray(A).build();
+        int maxProfit = this.s.solution(this.params)[0];
+
+        Assert.assertEquals(6, maxProfit);
+    }
 }
