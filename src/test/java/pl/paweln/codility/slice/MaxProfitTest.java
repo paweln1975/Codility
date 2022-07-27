@@ -30,10 +30,16 @@ public class MaxProfitTest {
     }
 
     @Test
-    public void testEmpty() {
-        int [] A = {};
+    public void testEmptyOrSingle() {
+        int[] A = {};
         this.params = this.paramsBuilder.setFirstArray(A).build();
         int maxProfit = this.s.solution(this.params)[0];
+
+        Assert.assertEquals(0, maxProfit);
+
+        int[] B = {1};
+        this.params = this.paramsBuilder.setFirstArray(B).build();
+        maxProfit = this.s.solution(this.params)[0];
 
         Assert.assertEquals(0, maxProfit);
     }
